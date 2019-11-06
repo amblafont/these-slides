@@ -26,6 +26,7 @@
     \hspace{1em}%
     \insertframenumber/\inserttotalframenumber
 }
+\usepackage{tikz}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -530,6 +531,284 @@ If you omit details that are vital to the proof/implementation, just say
 Operational monads
 \end_layout
 
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Programming Languages as graphs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Example: 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus with 
+\begin_inset Formula $\beta$
+\end_inset
+
+-reduction
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+preview true
+filename "images/multigraphe.tex"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(
+\series bold
+Syntax
+\series default
+) vertices = terms 
+\end_layout
+
+\begin_layout Itemize
+(
+\series bold
+Semantics
+\series default
+) edges = reductions between terms
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+PLs as bipartite graphs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Example: 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus with bigstep operational semantics
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+A term reduces to a value
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+preview true
+filename "images/multigraphe.tex"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(
+\series bold
+Syntax
+\series default
+) vertices = terms 
+\end_layout
+
+\begin_layout Itemize
+(
+\series bold
+Semantics
+\series default
+) edges = reductions between terms
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Operational monads
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Definition
+\end_layout
+
+\begin_layout Standard
+(e.g.
+ 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calcul with 
+\begin_inset Formula $\beta$
+\end_inset
+
+-reduction)
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+For each set 
+\begin_inset Formula $X$
+\end_inset
+
+, a multigraph:
+\end_layout
+
+\begin_layout Frame
+\begin_inset CommandInset include
+LatexCommand input
+preview true
+filename "images/multigraphe.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(
+\series bold
+Syntax
+\series default
+) vertices = terms taking free variables in 
+\begin_inset Formula $X$
+\end_inset
+
+, for each set 
+\begin_inset Formula $X$
+\end_inset
+
+;
+\begin_inset Formula 
+\begin{align*}
+T(\emptyset) & =\{\lambda z.z,\dots\}\\
+T(\{x,y\}) & =\{\lambda z.z,x,\lambda z.y,x\,y,\dots\}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+(
+\series bold
+Semantics
+\series default
+) edges between 
+\begin_inset Formula $t$
+\end_inset
+
+ and 
+\begin_inset Formula $u$
+\end_inset
+
+, for each pair 
+\begin_inset Formula $(t,u)\in T(X)^{2}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\redr{\beta}{(\lambda x.x)y}y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
++ parallel substitution
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -569,7 +848,7 @@ A title should summarize the slide in an understandable fashion for anyone
 \begin_inset Formula $\beta$
 \end_inset
 
--reduction ).
+-reduction).
 \end_layout
 
 \begin_layout Block
@@ -610,12 +889,6 @@ Substitution of terms
  
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Block
 \begin_inset Formula $\Rightarrow$
 \end_inset
@@ -641,7 +914,10 @@ with binding variables
 
 \end_layout
 
-\begin_layout Pause
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
 
 \end_layout
 
@@ -674,12 +950,6 @@ Substitution of reductions
 
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Block
 \begin_inset Formula $\Rightarrow$
 \end_inset
@@ -768,6 +1038,16 @@ Preview: Operations as module morphisms
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+application plutot que +, et Tom préfère la version diagrammatique
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -827,10 +1107,6 @@ Operations as module morphisms
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Frame
 
 \end_layout
 
@@ -1055,6 +1331,49 @@ On second slide.
 General signatures
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Specify reduction monads
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A signature is a sequence of arities 
+\begin_inset Formula $A_{1},\dots,A_{n}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
 Main Results
 \end_layout

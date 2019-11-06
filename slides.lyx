@@ -602,10 +602,152 @@ Syntax
 \series bold
 Semantics
 \series default
-) edges = reductions between terms
+) arrows = reductions between terms
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Graphs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Definition
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\backslash
+{
+\backslash
+text{edges}
+\backslash
+}
+\backslash
+ar@<+0.5ex>[r]^{
+\backslash
+text{source}}
+\backslash
+ar@<-0.5ex>[r]_{
+\backslash
+text{target}}&
+\backslash
+{
+\backslash
+text{vertices
+\backslash
+}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+Graph = a triple 
+\begin_inset Formula $(A,V,\partial)$
+\end_inset
+
+ where 
+\begin_inset Formula 
+\[
+A\xrightarrow{\partial}V\times V
+\]
+
+\end_inset
+
+
+\series bold
+Idea
+\series default
+:
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\begin{align*}
+A & =\{\text{arrows}\}\\
+V & =\{\text{vertices}\}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\[
+\begin{array}{rcl}
+\partial: & {\color{blue}A} & \to V\times V\\
+ & {\color{blue}t\to u} & \mapsto(t,u)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\[
+\partial^{-1}(\{(t,u)\})=\{\text{arrows between \ensuremath{t} and \ensuremath{u}}\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -635,12 +777,36 @@ Example:
 -calculus with bigstep operational semantics
 \end_layout
 
+\begin_layout Itemize
+term 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ value
+\end_layout
+
+\begin_layout Itemize
+variables = placeholders for values
+\end_layout
+
 \end_deeper
 \begin_layout Frame
-A term reduces to a value
+
 \end_layout
 
 \begin_layout Frame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -651,7 +817,7 @@ A term reduces to a value
 \begin_inset CommandInset include
 LatexCommand input
 preview true
-filename "images/multigraphe.tex"
+filename "images/bipartite-graph.tex"
 
 \end_inset
 
@@ -663,24 +829,6 @@ filename "images/multigraphe.tex"
 
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-(
-\series bold
-Syntax
-\series default
-) vertices = terms 
-\end_layout
-
-\begin_layout Itemize
-(
-\series bold
-Semantics
-\series default
-) edges = reductions between terms
-\end_layout
-
-\end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset

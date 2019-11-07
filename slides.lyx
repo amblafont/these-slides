@@ -386,6 +386,44 @@ tableofcontents[currentsection,currentsubsection]
 }
 \end_layout
 
+\begin_layout Plain Layout
+
+
+\backslash
+AtBeginSection[]{%
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+frame<beamer>{ 
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+frametitle{Outline}   
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+tableofcontents[currentsection,currentsubsection] 
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
 \end_inset
 
 
@@ -538,7 +576,7 @@ If you omit details that are vital to the proof/implementation, just say
 
 \end_deeper
 \begin_layout Section
-Operational monads
+Reduction monads
 \end_layout
 
 \begin_layout Standard
@@ -849,14 +887,14 @@ text{vertices
 
 \end_deeper
 \begin_layout Frame
-Graph = a triple 
-\begin_inset Formula $(A,V,\partial)$
+Graph = a quadruple 
+\begin_inset Formula $(A,V,\sigma,\tau)$
 \end_inset
 
  where 
 \begin_inset Formula 
 \[
-A\xrightarrow{\partial}V\times V
+\xymatrix{A\ar@<+.5ex>[r]^{\sigma}\ar@<-0.5ex>[r]_{\tau} & V}
 \]
 
 \end_inset
@@ -871,7 +909,7 @@ A\xrightarrow{\partial}V\times V
 \begin_layout Frame
 \begin_inset Formula 
 \[
-A=\{\text{arrows}\}\qquad\qquad V=\{\text{vertices}\}
+A=\{\text{total set of arrows}\}\qquad\qquad V=\{\text{vertices}\}
 \]
 
 \end_inset
@@ -901,9 +939,27 @@ V & =\{\text{vertices}\}
 \begin_inset Formula 
 \[
 \begin{array}{rcl}
-\partial: & {\color{blue}A} & \to V\times V\\
- & {\color{blue}t\to u} & \mapsto(t,u)
+\sigma: & {\color{blue}A} & \to V\\
+ & {\color{blue}t\xrightarrow{r}u} & \mapsto t
+\end{array}\qquad\begin{array}{rcl}
+\tau: & {\color{blue}A} & \to V\\
+ & {\color{blue}t\xrightarrow{r}u} & \mapsto u
 \end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\[
+\sigma(r)\xrightarrow{r}\tau(r)
 \]
 
 \end_inset
@@ -1105,7 +1161,7 @@ Bipartite graph = a quadruple
  where 
 \begin_inset Formula 
 \[
-A\xrightarrow{\partial}V_{1}\times V_{2}
+V_{1}\xleftarrow{\sigma}A\xrightarrow{\tau}V_{2}
 \]
 
 \end_inset
@@ -1166,6 +1222,10 @@ vspace{1em}
 \end_layout
 
 \begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
 \begin{array}{rcl}
@@ -1173,6 +1233,11 @@ vspace{1em}
  & {\color{blue}t\to u} & \mapsto(t,u)
 \end{array}
 \]
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1223,6 +1288,10 @@ Parallel substitution
 \end_layout
 
 \begin_deeper
+\begin_layout FrameSubtitle
+Syntax comes with substitution
+\end_layout
+
 \begin_layout FrameSubtitle
 \begin_inset Note Note
 status open
@@ -1425,7 +1494,7 @@ status open
 
 
 \backslash
-vspace{-1em}
+vspace{-0.5em}
 \end_layout
 
 \end_inset
@@ -1477,6 +1546,25 @@ L(\{x,y\}) & =\{\lambda z.z,\dots,x,y,x\,y,\dots\}\quad\supset L(\emptyset)
 \end_inset
 
 
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
 \begin_inset Preview
 
 \begin_layout Standard
@@ -1524,11 +1612,30 @@ For any
 \end_inset
 
 ,
+\end_layout
+
+\begin_layout Block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
 \begin_inset Formula 
 \[
-\begin{array}{cccc}
+\begin{array}{crcl}
 \bind_{f}: & L(X) & \rightarrow & L(Y)\\
- & t & \mapsto & t[x\mapsto f(x)]
+ & t & \mapsto & t[x\mapsto f(x)]\qquad(\text{or\, }t[f])
 \end{array}
 \]
 
@@ -1560,7 +1667,7 @@ For any
 status open
 
 \begin_layout Plain Layout
-Substitution and Monads
+Monads
 \end_layout
 
 \end_inset
@@ -1570,7 +1677,14 @@ Substitution and Monads
 
 \begin_deeper
 \begin_layout FrameSubtitle
-Definition of monads
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus as a monad 
+\begin_inset Formula $(L,\bind,\eta)$
+\end_inset
+
+
 \begin_inset Note Note
 status open
 
@@ -1618,14 +1732,7 @@ text{vertices
 
 \end_deeper
 \begin_layout Frame
-\begin_inset Formula $\lambda$
-\end_inset
 
--calculus as a monad 
-\begin_inset Formula $(L,\bind,\eta)$
-\end_inset
-
-:
 \end_layout
 
 \begin_deeper
@@ -1639,7 +1746,16 @@ Parallel substitution
 
 \begin_layout Enumerate
 Variables are terms
-\begin_inset Formula $\begin{tikzpicture}\node{x};\end{tikzpicture}$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
 \end_inset
 
 
@@ -1647,7 +1763,7 @@ Variables are terms
 \[
 \begin{array}{cccc}
 \eta_{X}: & X & \rightarrow & L(X)\\
- & x & \mapsto & \begin{aligned}\begin{tikzpicture}\node[triangle](a)at(0,0){\(x\)};\node(b)at(0,-0.7){\(x\)};\draw(b.north)edge(b.north|-a.south);\end{tikzpicture}\end{aligned}
+ & x & \mapsto & \begin{aligned}\begin{tikzpicture}\node[triangle](a)at(0,0){\underline{\ensuremath{x}}};\node(b)at(0,-0.7){\ensuremath{x}};\draw(b.north)edge(b.north|-a.south);\end{tikzpicture}\end{aligned}
 \end{array}
 \]
 
@@ -1657,10 +1773,34 @@ Variables are terms
 \end_layout
 
 \begin_layout Enumerate
+Monadics laws:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO le faire en tikz: à guache version écrite, a droite, version tikz
+\end_layout
+
+\end_inset
+
+
 \begin_inset Formula 
-\begin{align*}
-\eta_{X} & :X\rightarrow L(X)\\
-\end{align*}
+\[
+\underline{x}[f]=f(x)\qquad\qquad t[x\mapsto\underline{x}]=t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
++ associativity:
+\begin_inset Formula 
+\[
+t[f][g]=t\left[x\mapsto f(x)[g]\right]
+\]
 
 \end_inset
 
@@ -1668,95 +1808,7 @@ Variables are terms
 \end_layout
 
 \end_deeper
-\begin_layout Frame
-\begin_inset Formula 
-\[
-A\xrightarrow{\partial}V_{1}\times V_{2}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Formula 
-\[
-A=\{\text{arrows}\}\qquad\qquad\begin{aligned}V_{1} & =\{\text{vertices in first group}\}\\
-V_{2} & =\{\text{vertices in second group}\}
-\end{aligned}
-\]
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\begin{align*}
-A & =\{\text{arrows}\}\\
-V_{1} & =\{\text{vertices in first group}\}\\
-V_{2} & =\{\text{vertices in second group}\}
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{1em}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Formula 
-\[
-\begin{array}{rcl}
-\partial: & {\color{blue}A} & \to V\times V\\
- & {\color{blue}t\to u} & \mapsto(t,u)
-\end{array}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-For simplicity, we focus on the particular case of 
-\series bold
-graphs
-\series default
-: 
-\begin_inset Formula $V_{1}=V_{2}$
-\end_inset
-
-.
-\end_layout
-
+\end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -1769,7 +1821,7 @@ graphs
 status open
 
 \begin_layout Plain Layout
-Substitution for syntax and semantics
+Substitution for semantics
 \end_layout
 
 \end_inset
@@ -1793,62 +1845,35 @@ A title should summarize the slide in an understandable fashion for anyone
 
 \end_layout
 
-\begin_layout Block
-\begin_inset Argument 2
+\begin_layout Columns
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Syntax
+
+
+\backslash
+dimexpr
+\backslash
+paperwidth-20pt
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Block
-
-\series bold
-Substitution of terms
-\series default
-: 
-\begin_inset Formula $t\monsubst{x\mapsto u_{x}}$
-\end_inset
-
- replaces each free variable 
-\begin_inset Formula $x$
-\end_inset
-
- with the term 
-\begin_inset Formula $u_{x}$
-\end_inset
-
-, in the term 
-\begin_inset Formula $t$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Block
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
- Terms form a 
-\series bold
-monad 
-\begin_inset Formula $T$
-\end_inset
-
- 
-\series default
-(on sets)
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-with binding variables
+pour réduire la marge
 \end_layout
 
 \end_inset
@@ -1857,34 +1882,42 @@ with binding variables
 \end_layout
 
 \begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
+Our notion of PL:
 \end_layout
 
-\begin_layout Block
-\begin_inset Argument 2
-status open
-
-\begin_layout Plain Layout
-Operational Semantics
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Block
-
+\begin_layout Itemize
+(
 \series bold
-Substitution of reductions
+Syntax
 \series default
-:
+) a monad 
+\begin_inset Formula $(L,\bind,\eta)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+(
+\series bold
+Semantics
+\series default
+) graphs 
+\begin_inset Formula $\xymatrix{A(X)\ar@<+.5ex>[r]^{\sigma}\ar@<-0.5ex>[r]_{\tau} & L(X)}
+$
+\end_inset
+
+ for each 
+\begin_inset Formula $X$
+\end_inset
+
+
 \begin_inset Formula 
 \[
-\dfrac{\redr rtu}{\redr{r\monsubst{x\mapsto u_{x}}}{t\monsubst{x\mapsto u_{x}}}{u\monsubst{x\mapsto u_{x}}}}
+A(X)=\begin{array}{c}
+\text{total set of reductions between}\\
+\text{terms taking free variables in \ensuremath{X}}
+\end{array}
 \]
 
 \end_inset
@@ -1892,21 +1925,32 @@ Substitution of reductions
 
 \end_layout
 
-\begin_layout Block
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
- Reductions between terms form a 
+\begin_layout Itemize
+reductions: substitution of variables with 
 \series bold
-module over 
-\begin_inset Formula $T$
+
+\begin_inset Formula $L$
 \end_inset
 
-
+-terms
 \series default
 .
 \end_layout
 
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\dfrac{\redr rtu}{\redr{r\monsubst f}{t\monsubst f}{u\monsubst f}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -1920,7 +1964,7 @@ module over
 status open
 
 \begin_layout Plain Layout
-Substitution and monads 
+Substitution for semantics made formal
 \end_layout
 
 \end_inset
@@ -1928,10 +1972,471 @@ Substitution and monads
 
 \end_layout
 
+\begin_deeper
+\begin_layout FrameSubtitle
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+A title should summarize the slide in an understandable fashion for anyone
+ how does not follow everything on the slide itself.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+(graphs 
+\begin_inset Formula $\xymatrix{A(X)\ar@<+.5ex>[r]^{\sigma}\ar@<-0.5ex>[r]_{\tau} & V(X)}
+$
+\end_inset
+
+ for each 
+\begin_inset Formula $X$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Frame
-\begin_inset Graphics
-	filename images/def-monads-2.png
-	width 100text%
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\text{For any \ensuremath{f:X\rightarrow\boldsymbol{L}(Y)}},\qquad\begin{array}{crl}
+\bind_{f}: & A(X) & \rightarrow A(Y)\\
+ & r & \mapsto r[x\mapsto f(x)]
+\end{array}
+\]
+
+\end_inset
+
+s.t.
+ if 
+\begin_inset Formula $\partial_{X}(r)=(t,u)$
+\end_inset
+
+, then 
+\begin_inset Formula $\partial_{Y}(r[x\mapsto f(x)])=(t[x\mapsto f(x)],u[x\mapsto f(x)])$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Columns
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+dimexpr
+\backslash
+paperwidth-50pt
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+pour réduire la marge
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $A$
+\end_inset
+
+ as a 
+\series bold
+module
+\series default
+ over 
+\begin_inset Formula $L$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+For any 
+\begin_inset Formula $f:X\rightarrow\boldsymbol{L}(Y)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{crl}
+\bind_{f}: & A(X) & \rightarrow A(Y)\\
+ & r & \mapsto r[x\mapsto f(x)]\quad(\text{or }r[f])
+\end{array}
+\]
+
+\end_inset
+
+s.t.
+\begin_inset Formula 
+\[
+r[x\mapsto\underline{x}]=r\qquad\qquad r[f][g]=r\left[x\mapsto f(x)[g]\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Other example of module over 
+\begin_inset Formula $L$
+\end_inset
+
+: 
+\begin_inset Formula $L$
+\end_inset
+
+ itself.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma$
+\end_inset
+
+ and 
+\begin_inset Formula $\tau$
+\end_inset
+
+ as 
+\series bold
+
+\begin_inset Formula $L$
+\end_inset
+
+-module morphisms
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+
+\color blue
+Source
+\color inherit
+ and 
+\color red
+target
+\color inherit
+ of 
+\begin_inset Formula $r[f]$
+\end_inset
+
+ unspecified by the module structure on 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Block
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If 
+\begin_inset Formula $t\xrightarrow{r}u$
+\end_inset
+
+, then 
+\begin_inset Formula $\sigma(r[f])=t[f]$
+\end_inset
+
+ and 
+\begin_inset Formula $\tau(r[f])=u[f]$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\dfrac{\redr r{\sigma(r)}{\tau(r)}}{\redr{r\monsubst f}{{\color{blue}\sigma(r)\monsubst f}}{{\color{red}\tau(r)[f]}}}\quad\text{enforces\ensuremath{\quad\begin{aligned}{\color{blue}\sigma(r[f])=\sigma(r)[f]}\\
+{\color{red}\tau(r[f])=\sigma(r)[f]}
+\end{aligned}
+}}
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+enforces 
+\begin_inset Formula 
+\[
+{\color{blue}\sigma(r[f])=\sigma(r)[f]}\qquad{\color{red}\tau(r[f])=\tau(r)[f]}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Commutation with substitution 
+\begin_inset Formula $\Leftrightarrow$
+\end_inset
+
+ Module morphisms 
+\begin_inset Formula $\sigma,\tau:A\rightarrow L$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Reduction monads
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Definition
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+Reduction monad: a quadruple 
+\begin_inset Formula $(L,A,\sigma,\tau)$
+\end_inset
+
+ s.t.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $L$
+\end_inset
+
+ = a monad
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $A$
+\end_inset
+
+ = a module over 
+\begin_inset Formula $L$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\sigma,\tau:A\rightarrow L$
+\end_inset
+
+ are 
+\begin_inset Formula $L$
+\end_inset
+
+-module morphisms.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus with 
+\begin_inset Formula $\beta$
+\end_inset
+
+-reduction.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+How can we specify a reduction monad?
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+(Syntax)
+\end_layout
+
+\end_inset
+
+ signature for the (syntactic) operations for the monad;
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+(Semantics)
+\end_layout
+
+\end_inset
+
+ reduction rules,
+\color blue
+ involving some specified syntactic operations
+\color inherit
+.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+Use of a general notion of 
+\series bold
+signature
+\series default
+ managing this 
+\color blue
+dependancy
+\color inherit
+.
+\end_layout
+
+\begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+application plutot que +, et Tom préfère la version diagrammatique
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+General signatures
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Specify reduction monads
+\end_layout
 
 \end_inset
 
@@ -1950,7 +2455,41 @@ Substitution and monads
 status open
 
 \begin_layout Plain Layout
-Preview: Operations as module morphisms
+Overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A signature is a sequence of arities 
+\begin_inset Formula $A_{1},\dots,A_{n}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Syntax
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Operations as module morphisms
 \end_layout
 
 \end_inset
@@ -1962,16 +2501,6 @@ Preview: Operations as module morphisms
 \begin_inset Graphics
 	filename images/operations-as-module-morphisms.png
 	width 100text%
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-application plutot que +, et Tom préfère la version diagrammatique
-\end_layout
 
 \end_inset
 
@@ -2036,313 +2565,6 @@ Operations as module morphisms
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Make Titles Informative.
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset Argument item:2
-status open
-
-\begin_layout Plain Layout
-
-1-
-\end_layout
-
-\end_inset
-
-You can also use overlay specifications to create overlays.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Argument item:2
-status open
-
-\begin_layout Plain Layout
-
-3-
-\end_layout
-
-\end_inset
-
-This allows you to present things in any order.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Argument item:2
-status open
-
-\begin_layout Plain Layout
-
-2-
-\end_layout
-
-\end_inset
-
-This is shown second.
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Make Titles Informative.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Block
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-
-1-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Untitled block.
-\end_layout
-
-\begin_layout Itemize
-Shown on all slides.
-\end_layout
-
-\end_deeper
-\begin_layout ExampleBlock
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-
-2-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Argument 2
-status open
-
-\begin_layout Plain Layout
-Some Example Block Title
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset Formula $e^{i\pi}=-1$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $e^{i\pi/2}=i$
-\end_inset
-
-.
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Section
-General signatures
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Specify reduction monads
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Overview
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-A signature is a sequence of arities 
-\begin_inset Formula $A_{1},\dots,A_{n}$
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-Main Results
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Make Titles Informative.
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Theorem
-On first slide.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Corollary
-On second slide.
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Make Titles Informative.
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout ColumnsTopAligned
-
-\end_layout
-
-\begin_deeper
-\begin_layout Column
-5cm
-\end_layout
-
-\begin_layout Theorem
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-
-1-
-\end_layout
-
-\end_inset
-
-In left column.
-\end_layout
-
-\begin_layout Column
-5cm
-\end_layout
-
-\begin_layout Corollary
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-
-2-
-\end_layout
-
-\end_inset
-
-In right column.
-\begin_inset Newline newline
-\end_inset
-
-New line
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Subsection
-Basic Ideas for Proofs/Implementations
-\end_layout
-
-\begin_layout Section
-Syntax
 \end_layout
 
 \begin_layout Section

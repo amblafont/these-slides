@@ -28,6 +28,7 @@
 }
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows}
+\input{images/triangle-style}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -613,11 +614,7 @@ monads and modules over them
 \begin_inset Formula $\beta$
 \end_inset
 
--reduction (modulo 
-\begin_inset Formula $\alpha$
-\end_inset
-
--equivalence)
+-reduction
 \begin_inset Formula 
 \[
 S,T\quad::=x|S\,T|\lambda x.S
@@ -629,6 +626,19 @@ S,T\quad::=x|S\,T|\lambda x.S
 \begin_inset Formula 
 \[
 \redr{\beta}{(\lambda x.t)\,u}{t[x\mapsto u]}\qquad+\quad\text{congruences}
+\]
+
+\end_inset
+
+modulo 
+\begin_inset Formula $\alpha$
+\end_inset
+
+-equivalence, e.g.
+ 
+\begin_inset Formula 
+\[
+\lambda x.x=\lambda y.y
 \]
 
 \end_inset
@@ -1534,6 +1544,11 @@ For any
 \end_layout
 
 \begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\fauxtext}{of}
+\end_inset
+
+
 \begin_inset Separator plain
 \end_inset
 
@@ -1624,11 +1639,15 @@ Parallel substitution
 
 \begin_layout Enumerate
 Variables are terms
+\begin_inset Formula $\begin{tikzpicture}\node{x};\end{tikzpicture}$
+\end_inset
+
+
 \begin_inset Formula 
 \[
 \begin{array}{cccc}
 \eta_{X}: & X & \rightarrow & L(X)\\
- & x & \mapsto
+ & x & \mapsto & \begin{aligned}\begin{tikzpicture}\node[triangle](a)at(0,0){\(x\)};\node(b)at(0,-0.7){\(x\)};\draw(b.north)edge(b.north|-a.south);\end{tikzpicture}\end{aligned}
 \end{array}
 \]
 

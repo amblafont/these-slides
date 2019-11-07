@@ -434,6 +434,14 @@ beamerdefaultoverlayspecification{<+->}
 \end_layout
 
 \begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bind}{\mathsf{{bind}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -552,20 +560,6 @@ Ingredients
 
 \end_layout
 
-\begin_deeper
-\begin_layout FrameSubtitle
-Example: 
-\begin_inset Formula $\lambda$
-\end_inset
-
--calculus with 
-\begin_inset Formula $\beta$
-\end_inset
-
--reduction
-\end_layout
-
-\end_deeper
 \begin_layout Frame
 
 \end_layout
@@ -609,6 +603,37 @@ monads and modules over them
 \end_deeper
 \begin_layout Itemize
 (untyped PLs)
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus with 
+\begin_inset Formula $\beta$
+\end_inset
+
+-reduction (modulo 
+\begin_inset Formula $\alpha$
+\end_inset
+
+-equivalence)
+\begin_inset Formula 
+\[
+S,T\quad::=x|S\,T|\lambda x.S
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\redr{\beta}{(\lambda x.t)\,u}{t[x\mapsto u]}\qquad+\quad\text{congruences}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -673,7 +698,59 @@ filename "images/multigraphe.tex"
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_deeper
+\begin_layout Columns
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+dimexpr
+\backslash
+paperwidth-35pt
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+pour réduire la marge
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 (
 \series bold
@@ -687,9 +764,10 @@ Syntax
 \series bold
 Semantics
 \series default
-) arrows = reductions between terms
+) arrows = reductions (dedicated syntax: Cf labels)
 \end_layout
 
+\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -774,18 +852,35 @@ A\xrightarrow{\partial}V\times V
 \end_inset
 
 
-\series bold
-Idea
-\series default
-:
 \end_layout
 
 \begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\[
+A=\{\text{arrows}\}\qquad\qquad V=\{\text{vertices}\}
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Formula 
 \begin{align*}
 A & =\{\text{arrows}\}\\
 V & =\{\text{vertices}\}
 \end{align*}
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1006,12 +1101,54 @@ A\xrightarrow{\partial}V_{1}\times V_{2}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\[
+A=\{\text{arrows}\}\qquad\qquad\begin{aligned}V_{1} & =\{\text{vertices in first group}\}\\
+V_{2} & =\{\text{vertices in second group}\}
+\end{aligned}
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Formula 
 \begin{align*}
 A & =\{\text{arrows}\}\\
 V_{1} & =\{\text{vertices in first group}\}\\
 V_{2} & =\{\text{vertices in second group}\}
 \end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1em}
+\end_layout
 
 \end_inset
 
@@ -1067,7 +1204,7 @@ Substitution
 status open
 
 \begin_layout Plain Layout
-Substitution
+Parallel substitution
 \end_layout
 
 \end_inset
@@ -1091,13 +1228,52 @@ A title should summarize the slide in an understandable fashion for anyone
 
 \end_layout
 
+\begin_layout Columns
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+dimexpr
+\backslash
+paperwidth-20pt
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+pour réduire la marge
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+terms (e.g.
+ 
 \begin_inset Formula $\lambda$
 \end_inset
 
--terms = trees whose leaves are free variables.
+-terms) = trees with free variables as (distinguished) leaves.
 \end_layout
 
+\end_deeper
 \end_deeper
 \begin_layout Frame
 \begin_inset ERT
@@ -1150,7 +1326,7 @@ filename "images/substitution.tex"
 status open
 
 \begin_layout Plain Layout
-Substitution
+Parallel substitution made formal
 \end_layout
 
 \end_inset
@@ -1174,11 +1350,40 @@ A title should summarize the slide in an understandable fashion for anyone
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Formula $\lambda$
+\begin_layout Columns
+\begin_inset Separator plain
 \end_inset
 
--term represented as a tree whose leaves are free variables.
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+dimexpr
+\backslash
+paperwidth-20pt
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+pour réduire la marge
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Block
@@ -1186,61 +1391,145 @@ A title should summarize the slide in an understandable fashion for anyone
 status open
 
 \begin_layout Plain Layout
-Syntax
+Free variables indexing
 \end_layout
 
 \end_inset
 
 
-\end_layout
+\begin_inset Formula 
+\[
+X\mapsto\{\text{terms taking free variables in \ensuremath{X}}\}
+\]
 
-\begin_layout Block
-
-\series bold
-Substitution of terms
-\series default
-: 
-\begin_inset Formula $t\monsubst{x\mapsto u_{x}}$
 \end_inset
 
- replaces each free variable 
-\begin_inset Formula $x$
-\end_inset
 
- with the term 
-\begin_inset Formula $u_{x}$
-\end_inset
-
-, in the term 
-\begin_inset Formula $t$
-\end_inset
-
-.
- 
 \end_layout
 
 \begin_layout Block
-\begin_inset Formula $\Rightarrow$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
 \end_inset
 
- Terms form a 
-\series bold
-monad 
-\begin_inset Formula $T$
+
+\end_layout
+
+\begin_deeper
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Example: 
+\begin_inset Formula $\lambda$
 \end_inset
 
- 
-\series default
-(on sets)
+-calculus
+\end_layout
+
+\end_inset
+
+
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-with binding variables
+we may not use all of them
 \end_layout
 
 \end_inset
 
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+L(\emptyset) & =\{\lambda z.z,\dots\}=\{\text{closed terms}\}\\
+L(\{x,y\}) & =\{\lambda z.z,\dots,x,y,x\,y,\dots\}\quad\supset L(\emptyset)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+preview true
+filename "images/freevar-indexing.tex"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Columns
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Parallel substitution
+\end_layout
+
+\end_inset
+
+For any 
+\begin_inset Formula $f:X\rightarrow L(Y)$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+\begin{array}{cccc}
+\bind_{f}: & L(X) & \rightarrow & L(Y)\\
+ & t & \mapsto & t[x\mapsto f(x)]
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
 
 \end_layout
 
@@ -1251,12 +1540,12 @@ with binding variables
 
 \end_layout
 
-\begin_layout Block
-\begin_inset Argument 2
+\begin_layout Frame
+\begin_inset Argument 4
 status open
 
 \begin_layout Plain Layout
-Operational Semantics
+Substitution and Monads
 \end_layout
 
 \end_inset
@@ -1264,15 +1553,106 @@ Operational Semantics
 
 \end_layout
 
-\begin_layout Block
+\begin_deeper
+\begin_layout FrameSubtitle
+Definition of monads
+\begin_inset Note Note
+status open
 
-\series bold
-Substitution of reductions
-\series default
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\backslash
+{
+\backslash
+text{edges}
+\backslash
+}
+\backslash
+ar@<+0.5ex>[r]^{
+\backslash
+text{source}}
+\backslash
+ar@<-0.5ex>[r]_{
+\backslash
+text{target}}&
+\backslash
+{
+\backslash
+text{vertices
+\backslash
+}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus as a monad 
+\begin_inset Formula $(L,\bind,\eta)$
+\end_inset
+
 :
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Parallel substitution 
+\begin_inset Formula $(L,\bind)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Variables are terms
 \begin_inset Formula 
 \[
-\dfrac{\redr rtu}{\redr{r\monsubst{x\mapsto u_{x}}}{t\monsubst{x\mapsto u_{x}}}{u\monsubst{x\mapsto u_{x}}}}
+\begin{array}{cccc}
+\eta_{X}: & X & \rightarrow & L(X)\\
+ & x & \mapsto
+\end{array}
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula 
+\begin{align*}
+\eta_{X} & :X\rightarrow L(X)\\
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset Formula 
+\[
+A\xrightarrow{\partial}V_{1}\times V_{2}
 \]
 
 \end_inset
@@ -1280,22 +1660,84 @@ Substitution of reductions
 
 \end_layout
 
-\begin_layout Block
-\begin_inset Formula $\Rightarrow$
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\[
+A=\{\text{arrows}\}\qquad\qquad\begin{aligned}V_{1} & =\{\text{vertices in first group}\}\\
+V_{2} & =\{\text{vertices in second group}\}
+\end{aligned}
+\]
+
 \end_inset
 
- Reductions between terms form a 
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+A & =\{\text{arrows}\}\\
+V_{1} & =\{\text{vertices in first group}\}\\
+V_{2} & =\{\text{vertices in second group}\}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\[
+\begin{array}{rcl}
+\partial: & {\color{blue}A} & \to V\times V\\
+ & {\color{blue}t\to u} & \mapsto(t,u)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+For simplicity, we focus on the particular case of 
 \series bold
-module over 
-\begin_inset Formula $T$
+graphs
+\series default
+: 
+\begin_inset Formula $V_{1}=V_{2}$
 \end_inset
 
-
-\series default
 .
 \end_layout
 
-\end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -1330,19 +1772,6 @@ A title should summarize the slide in an understandable fashion for anyone
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-(e.g.
- 
-\begin_inset Formula $\lambda$
-\end_inset
-
--calculus with 
-\begin_inset Formula $\beta$
-\end_inset
-
--reduction).
 \end_layout
 
 \begin_layout Block

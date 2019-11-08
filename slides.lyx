@@ -7,6 +7,7 @@
 \textclass beamer
 \begin_preamble
 \usetheme{Warsaw}
+\usepackage{svg}
 % or ...
 
 \setbeamercovered{transparent}
@@ -652,22 +653,34 @@ monads and modules over them
 \begin_inset Formula $\beta$
 \end_inset
 
--reduction
-\begin_inset Formula 
-\[
-S,T\quad::=x|S\,T|\lambda x.S
-\]
+-reduction:
+\end_layout
 
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Syntax: 
+\begin_inset Formula $\qquad\qquad S,T\quad::=x|S\,T|\lambda x.S$
 \end_inset
 
 
-\begin_inset Formula 
-\[
-\redr{\beta}{(\lambda x.t)\,u}{t[x\mapsto u]}\qquad+\quad\text{congruences}
-\]
+\end_layout
 
+\begin_layout Itemize
+
+\series bold
+Reductions: 
+\series default
+
+\begin_inset Formula $\qquad\redr{\beta}{(\lambda x.t)\,u}{t[x\mapsto u]}\qquad+\quad\text{congruences}$
 \end_inset
 
+
+\end_layout
+
+\end_deeper
+\begin_layout Example
 modulo 
 \begin_inset Formula $\alpha$
 \end_inset
@@ -2572,6 +2585,10 @@ Operations = module morphisms
 
 \end_layout
 
+\begin_layout Subsection
+Operations
+\end_layout
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -2679,6 +2696,460 @@ status open
 \begin_inset Graphics
 	filename images/1-sig_and_their_models.png
 	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Syntax
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[trim=0 40 0 100,clip,width=1.1
+\backslash
+textwidth]{slides/slide_12_effect_1.pdf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Examples of 1-signatures generating syntax
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[trim=0 35 0 100,clip,width=1.1
+\backslash
+textwidth]{slides/slide_13_effect_0.pdf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Initial semantics for algebraic 1-signatures
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[trim=0 35 0 100,clip,width=1.1
+\backslash
+textwidth]{slides/slide_14_effect_0.pdf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Quotient of algebraic signatures
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[trim=0 35 0 100,clip,width=1.1
+\backslash
+textwidth]{slides/slide_15_effect_1.pdf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Equations
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: a commutative binary operation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[trim=0 35 0 100,clip,width=1.1
+\backslash
+textwidth]{slides/slide_17_effect_0.pdf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: a commutative binary operation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[trim=0 19 0 100,clip,width=1.1
+\backslash
+textwidth]{slides/slide_17_effect_2.pdf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Equations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[trim=0 35 0 100,clip,width=1.1
+\backslash
+textwidth]{slides/slide_18_effect_3.pdf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Initial semantics for algebraic 2-signatures
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[trim=0 35 0 100,clip,width=1.1
+\backslash
+textwidth]{slides/slide_19_effect_1.pdf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: fixpoint operator
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[trim=0 35 0 100,clip,width=1.1
+\backslash
+textwidth]{slides/slide_21_effect_1.pdf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 

@@ -29,7 +29,33 @@
 }
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows}
+\usetikzlibrary{decorations.pathreplacing}
+
 \input{images/triangle-style}
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node[baseline] (#1) {};}
+
+\tikzset{My Node Style/.style={midway, right, xshift=3.0ex, 
+%align=left,
+%anchor=west, 
+%anchor=north west,
+font=\small, draw=none, 
+% align=left,
+anchor=base west,
+ thin, text=black}}
+
+\newcommand\VerticalBrace[4][]{%
+    % #1 = draw options
+    % #2 = top mark
+    % #2 = bottom mark
+    % #4 = label
+\begin{tikzpicture}[overlay,remember picture]
+  \draw[decorate,decoration={brace, amplitude=1.5ex}, #1] 
+    ([yshift=1ex]#2.north east)  --  (#3.south east-|#2.north east)
+        node[My Node Style
+%, baseline=brace.east
+] {#4};
+\end{tikzpicture}
+}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -476,6 +502,16 @@ beamerdefaultoverlayspecification{<+->}
 \begin_layout Standard
 \begin_inset FormulaMacro
 \newcommand{\bind}{\mathsf{{bind}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\app}{\mathsf{{app}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\appcong}{\mathsf{{app\text{-}cong}}}
 \end_inset
 
 
@@ -3160,6 +3196,1002 @@ textwidth]{slides/slide_21_effect_1.pdf}
 Semantics
 \end_layout
 
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Specifying reduction monads
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus with 
+\begin_inset Formula $\beta$
+\end_inset
+
+-reduction as a reduction monad: 
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+preview true
+filename "images/recall-red-monad-def.tex"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+vertices = 
+\begin_inset Formula $L$
+\end_inset
+
+ = initial model of the signature of 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus.
+\end_layout
+
+\begin_layout Itemize
+arrows = 
+\begin_inset Formula $R,\sigma,\tau$
+\end_inset
+
+ = ? 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Idea
+\series default
+: defined inductively through reduction rules.
+\begin_inset Formula 
+\[
+(\lambda x.t)\,u\rightarrow t[x:=u]\qquad\frac{t\rightarrow t'}{t\,u\rightarrow t'\,u}\qquad\dots
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Model of a reduction rule
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Example: binary congruence for application.
+\end_layout
+
+\begin_layout Columns
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+dimexpr
+\backslash
+paperwidth-20pt
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+pour réduire la marge
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\text{\fbox{\ensuremath{\frac{t\rightarrow t'\qquad u\rightarrow u'}{{\color{blue}t\,u}\rightarrow{\color{red}t'\,u'}}}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Model for this reduction rule
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+reduction monad: 
+\begin_inset Formula $\qquad\xymatrix{R\ar@<+.5ex>[r]^{\sigma}\ar@<-0.5ex>[r]_{\tau} & T}
+\qquad\tikzmark{rmon}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+module morphism: 
+\begin_inset Formula $\quad\app:T\times T\rightarrow T\tikzmark{monmor}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+VerticalBrace{rmon}{monmor}{$(T,
+\backslash
+app)$ = model of $
+\backslash
+Theta
+\backslash
+times
+\backslash
+Theta$}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\forall$
+\end_inset
+
+ 
+\begin_inset Formula $\redr{r_{1}}t{t'}$
+\end_inset
+
+ and 
+\begin_inset Formula $\redr{r_{2}}u{u'}$
+\end_inset
+
+, a reduction
+\begin_inset Formula 
+\[
+\redr{\appcong(r_{1},r_{2})}{{\color{blue}\app(t,u)}}{{\color{red}\app(t',u')}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+compatibility with substitution:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-0.5em}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\appcong(r_{1},r_{2})[f]=\appcong(r_{1}[f],r_{2}[f])
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+\sigma(\appcong(r_{1},r_{2}))={\color{blue}t\,u}\qquad\tau(\appcong(r_{1},r_{2}))={\color{red}t'\,u'}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+module morphism: 
+\begin_inset Formula $\quad\appcong:R\times R\rightarrow R$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+s.t.
+ 
+\begin_inset Formula $\forall$
+\end_inset
+
+ 
+\begin_inset Formula $\redr{r_{1}}t{t'}$
+\end_inset
+
+ and 
+\begin_inset Formula $\redr{r_{2}}u{u'}$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+\sigma(\appcong(r_{1},r_{2}))={\color{blue}t\,u}\qquad\tau(\appcong(r_{1},r_{2}))={\color{red}t'\,u'}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\redr{\appcong(\redr{r_{1}}t{t'},\redr{r_{2}}u{u')}}{\app(t,u)}{\app(t',u')}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Block
+
+\end_layout
+
+\begin_layout Block
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Analysis of a reduction rule
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Example: binary congruence for application.
+\end_layout
+
+\begin_layout Columns
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+dimexpr
+\backslash
+paperwidth-20pt
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+pour réduire la marge
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-0.5em}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\text{\fbox{\ensuremath{\frac{t\rightarrow t'\qquad u\rightarrow u'}{{\color{blue}t\,u}\rightarrow{\color{red}t'\,u'}}}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Columns
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+preview true
+filename "images/redrule-ex-model.tex"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Columns
+
+\end_layout
+
+\begin_layout Itemize
+hypothesis/conclusion = pair of 
+\emph on
+
+\begin_inset Formula $\lambda$
+\end_inset
+
+-
+\emph default
+terms using metavariables
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+as module morphisms 
+\begin_inset Formula $L^{4}\rightarrow L\times L$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\text{e.g.}\quad{\color{blue}t\,u}\rightarrow{\color{red}t'\,u'}:\qquad(t,t',u,u')\mapsto({\color{blue}t\,u},{\color{red}t'\,u'})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Generalization
+\series default
+: 
+\begin_inset Formula $L\mapsto$
+\end_inset
+
+ any monad 
+\begin_inset Formula $T$
+\end_inset
+
+ with an application operation 
+\begin_inset Formula $\app:T\times T\rightarrow T$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+\text{e.g.}\quad{\color{blue}t\,u}\rightarrow{\color{red}t'\,u'}:\qquad(t,t',u,u')\mapsto({\color{blue}\app(t,u)},{\color{red}\app(t',u')})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Reduction rules
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Definition
+\end_layout
+
+\begin_layout Columns
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+dimexpr
+\backslash
+paperwidth-20pt
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+pour réduire la marge
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-0.5em}
+\end_layout
+
+\end_inset
+
+Let 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ = signature for monads
+\begin_inset Formula 
+\[
+\text{\fbox{\ensuremath{\frac{t\rightarrow t'\qquad u\rightarrow u'}{{\color{blue}t\,u}\rightarrow{\color{red}t'\,u'}}}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Columns
+(for this example, 
+\begin_inset Formula $\Sigma=\Theta\times\Theta$
+\end_inset
+
+, or 
+\begin_inset Formula $\Sigma=$
+\end_inset
+
+ signature for 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus)
+\end_layout
+
+\begin_layout Columns
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Columns
+
+\end_layout
+
+\begin_layout Columns
+
+\end_layout
+
+\begin_layout Columns
+A 
+\series bold
+
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-reduction rule
+\series default
+ assigns (functorially) to each 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-model 
+\begin_inset Formula $T$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Columns
+
+\end_layout
+
+\begin_layout Columns
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hfill
+\backslash
+tikzmark{right}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $V(T)$
+\end_inset
+
+ = 
+\begin_inset Formula $T$
+\end_inset
+
+-module of metavariables (e.g.
+ 
+\begin_inset Formula $V(T)=T^{4}$
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Itemize
+a list of 
+\series bold
+hypotheses
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzmark{hs}
+\end_layout
+
+\end_inset
+
+
+\series default
+ 
+\end_layout
+
+\begin_layout Itemize
+a 
+\series bold
+conclusion
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzmark{concl}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+VerticalBrace{hs}{concl}{module morphisms $
+\backslash
+begin{array}[t]{rc}
+\end_layout
+
+\begin_layout Plain Layout
+
+V(T) 
+\backslash
+rightarrow & T
+\backslash
+times T 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+text{(or} & T' 
+\backslash
+times T'
+\backslash
+text{)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+text{(or} & T'' 
+\backslash
+times T''
+\backslash
+text{)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ & 
+\backslash
+dots
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array}$}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Model of a reduction rule (more formal)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Example: binary congruence for application.
+\end_layout
+
+\begin_layout Columns
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+dimexpr
+\backslash
+paperwidth-20pt
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+pour réduire la marge
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Columns
+reduction monad: 
+\begin_inset Formula $\quad\xymatrix{R\ar@<+.5ex>[r]^{\sigma}\ar@<-0.5ex>[r]_{\tau} & T}
+$
+\end_inset
+
+ + module morphism: 
+\begin_inset Formula $\quad\app:T\times T\rightarrow T$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{\fbox{\ensuremath{\frac{t\rightarrow t'\qquad u\rightarrow u'}{{\color{blue}t\,u}\rightarrow{\color{red}t'\,u'}}}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Module of metavariables: 
+\begin_inset Formula $\quad T^{4}$
+\end_inset
+
+ for 
+\begin_inset Formula $t,t',u,u'$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Hypothesis/conclusion 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ module morphism 
+\begin_inset Formula $T^{4}\rightarrow T\times T$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\text{e.g.}\quad{\color{blue}t\,u}\rightarrow{\color{red}t'\,u'}:\qquad(t,t',u,u')\mapsto({\color{blue}t\,u},{\color{red}t'\,u'})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Section*
 Summary
 \end_layout

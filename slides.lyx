@@ -29,10 +29,10 @@
 }
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows}
-\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.pathreplacing,tikzmark,calc}
 
 \input{images/triangle-style}
-\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node[baseline] (#1) {};}
+%\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node[baseline] (#1) {};}
 
 \tikzset{My Node Style/.style={midway, right, xshift=3.0ex, 
 %align=left,
@@ -50,7 +50,8 @@ anchor=base west,
     % #4 = label
 \begin{tikzpicture}[overlay,remember picture]
   \draw[decorate,decoration={brace, amplitude=1.5ex}, #1] 
-    ([yshift=1ex]#2.north east)  --  (#3.south east-|#2.north east)
+%    ([yshift=1ex]:#2.north east)  --  (#3.south east-|#2.north east)
+    ([yshift=1ex]pic cs:#2)  --  ({pic cs:#3} -| {pic cs:#2})
         node[My Node Style
 %, baseline=brace.east
 ] {#4};
@@ -3388,8 +3389,8 @@ Model for this reduction rule
 \begin_deeper
 \begin_layout Itemize
 reduction monad: 
-\begin_inset Formula $\qquad\xymatrix{R\ar@<+.5ex>[r]^{\sigma}\ar@<-0.5ex>[r]_{\tau} & T}
-\qquad\tikzmark{rmon}$
+\begin_inset Formula $\;\xymatrix{R\ar@<+.5ex>[r]^{\sigma}\ar@<-0.5ex>[r]_{\tau} & T}
+\qquad\quad\ \ \tikzmark{rmon}$
 \end_inset
 
 
@@ -3397,7 +3398,7 @@ reduction monad:
 
 \begin_layout Itemize
 module morphism: 
-\begin_inset Formula $\quad\app:T\times T\rightarrow T\tikzmark{monmor}$
+\begin_inset Formula $\;\app:T\times T\rightarrow T\tikzmark{monmor}$
 \end_inset
 
 
@@ -3682,15 +3683,16 @@ terms using metavariables
 
 \begin_deeper
 \begin_layout Itemize
-as module morphisms 
-\begin_inset Formula $L^{4}\rightarrow L\times L$
+as parallel module morphisms 
+\begin_inset Formula $L^{4}\rightrightarrows L$
 \end_inset
 
 
 \begin_inset Formula 
-\[
-\text{e.g.}\quad{\color{blue}t\,u}\rightarrow{\color{red}t'\,u'}:\qquad(t,t',u,u')\mapsto({\color{blue}t\,u},{\color{red}t'\,u'})
-\]
+\begin{align*}
+\text{e.g.}\quad{\color{blue}t\,u}\rightarrow{\color{red}t'\,u'}:\qquad & (t,t',u,u')\mapsto{\color{blue}t\,u}\\
+ & (t,t',u,u')\mapsto{\color{red}t'\,u'}
+\end{align*}
 
 \end_inset
 
@@ -3714,11 +3716,29 @@ Generalization
 \begin_inset Formula $\app:T\times T\rightarrow T$
 \end_inset
 
-.
+,
+\begin_inset Formula 
+\begin{align*}
+\text{e.g.}\quad{\color{blue}t\,u}\rightarrow{\color{red}t'\,u'}:\qquad & (t,t',u,u')\mapsto{\color{blue}\app(t,u)}\\
+ & (t,t',u,u')\mapsto{\color{red}\app(t',u')}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
 \text{e.g.}\quad{\color{blue}t\,u}\rightarrow{\color{red}t'\,u'}:\qquad(t,t',u,u')\mapsto({\color{blue}\app(t,u)},{\color{red}\app(t',u')})
 \]
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -3805,7 +3825,16 @@ Let
 \begin_inset Formula $\Sigma$
 \end_inset
 
- = signature for monads
+ = signature for monads (e.g.
+ 
+\begin_inset Formula $\Theta\times\Theta$
+\end_inset
+
+ for congruence for application).
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
 \text{\fbox{\ensuremath{\frac{t\rightarrow t'\qquad u\rightarrow u'}{{\color{blue}t\,u}\rightarrow{\color{red}t'\,u'}}}}}
@@ -3816,8 +3845,17 @@ Let
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Columns
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 (for this example, 
 \begin_inset Formula $\Sigma=\Theta\times\Theta$
 \end_inset
@@ -3833,7 +3871,16 @@ Let
 -calculus)
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Columns
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -3849,7 +3896,25 @@ vspace{1em}
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
 \begin_layout Columns
+\begin_inset Separator plain
+\end_inset
+
 
 \end_layout
 
@@ -3858,15 +3923,119 @@ vspace{1em}
 \end_layout
 
 \begin_layout Columns
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+dimexpr
+\backslash
+paperwidth-40pt
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+pour réduire la marge
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Columns
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-reduction rule
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
 A 
 \series bold
 
 \begin_inset Formula $\Sigma$
 \end_inset
 
--reduction rule
+-reduction rule 
 \series default
- assigns (functorially) to each 
+
+\begin_inset Formula $(\vec{\sigma},\vec{\tau})$
+\end_inset
+
+ 
+\begin_inset Formula $\qquad\quad\dfrac{\sigma_{1}\rightarrow\tau_{1}\quad\dots\quad\sigma_{n}\rightarrow\tau_{n}}{\sigma_{0}\rightarrow\tau_{0}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\frac{\sigma_{1}\rightarrow\tau_{1}\quad\dots\quad\sigma_{n}\rightarrow\tau_{n}}{\sigma_{0}\rightarrow\tau_{0}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+assigns (functorially) to each 
 \begin_inset Formula $\Sigma$
 \end_inset
 
@@ -3877,11 +4046,7 @@ A
 :
 \end_layout
 
-\begin_layout Columns
-
-\end_layout
-
-\begin_layout Columns
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3916,9 +4081,86 @@ tikzmark{right}
 \end_layout
 
 \begin_layout Itemize
+parallel 
+\begin_inset Formula $T$
+\end_inset
+
+-module morphisms 
+\begin_inset Formula $\xymatrix{V(T)\ar@<+.5ex>[r]^{\sigma_{i,T}}\ar@<-.5ex>[r]_{\tau_{i,T}} & {{T'}^{\dots}\tikzmark{e}}{}'}
+$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We write
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sigma_{i},\tau_{i}:V\rightarrow\Theta^{(n_{i})}\qquad n_{i}=\text{number of \ensuremath{\overset{\tikzmark{dd}}{\text{derivatives}}}}
+\]
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[->, overlay,remember picture]
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw ($ (pic cs:dd) $)  --  ($ (pic cs:e) $);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-2em}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
 a list of 
 \series bold
-hypotheses
+hypotheses 
+\begin_inset Formula $\sigma_{i,T}\rightarrow\tau_{i,T}\quad$
+\end_inset
+
+
 \begin_inset ERT
 status open
 
@@ -3940,6 +4182,14 @@ tikzmark{hs}
 a 
 \series bold
 conclusion
+\series default
+ 
+\begin_inset Formula $\sigma_{0,T}\rightarrow\tau_{0,T}$
+\end_inset
+
+
+\series bold
+
 \begin_inset ERT
 status open
 
@@ -3955,7 +4205,61 @@ tikzmark{concl}
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\frac{\sigma_{1}\rightarrow\tau_{1}\quad\dots\quad\sigma_{n}\rightarrow\tau_{n}}{\sigma_{0}\rightarrow\tau_{0}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+represented as
+\begin_inset Formula 
+\[
+v\in V(T)\quad\mapsto\quad\frac{h_{1,1}\rightarrow h_{1,2}\quad\dots\quad h}{}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -3963,18 +4267,39 @@ status open
 
 
 \backslash
-VerticalBrace{hs}{concl}{module morphisms $
-\backslash
-begin{array}[t]{rc}
+VerticalBrace{hs}{concl}{
 \end_layout
 
 \begin_layout Plain Layout
 
-V(T) 
+as module morphisms 
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
-rightarrow & T
+xymatrix{V(T)
 \backslash
-times T 
+ar@<+.5ex>[r]^{
+\backslash
+sigma_{i,T}}
+\backslash
+ar@<-.5ex>[r]_{
+\backslash
+tau_{i,T}} & T
+\end_layout
+
+\begin_layout Plain Layout
+
+%V(T) 
+\backslash
+rightrightarrows & T
 \end_layout
 
 \begin_layout Plain Layout
@@ -3988,11 +4313,9 @@ times T
 
 \begin_layout Plain Layout
 
- 
+& 
 \backslash
-text{(or} & T' 
-\backslash
-times T'
+text{(or} T'
 \backslash
 text{)}
 \end_layout
@@ -4008,11 +4331,9 @@ text{)}
 
 \begin_layout Plain Layout
 
- 
+& 
 \backslash
-text{(or} & T'' 
-\backslash
-times T''
+text{(or}  T''
 \backslash
 text{)}
 \end_layout
@@ -4035,9 +4356,22 @@ dots
 
 \begin_layout Plain Layout
 
+}
+\end_layout
 
-\backslash
-end{array}$}
+\begin_layout Plain Layout
+
+$
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4047,7 +4381,208 @@ end{array}$}
 
 \end_deeper
 \begin_layout Frame
+\begin_inset Note Note
+status open
 
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+as module morphisms 
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+xymatrix{V(T)
+\backslash
+ar@<+.5ex>[r]^{
+\backslash
+sigma_i(T)}
+\backslash
+ar@<-.5ex>[r]_{
+\backslash
+tau_i(T)} & T
+\end_layout
+
+\begin_layout Plain Layout
+
+%V(T) 
+\backslash
+rightrightarrows & T
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+text{(or} T'
+\backslash
+text{)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+text{(or}  T''
+\backslash
+text{)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ & 
+\backslash
+dots
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Reduction signatures
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+and their models
+\end_layout
+
+\begin_layout Columns
+
+\end_layout
+
+\begin_layout Columns
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+dimexpr
+\backslash
+paperwidth-20pt
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+pour réduire la marge
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Columns
+
+\series bold
+Reduction signature
+\series default
+ = 
+\begin_inset Formula $\begin{cases}
+\text{signature \Sigma\ for monads}\\
+\text{family \mathfrak{R} of \Sigma-reduction rules}
+\end{cases}$
+\end_inset
+
+ 
 \end_layout
 
 \begin_deeper
@@ -4056,7 +4591,19 @@ end{array}$}
 status open
 
 \begin_layout Plain Layout
+signature 
+\begin_inset Formula $\Sigma$
+\end_inset
 
+ for monads + family 
+\begin_inset Formula $\mathfrak{R}$
+\end_inset
+
+ of 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-reduction rules.
 \end_layout
 
 \end_inset
@@ -4064,15 +4611,125 @@ status open
 
 \end_layout
 
+\begin_layout Standard
+
+\series bold
+Models
+\series default
+ =
+\end_layout
+
+\begin_layout Itemize
+reduction monads 
+\begin_inset Formula $\xymatrix{R\ar@<+.5ex>[r]^{\sigma}\ar@<-.5ex>[r]_{\tau} & T}
+$
+\end_inset
+
+ with a 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-model structure on 
+\begin_inset Formula $T$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+for each reduction rule 
+\begin_inset Formula $\quad\dfrac{\sigma_{1}\rightarrow\tau_{1}\quad\dots\quad\sigma_{n}\rightarrow\tau_{n}}{\sigma_{0}\rightarrow\tau_{0}}\text{\ensuremath{\quad\xymatrix{V\ar@<+.5ex>[r]^{\sigma_{i}}\ar@<-.5ex>[r]_{\tau_{i}} & \Theta^{(n_{i})}}
+}}$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{0.2em}
+\end_layout
+
+\end_inset
+
+ in 
+\begin_inset Formula $\mathfrak{R}$
+\end_inset
+
+, a mapping, for each 
+\begin_inset Formula $v\in V(T)(X)$
+\end_inset
+
+,
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\redr{r_{1}}{\sigma_{1}(v)}{\tau_{1}(v)},\dots,\redr{r_{n}}{\sigma_{n}(v)}{\tau_{n}(v)}\quad\mapsto\quad\redr{op(r_{1},\dots r_{n})}{\sigma_{0}(v)}{\tau_{0}(v)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-0.5em}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\begin{pmatrix}\redr{r_{1}}{\sigma_{1}(v)}{\tau_{1}(v)}\\
+\dots\\
+\redr{r_{n}}{\sigma_{n}(v)}{\tau_{n}(v)}
+\end{pmatrix}\quad\mapsto\quad\redr{op(r_{1},\dots r_{n})}{\sigma_{0}(v)}{\tau_{0}(v)}
+\]
+
+\end_inset
+
+compatible with substitution:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-0.5em}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+op(r_{1},\dots r_{n})[f]=op(r_{1}[f],\dots,r_{n}[f])
+\]
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
+\end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset

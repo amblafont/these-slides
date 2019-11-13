@@ -512,6 +512,11 @@ beamerdefaultoverlayspecification{<+->}
 
 
 \begin_inset FormulaMacro
+\newcommand{\abs}{\mathsf{{abs}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
 \newcommand{\appcong}{\mathsf{{app\text{-}cong}}}
 \end_inset
 
@@ -534,6 +539,16 @@ robustify{
 \backslash
 monsubst}
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "/home/amblaf/Documents/manuscrit-these/lyxymatrix.lyx"
 
 \end_inset
 
@@ -3663,14 +3678,28 @@ filename "images/redrule-ex-model.tex"
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Columns
 
 \end_layout
 
-\begin_layout Itemize
-hypothesis/conclusion = pair of 
+\begin_deeper
+\begin_layout Standard
+Hypothesis/conclusion = pair of 
 \emph on
 
 \begin_inset Formula $\lambda$
@@ -3681,7 +3710,6 @@ hypothesis/conclusion = pair of
 terms using metavariables
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 as parallel module morphisms 
 \begin_inset Formula $L^{4}\rightrightarrows L$
@@ -3708,15 +3736,32 @@ Generalization
 \begin_inset Formula $L\mapsto$
 \end_inset
 
- any monad 
+ any model 
 \begin_inset Formula $T$
 \end_inset
 
- with an application operation 
+ of 
+\begin_inset Formula $\Sigma_{LC}$
+\end_inset
+
+, with application denoted 
 \begin_inset Formula $\app:T\times T\rightarrow T$
 \end_inset
 
 ,
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Formula 
 \begin{align*}
 \text{e.g.}\quad{\color{blue}t\,u}\rightarrow{\color{red}t'\,u'}:\qquad & (t,t',u,u')\mapsto{\color{blue}\app(t,u)}\\
@@ -3966,10 +4011,11 @@ pour réduire la marge
 status open
 
 \begin_layout Plain Layout
+Definition of 
 \begin_inset Formula $\Sigma$
 \end_inset
 
--reduction rule
+-reduction rules
 \end_layout
 
 \end_inset
@@ -3991,7 +4037,7 @@ A
 \end_inset
 
  
-\begin_inset Formula $\qquad\quad\dfrac{\sigma_{1}\rightarrow\tau_{1}\quad\dots\quad\sigma_{n}\rightarrow\tau_{n}}{\sigma_{0}\rightarrow\tau_{0}}$
+\begin_inset Formula $\qquad\quad\boxed{\dfrac{\sigma_{1}\rightarrow\tau_{1}\quad\dots\quad\sigma_{n}\rightarrow\tau_{n}}{\sigma_{0}\rightarrow\tau_{0}}}$
 \end_inset
 
 
@@ -4500,10 +4546,6 @@ $
 
 \end_layout
 
-\begin_layout Frame
-
-\end_layout
-
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -4525,102 +4567,165 @@ Reduction signatures
 \end_layout
 
 \begin_deeper
-\begin_layout FrameSubtitle
-and their models
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Definition
 \end_layout
 
-\begin_layout Columns
+\end_inset
+
 
 \end_layout
 
-\begin_layout Columns
+\begin_layout Block
+A
+\series bold
+ reduction signature
+\series default
+ is a pair 
+\begin_inset Formula $(\Sigma,\text{\ensuremath{\mathfrak{R}}}$
+\end_inset
+
+) where
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ is a signature for monads
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathfrak{R}$
+\end_inset
+
+ is a family of 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-reduction rules
+\end_layout
+
+\end_deeper
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Example: 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus with 
+\begin_inset Formula $\beta$
+\end_inset
+
+-reduction
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\Sigma=\Theta\times\Theta+\Theta'$
+\end_inset
+
+ for 
+\emph on
+
+\begin_inset Formula $\app$
+\end_inset
+
+
+\emph default
+ and 
+\begin_inset Formula $\abs$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-reduction rules:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+congruence for application
+\end_layout
+
+\begin_layout Itemize
+congruence for abstraction:
+\begin_inset Formula 
+\[
+\dfrac{{\color{blue}u}\rightarrow{\color{red}u'}}{\lambda x.u\rightarrow\lambda x.u'}\;\rightsquigarrow\;\frac{\pi_{1}\rightarrow\pi_{2}}{\abs\circ\pi_{1}\rightarrow\abs\circ\pi_{2}}\quad\xymatrix{{\color{blue}T'}\times{\color{red}T'}\xyport{{\xyarrow[r][][][][0.5ex]}}{\pi_{1,T}}-\xystarboard{{\xyarrow[r][][][][-0.5ex]}}{\pi_{2,T}}- & T'}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\beta$
+\end_inset
+
+-reduction
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Standard
 \begin_inset Separator plain
 \end_inset
 
 
 \end_layout
 
-\begin_deeper
-\begin_layout Column
-\begin_inset ERT
+\begin_layout Frame
+\begin_inset Argument 4
 status open
 
 \begin_layout Plain Layout
-
-
-\backslash
-dimexpr
-\backslash
-paperwidth-20pt
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-pour réduire la marge
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Columns
-
-\series bold
-Reduction signature
-\series default
- = 
-\begin_inset Formula $\begin{cases}
-\text{signature \Sigma\ for monads}\\
-\text{family \mathfrak{R} of \Sigma-reduction rules}
-\end{cases}$
-\end_inset
-
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-signature 
-\begin_inset Formula $\Sigma$
-\end_inset
-
- for monads + family 
-\begin_inset Formula $\mathfrak{R}$
-\end_inset
-
- of 
-\begin_inset Formula $\Sigma$
-\end_inset
-
--reduction rules.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
 Models
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Definition
+\end_layout
+
+\begin_layout Standard
+A 
+\series bold
+model
 \series default
- =
+ of a signature 
+\begin_inset Formula $(\Sigma,\mathfrak{R})$
+\end_inset
+
+ consists of:
 \end_layout
 
 \begin_layout Itemize
-reduction monads 
+a reduction monad 
 \begin_inset Formula $\xymatrix{R\ar@<+.5ex>[r]^{\sigma}\ar@<-.5ex>[r]_{\tau} & T}
 $
 \end_inset
@@ -4638,8 +4743,12 @@ $
 
 \begin_layout Itemize
 for each reduction rule 
-\begin_inset Formula $\quad\dfrac{\sigma_{1}\rightarrow\tau_{1}\quad\dots\quad\sigma_{n}\rightarrow\tau_{n}}{\sigma_{0}\rightarrow\tau_{0}}\text{\ensuremath{\quad\xymatrix{V\ar@<+.5ex>[r]^{\sigma_{i}}\ar@<-.5ex>[r]_{\tau_{i}} & \Theta^{(n_{i})}}
-}}$
+\begin_inset Formula 
+\[
+\boxed{\dfrac{\sigma_{1}\rightarrow\tau_{1}\quad\dots\quad\sigma_{n}\rightarrow\tau_{n}}{\sigma_{0}\rightarrow\tau_{0}}}\text{\ensuremath{\quad\xymatrix{V\xyport{{\xyarrow[r][][][][0.5ex]}}{\sigma_{i}}-\xystarboard{{\xyarrow[r][][][][-0.5ex]}}{\tau_{i}}- & \Theta^{(n_{i})}}
+}}\quad\text{in \ensuremath{\mathfrak{R}},}
+\]
+
 \end_inset
 
  
@@ -4650,16 +4759,12 @@ status open
 
 
 \backslash
-vspace{0.2em}
+vspace{-0.4em}
 \end_layout
 
 \end_inset
 
- in 
-\begin_inset Formula $\mathfrak{R}$
-\end_inset
-
-, a mapping, for each 
+ a mapping, for each 
 \begin_inset Formula $v\in V(T)(X)$
 \end_inset
 
@@ -4729,7 +4834,6 @@ op(r_{1},\dots r_{n})[f]=op(r_{1}[f],\dots,r_{n}[f])
 \end_layout
 
 \end_deeper
-\end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -4742,7 +4846,7 @@ op(r_{1},\dots r_{n})[f]=op(r_{1}[f],\dots,r_{n}[f])
 status open
 
 \begin_layout Plain Layout
-Model of a reduction rule (more formal)
+Initiality
 \end_layout
 
 \end_inset
@@ -4750,104 +4854,135 @@ Model of a reduction rule (more formal)
 
 \end_layout
 
-\begin_deeper
-\begin_layout FrameSubtitle
-Example: binary congruence for application.
+\begin_layout Frame
+(appropriate notion of model morphisms)
 \end_layout
 
-\begin_layout Columns
+\begin_deeper
+\begin_layout Theorem
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ has an initial model (e.g.
+ 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ is algebraic) 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $(\Sigma,\mathfrak{R})$
+\end_inset
+
+ has an initial model.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Separator plain
 \end_inset
 
 
 \end_layout
 
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Examples
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_deeper
-\begin_layout Column
+\begin_layout Itemize
+The reduction signature of the previous slide for 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus with 
+\begin_inset Formula $\beta$
+\end_inset
+
+-reduction has an initial model.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus with explicit substitution [Kesner 2009].
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size small
+\emph on
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
+\size small
+\emph on
 
 \backslash
-dimexpr
-\backslash
-paperwidth-20pt
+vspace{-0.5em}
 \end_layout
 
 \end_inset
 
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-pour réduire la marge
-\end_layout
-
-\end_inset
-
-
+A Theory of Explicit Substitutions with Safe and Full Composition
 \end_layout
 
 \end_deeper
-\begin_layout Columns
-reduction monad: 
-\begin_inset Formula $\quad\xymatrix{R\ar@<+.5ex>[r]^{\sigma}\ar@<-0.5ex>[r]_{\tau} & T}
-$
-\end_inset
-
- + module morphism: 
-\begin_inset Formula $\quad\app:T\times T\rightarrow T$
-\end_inset
-
-
+\begin_layout Standard
+Generalizing from graphs to bipartite graphs yields more examples:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
-\text{\fbox{\ensuremath{\frac{t\rightarrow t'\qquad u\rightarrow u'}{{\color{blue}t\,u}\rightarrow{\color{red}t'\,u'}}}}}
-\]
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Examples
+\end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(big step) cbv 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus.
 \end_layout
 
 \begin_layout Itemize
-Module of metavariables: 
-\begin_inset Formula $\quad T^{4}$
+\begin_inset Formula $\pi$
 \end_inset
 
- for 
-\begin_inset Formula $t,t',u,u'$
-\end_inset
-
-
+-calculus
 \end_layout
 
-\begin_layout Itemize
-Hypothesis/conclusion 
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
- module morphism 
-\begin_inset Formula $T^{4}\rightarrow T\times T$
-\end_inset
-
-
-\begin_inset Formula 
-\[
-\text{e.g.}\quad{\color{blue}t\,u}\rightarrow{\color{red}t'\,u'}:\qquad(t,t',u,u')\mapsto({\color{blue}t\,u},{\color{red}t'\,u'})
-\]
-
-\end_inset
-
-
-\end_layout
-
+\end_deeper
 \end_deeper
 \begin_layout Section*
 Summary

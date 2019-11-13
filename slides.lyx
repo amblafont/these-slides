@@ -4751,7 +4751,11 @@ for each reduction rule
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
 \begin_inset ERT
 status open
 
@@ -4809,6 +4813,10 @@ vspace{-0.5em}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Itemize
 compatible with substitution:
 \begin_inset ERT
 status open
@@ -4833,6 +4841,7 @@ op(r_{1},\dots r_{n})[f]=op(r_{1}[f],\dots,r_{n}[f])
 
 \end_layout
 
+\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain

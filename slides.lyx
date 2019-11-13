@@ -2417,14 +2417,27 @@ Reduction monads
 \end_layout
 
 \begin_deeper
-\begin_layout FrameSubtitle
-Definition
+\begin_layout Definition
+A 
+\series bold
+reduction monad
+\series default
+ is a quadruple 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $(T,R,\sigma,\tau)$
+\end_inset
+
+ denoted by
 \end_layout
 
-\end_deeper
-\begin_layout Frame
-Reduction monad: a quadruple 
-\begin_inset Formula $(L,R,\sigma,\tau)$
+\end_inset
+
+ 
+\begin_inset Formula $\xymatrix{R\ar@<+.5ex>[r]^{\sigma}\ar@<-0.5ex>[r]_{\tau} & T}
+$
 \end_inset
 
  s.t.
@@ -2432,7 +2445,7 @@ Reduction monad: a quadruple
 
 \begin_deeper
 \begin_layout Itemize
-\begin_inset Formula $L$
+\begin_inset Formula $T$
 \end_inset
 
  = monad
@@ -2443,23 +2456,24 @@ Reduction monad: a quadruple
 \end_inset
 
  = module over 
-\begin_inset Formula $L$
+\begin_inset Formula $T$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\sigma,\tau:R\rightarrow L$
+\begin_inset Formula $\sigma,\tau:R\rightarrow T$
 \end_inset
 
  are 
-\begin_inset Formula $L$
+\begin_inset Formula $T$
 \end_inset
 
 -module morphisms.
 \end_layout
 
+\end_deeper
 \begin_layout Example
 \begin_inset Formula $\lambda$
 \end_inset
@@ -2533,53 +2547,6 @@ application plutot que +, et Tom préfère la version diagrammatique
 
 \end_layout
 
-\begin_layout Section
-General signatures
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Specify reduction monads
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Overview
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-A signature is a sequence of arities 
-\begin_inset Formula $A_{1},\dots,A_{n}$
-\end_inset
-
-
-\end_layout
-
-\end_deeper
 \begin_layout Section
 Syntax
 \end_layout
@@ -3344,21 +3311,6 @@ status open
 
 \end_deeper
 \begin_layout Frame
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename images/1-sig_and_their_models.png
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
@@ -3652,11 +3604,251 @@ Examples of 1-signatures generating syntax
 
 \end_layout
 
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Signature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $T\mapsto(T\times T)\times T'$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Model
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(T\times T)\coprod T'\xrightarrow{}T$
+\end_inset
+
+, or 
+\begin_inset Formula $\left(\begin{aligned}T\times T & \xrightarrow{}T\\
+T' & \xrightarrow{}T
+\end{aligned}
+\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Syntax
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+initial model: 
+\begin_inset Formula $(L\times L)\coprod L'\xrightarrow[[\app,\abs{]}]{}L$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Frame
 
 \end_layout
 
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Language with a constant and a binary operation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Signature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $T\mapsto1\coprod(T\times T)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Model
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1\coprod(T\times T)\xrightarrow{}T$
+\end_inset
+
+, or 
+\begin_inset Formula $\left(\begin{aligned}1 & \xrightarrow{}T\\
+T\times T & \xrightarrow{}T
+\end{aligned}
+\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Syntax
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+initial model
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+
+\end_layout
+
+\end_deeper
 \begin_layout Frame
+Can we generalize this pattern?
+\end_layout
+
+\begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Preview
 
 \begin_layout Standard
@@ -3670,6 +3862,11 @@ status open
 includegraphics[trim=0 35 0 100,clip,width=1.1
 \backslash
 textwidth]{slides/slide_13_effect_0.pdf}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3703,10 +3900,139 @@ Initial semantics for algebraic 1-signatures
 \end_layout
 
 \begin_layout Frame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{columns}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+column{
+\backslash
+dimexpr
+\backslash
+paperwidth-50pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+
+\series bold
+Algebraic 1-signatures 
+\series default
+= 1-signatures built out of derivatives, finite products, disjoint unions,
+ and the 1-signature 
+\begin_inset Formula $\Theta:T\mapsto T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Algebraic 1-signatures 
+\begin_inset Formula $\simeq$
+\end_inset
+
+ binding signatures [Fiore-Plotkin-Turi 1999]
+\end_layout
+
+\end_deeper
+\begin_layout Frame
 
 \end_layout
 
 \begin_layout Frame
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ specification of 
+\begin_inset Formula $n$
+\end_inset
+
+-ary operations, possibly binding variables.
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[Hirschowitz-Maggesi 2007]
+\end_layout
+
+\end_inset
+
+Syntax exists for any algebraic 1-signature.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{2em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\series bold
+Question
+\series default
+: Can we enforce some equations in the syntax?
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+e.g.
+ 
+\emph on
+commutativity
+\emph default
+ or 
+\emph on
+associativity
+\emph default
+ of a binary operation.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Preview
 
 \begin_layout Standard
@@ -3725,6 +4051,27 @@ textwidth]{slides/slide_14_effect_0.pdf}
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{columns}
 \end_layout
 
 \end_inset
@@ -3752,11 +4099,73 @@ Quotient of algebraic signatures
 
 \end_layout
 
-\begin_layout Frame
+\begin_deeper
+\begin_layout Theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[Ahrens-Lafont-Hirschowitz-Maggesi 2018]
+\end_layout
+
+\end_inset
+
+Syntax exists for any 
+\begin_inset Quotes eld
+\end_inset
+
+quotient
+\begin_inset Quotes erd
+\end_inset
+
+ of algebraic 1-signatures.
+\end_layout
+
+\begin_layout Example
+a 
+\emph on
+commutative
+\emph default
+ binary operation 
+\begin_inset Formula $+$
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+\forall a,b,\quad a+b=b+a
+\]
+
+\end_inset
+
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+...
+ what about an 
+\emph on
+associative 
+\emph default
+binary operation?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Preview
 
 \begin_layout Standard
@@ -3775,6 +4184,144 @@ textwidth]{slides/slide_15_effect_1.pdf}
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{ % all template changes are local to this group.
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+setbeamertemplate{navigation symbols}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+begin{frame}[plain]
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\backslash
+begin{tikzpicture}[remember picture,overlay]
+\end_layout
+
+\begin_layout Plain Layout
+
+            
+\backslash
+node[at=(current page.center)] {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+includegraphics[keepaspectratio, width=
+\backslash
+paperwidth]{images/thinkingguepard} 
+\end_layout
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+includegraphics{images/thinkingguepard}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/thinkingguepard.png
+	height 100pheight%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+                
+\end_layout
+
+\begin_layout Plain Layout
+
+            };
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+end{frame}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \end_inset
@@ -3888,93 +4435,6 @@ textwidth]{slides/slide_17_effect_2.pdf}
 
 \begin_layout Standard
 \begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-{ % all template changes are local to this group.
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\backslash
-setbeamertemplate{navigation symbols}{}
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\backslash
-begin{frame}[plain]
-\end_layout
-
-\begin_layout Plain Layout
-
-        
-\backslash
-begin{tikzpicture}[remember picture,overlay]
-\end_layout
-
-\begin_layout Plain Layout
-
-            
-\backslash
-node[at=(current page.center)] {
-\end_layout
-
-\begin_layout Plain Layout
-
-                
-\backslash
-includegraphics[keepaspectratio,
-\end_layout
-
-\begin_layout Plain Layout
-
-%                                 width=
-\backslash
-paperwidth,
-\end_layout
-
-\begin_layout Plain Layout
-
-                                 height=
-\backslash
-paperheight]{images/guepard}
-\end_layout
-
-\begin_layout Plain Layout
-
-            };
-\end_layout
-
-\begin_layout Plain Layout
-
-        
-\backslash
-end{tikzpicture}
-\end_layout
-
-\begin_layout Plain Layout
-
-     
-\backslash
-end{frame}
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
 \end_inset
 
 

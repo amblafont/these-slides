@@ -28,7 +28,7 @@
     \insertframenumber/\inserttotalframenumber
 }
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{shapes,arrows,positioning}
 \usetikzlibrary{decorations.pathreplacing,tikzmark,calc}
 
 \input{images/triangle-style}
@@ -2685,9 +2685,212 @@ Examples of modules
 \end_layout
 
 \begin_layout Frame
+
+\series bold
+module over a monad 
+\series default
+
+\begin_inset Formula $T$
+\end_inset
+
+: supports the 
+\begin_inset Formula $T$
+\end_inset
+
+-monadic substitution
+\end_layout
+
+\begin_deeper
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Examples
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $T$
+\end_inset
+
+ itself
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $M\times N$
+\end_inset
+
+ for any modules 
+\begin_inset Formula $M$
+\end_inset
+
+ and 
+\begin_inset Formula $N$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\forall(t,u)\in M(X)\times N(X),\quad\qquad X\xrightarrow{f}T(Y),
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\boxed{(t,u)[f]=(t[f],u[f])}\in M(Y)\times N(Y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $M'$
+\end_inset
+
+= 
+\series bold
+derivative
+\series default
+ of a module 
+\begin_inset Formula $M$
+\end_inset
+
+:
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{2em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M'(X)=M(\tikzmarknode{freshv}{X\coprod\{\diamond\}})
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\boxed{M'(X)=M(X\coprod\{\tikzmarknode{freshv}{\diamond}\})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[overlay, remember picture]
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[decorate,decoration={brace, amplitude=1.5ex}] 
+\end_layout
+
+\begin_layout Plain Layout
+
+%    ([yshift=1ex]:#2.north east)  --  (#3.south east-|#2.north east)
+\end_layout
+
+\begin_layout Plain Layout
+
+    (freshv.north west)  --  (freshv.north east) node[ above=.6em]{$X$ extended
+ with a fresh variable $
+\backslash
+diamond$};
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+node[above right= 1cm of freshv] (legfreshv) {fresh variable};
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+draw[->] (legfreshv) to[bend right] (freshv);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+used to model an operation binding a variable (Cf next slide).
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/examples-modules.png
 	width 100text%
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -2714,10 +2917,124 @@ Operations as module morphisms
 
 \end_layout
 
+\begin_deeper
+\begin_layout FrameSubtitle
+Case of 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus
+\end_layout
+
+\begin_layout Columns
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+dimexpr
+\backslash
+paperwidth-35pt
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+pour réduire la marge
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Operations = module morphisms
+\series bold
+ 
+\series default
+= maps commuting with substitution:
+\end_layout
+
+\end_deeper
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Example: 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{rcl}
+\app: & L\times L & \rightarrow L\\
+\abs: & L' & \rightarrow L\qquad\left\{\quad\begin{aligned}\abs_{X}:L(X\coprod\{\diamond\}) & \rightarrow L(X)\\
+t & \mapsto\lambda\diamond.t
+\end{aligned}
+\right.\\
+\\
+\\
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Combine operations into a single one:
+\begin_inset Formula 
+\[
+\boxed{[\app,\abs]:(L\times L)\coprod L'\rightarrow L}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/operations-as-module-morphisms-2.png
 	width 100text%
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -2744,10 +3061,301 @@ status open
 
 \end_layout
 
+\begin_deeper
+\begin_layout Definition
+A 
+\series bold
+1-signature
+\series default
+ 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ is a (functorial) assignment
+\end_layout
+
+\begin_layout Definition
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[->]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (main) at (0,0) {$
+\backslash
+boxed{
+\backslash
+tikzmarknode{begin}{T}
+\backslash
+mapsto 
+\backslash
+tikzmarknode{end}{
+\backslash
+Sigma(T)}}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node(mon) at (-1,1){monad};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node(mod) at (1,1){module over $T$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (mon) -- (begin);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (mod) -- (end);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+preview true
+filename "images/one-sig-def.tex"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+1 
+\series bold
+model
+\series default
+ of a 1-signature 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ is a pair 
+\begin_inset Formula $(T,m)$
+\end_inset
+
+ where
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $T$
+\end_inset
+
+ is a monad
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Sigma(T)\xrightarrow{m}T$
+\end_inset
+
+ is a module morphism
+\end_layout
+
+\end_deeper
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Example: 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+[\app,\abs]:\Sigma_{LC}(L)\rightarrow L
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+preview true
+filename "images/one-sig-def.tex"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/1-sig_and_their_models.png
 	width 100text%
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -2775,10 +3383,225 @@ Syntax
 \end_layout
 
 \begin_layout Frame
+(suitable notion of model morphism [Hirschowitz-Maggesi 2012]
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+The
+\series bold
+ syntax
+\series default
+ specified by a 1-signature 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ is the initial object in its category of models.
+\end_layout
+
+\begin_layout Description
+Question: Does the syntax exist for every 1-signature?
+\end_layout
+
+\begin_layout Description
+Answer: No.
+\end_layout
+
+\begin_layout Description
+Counter-example: 
+\begin_inset Formula $\Sigma(R)=\tikzmarknode{P}{\mathcal{P}}\circ R$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzmarknode{dP}{Powerset endofunctor on $Set$.}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture,overlay]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[->] (dP) -- (P);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
 \begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+Powerset endofunctor
+\backslash
+tikz[remember picture,overlay,baseline=0pt] 
+\backslash
+draw[->] (0,1em) to (pic cs:P); on $Set$.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\align center
+powerset endofunctor
+\begin_inset Formula $\tikzmark{yop}$
+\end_inset
+
+ on 
+\begin_inset Formula $Set$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+begin{tikzpicture}[->, overlay,remember picture]
+\end_layout
+
+\begin_layout Plain Layout
+
+%  
+\backslash
+node[below left=of pic cs:P] (yop) {yop};
+\end_layout
+
+\begin_layout Plain Layout
+
+%  
+\backslash
+draw (yop)  --  ($ (pic cs:P) $);
+\end_layout
+
+\begin_layout Plain Layout
+
+%  
+\backslash
+draw ($ (pic cs:yop) $)  --  ($ (pic cs:P) $);
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Preview
 
 \begin_layout Standard
@@ -2792,6 +3615,11 @@ status open
 includegraphics[trim=0 40 0 100,clip,width=1.1
 \backslash
 textwidth]{slides/slide_12_effect_1.pdf}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3065,6 +3893,93 @@ textwidth]{slides/slide_17_effect_2.pdf}
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{ % all template changes are local to this group.
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+setbeamertemplate{navigation symbols}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+begin{frame}[plain]
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\backslash
+begin{tikzpicture}[remember picture,overlay]
+\end_layout
+
+\begin_layout Plain Layout
+
+            
+\backslash
+node[at=(current page.center)] {
+\end_layout
+
+\begin_layout Plain Layout
+
+                
+\backslash
+includegraphics[keepaspectratio,
+\end_layout
+
+\begin_layout Plain Layout
+
+%                                 width=
+\backslash
+paperwidth,
+\end_layout
+
+\begin_layout Plain Layout
+
+                                 height=
+\backslash
+paperheight]{images/guepard}
+\end_layout
+
+\begin_layout Plain Layout
+
+            };
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+end{frame}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -3304,6 +4219,10 @@ Idea
 \end_deeper
 \end_deeper
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -3364,7 +4283,7 @@ pour réduire la marge
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -3556,16 +4475,13 @@ status open
 \end_layout
 
 \end_deeper
-\begin_layout Block
+\end_deeper
+\end_deeper
+\end_inset
+
 
 \end_layout
 
-\begin_layout Block
-
-\end_layout
-
-\end_deeper
-\end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -3733,7 +4649,7 @@ as parallel module morphisms
 Generalization
 \series default
 : 
-\begin_inset Formula $L\mapsto$
+\begin_inset Formula $L\leadsto$
 \end_inset
 
  any model 
@@ -3744,7 +4660,7 @@ Generalization
 \begin_inset Formula $\Sigma_{LC}$
 \end_inset
 
-, with application denoted 
+, with application denoted by 
 \begin_inset Formula $\app:T\times T\rightarrow T$
 \end_inset
 

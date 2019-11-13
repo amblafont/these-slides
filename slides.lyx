@@ -57,6 +57,9 @@ anchor=base west,
 ] {#4};
 \end{tikzpicture}
 }
+\newcommand{\xyR}[1]{%
+\xydef@\xymatrixrowsep@{#1}
+} % end of \xyR
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -4353,11 +4356,219 @@ Example: a commutative binary operation
 
 \end_layout
 
-\begin_layout Frame
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Specification of a binary operation
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1-signature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $T\mapsto T\times T$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+model
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $T\times T\xrightarrow{+}T$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Question What is an appropriate notion of model for a 
+\series bold
+commutative 
+\series default
+binary operation?
+\end_layout
+
+\begin_layout Description
+Answer A monad 
+\begin_inset Formula $T$
+\end_inset
+
+ equipped with a binary operation 
+\begin_inset Formula $T\times T\xrightarrow{+}T$
+\end_inset
+
+ which is commutative, i.e.:
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+xymatrix@R=0.25em{T
+\backslash
+times T 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+ar@/^+1.5em/[rr]^+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+ar@/^-0.5em/[rd]_{
+\backslash
+text{swap}}
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  & T
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ & T
+\backslash
+times T
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+ar@/^-0.5em/[ru]_+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\xymatrix{T\times T\xyport{{\xyarrow[rr][][][1em]}}+{}\xystarboard{{\xyarrow[rd][][][-0.5em]}}{\text{swap}}{} &  & T\\
+ & T\times T\xystarboard{{\xyarrow[ru][][][-0.5em]}}+{}
+}
+$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+where
+\begin_inset Formula 
+\[
+\text{swap}(t,u)=(u,t)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Preview
 
 \begin_layout Standard
@@ -4383,7 +4594,16 @@ textwidth]{slides/slide_17_effect_0.pdf}
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -4421,6 +4641,11 @@ status open
 includegraphics[trim=0 19 0 100,clip,width=1.1
 \backslash
 textwidth]{slides/slide_17_effect_2.pdf}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

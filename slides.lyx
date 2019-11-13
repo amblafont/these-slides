@@ -3195,7 +3195,7 @@ status open
 \end_layout
 
 \begin_layout Definition
-1 
+A 
 \series bold
 model
 \series default
@@ -3204,7 +3204,7 @@ model
 \end_inset
 
  is a pair 
-\begin_inset Formula $(T,m)$
+\begin_inset Formula $M=(T,m)$
 \end_inset
 
  where
@@ -3251,7 +3251,33 @@ Example:
 
 \end_layout
 
-\begin_layout Definition
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Coercion
+\series default
+: If 
+\begin_inset Formula $M$
+\end_inset
+
+ is a model, we sometimes denote by 
+\begin_inset Formula $M$
+\end_inset
+
+ the underlying monad.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -3312,7 +3338,6 @@ status open
 
 \end_layout
 
-\end_deeper
 \begin_layout Frame
 
 \end_layout
@@ -4450,6 +4475,9 @@ Answer A monad
 \end_inset
 
  which is commutative, i.e.:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Preview
 
 \begin_layout Standard
@@ -4520,6 +4548,26 @@ ar@/^-0.5em/[ru]_+
 
 
 \backslash
+qquad
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+text{where}
+\backslash
+quad
+\backslash
+text{swap}(t,u) = 
+\backslash
+text{swap}(u,t)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
 ]
 \end_layout
 
@@ -4549,8 +4597,11 @@ $
 
 \end_layout
 
-\begin_deeper
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 where
 \begin_inset Formula 
 \[
@@ -4562,7 +4613,11 @@ where
 
 \end_layout
 
-\end_deeper
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Frame
 \begin_inset Note Note
@@ -4679,10 +4734,409 @@ Equations
 \end_layout
 
 \begin_layout Frame
+\begin_inset Formula $\Sigma=$
+\end_inset
+
+ 1-signature (e.g.
+ binary operation 
+\begin_inset Formula $\Sigma(T)=T\times T)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A 
+\series bold
+
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-equation
+\series default
+ 
+\begin_inset Formula $\xymatrix{A\ar@<+.5ex>^{u}[r]\ar@<-.5ex>_{v}[r] & B}
+$
+\end_inset
+
+ is a (functorial) assignment
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+preview true
+filename "images/Sigma-eq.tex"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Example
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[Binary commutative operation]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sigma(T)=T
+\backslash
+times T
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+qquad
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+left|
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+quad 
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+boxed{
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+%T
+\backslash
+times T
+\backslash
+xrightarrow{+}{} T
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{c}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+xymatrix@R=1em{T
+\backslash
+times T
+\backslash
+ar[d]^+ 
+\backslash
+
+\backslash
+ T}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+mapsto
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+xymatrix@R=0.25em@C=1em{T
+\backslash
+times T
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+ar@/^+1.5em/[rr]^+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+ar@/^-0.5em/[rd]_-{
+\backslash
+text{swap}}
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  & T
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ & T
+\backslash
+times T
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+ar@/^-0.5em/[ru]_-+
+\end_layout
+
+\begin_layout Plain Layout
+
+}       
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+right.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+
+\end_layout
+
+\begin_layout Example
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
 
 \end_layout
 
 \begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+2-signatures and their models
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A
+\series bold
+ 2-signature
+\series default
+ is a pair 
+\begin_inset Formula $(\Sigma,E$
+\end_inset
+
+) where
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ is a 1-signature for monads
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E$
+\end_inset
+
+ is a set of 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-equations
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A
+\series bold
+ model
+\series default
+ of a 2-signature 
+\begin_inset Formula $(\Sigma,E$
+\end_inset
+
+) consists of:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+a model 
+\begin_inset Formula $M=\Sigma(T)\xrightarrow{m}T$
+\end_inset
+
+ of 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ s.t.
+\begin_inset Formula 
+\[
+\forall\xymatrix{A\ar@<+.5ex>^{u}[r]\ar@<-.5ex>_{v}[r] & B}
+\in E,\quad\boxed{u_{M}=v_{M}}:A(M)\rightarrow B(M)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+morphism of models = morphisms between underlying models of 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Preview
 
 \begin_layout Standard
@@ -4696,6 +5150,11 @@ status open
 includegraphics[trim=0 35 0 100,clip,width=1.1
 \backslash
 textwidth]{slides/slide_18_effect_3.pdf}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4732,7 +5191,133 @@ Initial semantics for algebraic 2-signatures
 
 \end_layout
 
+\begin_deeper
+\begin_layout Theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[Ahrens-Lafont-Hirschowitz-Maggesi 2019]
+\end_layout
+
+\end_inset
+
+Any 
+\series bold
+algebraic
+\series default
+ 2-signature has an initial model.
+\end_layout
+
+\begin_layout Definition
+A 2-signature 
+\begin_inset Formula $(\Sigma,E)$
+\end_inset
+
+ is 
+\series bold
+algebraic
+\series default
+ if:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ is algebraic
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E$
+\end_inset
+
+ consists of 
+\series bold
+elementary 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+
+\series default
+-equations
+\end_layout
+
+\end_deeper
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Main examples of elementary 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-equations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Formula $A\rightrightarrows B$
+\end_inset
+
+ s.t.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A\left(\begin{array}{c}
+\xymatrix{\Sigma(T)\ar[d]\\
+T
+}
+\end{array}\right)=\Phi(T)\qquad B\left(\begin{array}{c}
+\xymatrix{\Sigma(T)\ar[d]\\
+T
+}
+\end{array}\right)=T
+\]
+
+\end_inset
+
+for some 
+\emph on
+algebraic
+\emph default
+ 1-signature 
+\begin_inset Formula $\Phi$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Preview
 
 \begin_layout Standard
@@ -4746,6 +5331,11 @@ status open
 includegraphics[trim=0 35 0 100,clip,width=1.1
 \backslash
 textwidth]{slides/slide_19_effect_1.pdf}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

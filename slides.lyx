@@ -106,9 +106,11 @@ anchor=base west,
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
-\biblio_style plain
+\cite_engine biblatex
+\cite_engine_type authoryear
+\biblio_style verbose
+\biblatex_bibstyle authoryear
+\biblatex_citestyle verbose
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -2971,7 +2973,7 @@ Example:
 \[
 \begin{array}{rcl}
 \app: & L\times L & \rightarrow L\\
-\abs: & L' & \rightarrow L\qquad\left\{\quad\begin{aligned}\abs_{X}:L(X\coprod\{\diamond\}) & \rightarrow L(X)\\
+\abs: & L' & \rightarrow L\qquad\left\{ \quad\begin{aligned}\abs_{X}:L(X\coprod\{\diamond\}) & \rightarrow L(X)\\
 t & \mapsto\lambda\diamond.t
 \end{aligned}
 \right.\\
@@ -4157,7 +4159,9 @@ status open
 
 \begin_layout Plain Layout
 
-[Ahrens-Lafont-Hirschowitz-Maggesi 2018]
+[Ahrens-
+\backslash
+emph{Lafont}-Hirschowitz-Maggesi CSL 2018]
 \end_layout
 
 \end_inset
@@ -5273,10 +5277,7 @@ ar[d]
 \backslash
 
 \backslash
-
-T
-}
-
+T}
 \backslash
 end{pmatrix}$
 \end_layout
@@ -5293,7 +5294,8 @@ end{pmatrix}$
 status open
 
 \begin_layout Plain Layout
-\begin_inset Formula $M=\left(\begin{array}{c}\xymatrix{\Sigma(T)\ar[d]\\
+\begin_inset Formula $M=\left(\begin{array}{c}
+\xymatrix{\Sigma(T)\ar[d]\\
 T
 }
 \end{array}\right)$
@@ -5400,7 +5402,9 @@ status open
 
 \begin_layout Plain Layout
 
-[Ahrens-Lafont-Hirschowitz-Maggesi 2019]
+[Ahrens-
+\backslash
+emph{Lafont}-Hirschowitz-Maggesi FSCD 2019]
 \end_layout
 
 \end_inset
@@ -7479,6 +7483,19 @@ Initiality
 
 \begin_deeper
 \begin_layout Theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[Ahrens-
+\backslash
+emph{Lafont}-Hirschowitz-Maggesi POPL 2020]
+\end_layout
+
+\end_inset
+
+
 \begin_inset Formula $\Sigma$
 \end_inset
 
@@ -7547,8 +7564,6 @@ status open
 
 \begin_layout Plain Layout
 
-\size small
-\emph on
 
 \backslash
 vspace{-0.5em}
@@ -7603,7 +7618,7 @@ Examples
 \end_deeper
 \end_deeper
 \begin_layout Section*
-Summary
+Conclusion
 \end_layout
 
 \begin_layout Frame
@@ -7611,6 +7626,20 @@ Summary
 status open
 
 \begin_layout Plain Layout
+Conclusion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
 Summary
 \end_layout
 
@@ -7621,96 +7650,145 @@ Summary
 
 \begin_deeper
 \begin_layout Itemize
-The
-\color none
- 
-\color inherit
-
-\begin_inset Flex Alert
-status open
-
-\begin_layout Plain Layout
-first main message
-\end_layout
-
-\end_inset
-
-
-\color none
- of your talk in one or two lines.
+PLs as reduction monads
 \end_layout
 
 \begin_layout Itemize
-The
-\color none
- 
-\color inherit
-
-\begin_inset Flex Alert
-status open
-
-\begin_layout Plain Layout
-second main message
-\end_layout
-
-\end_inset
-
-
-\color none
- of your talk in one or two lines.
+Signatures for reduction monads with initiality theorem
 \end_layout
 
 \begin_layout Itemize
-Perhaps a
-\color none
- 
-\color inherit
+Main theorems regarding syntax: formalized within the Coq UniMath library
+\end_layout
 
-\begin_inset Flex Alert
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
 status open
 
 \begin_layout Plain Layout
-third message
+Articles
 \end_layout
 
 \end_inset
 
 
-\color none
-, but not more than that.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-An outlook is always optional.
-\end_layout
-
-\end_inset
-
-
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Outlook
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-What we have not done yet.
+AHLM CSL 2018 about 
+\emph on
+quotient of algebraic 1-signatures
+\emph default
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\align center
+"High-Level Signatures and Initial Semantics
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Even more stuff.
+AHLM FSCD 2019 about 
+\emph on
+algebraic 2-signatures
+\emph default
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\align center
+"Modular Specification of Monads Through Higher-Order Presentations
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+AHLM POPL 2020 about 
+\emph on
+reduction monads
+\emph default
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\align center
+"Reduction monads and their signatures
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+HHL FoSSaCS 2020 (submitted): extension to bipartite graphs and simply typed
+ PLs
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\align center
+"Modules over monads and operational semantics
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+AHLM = Ahrens, A.
+ Hirschowitz, 
+\emph on
+Lafont
+\emph default
+, Maggesi
+\end_layout
+
+\begin_layout Standard
+HHL = A.
+ Hirschowitz, T.
+ Hirschowitz, 
+\emph on
+Lafont
+\end_layout
+
 \end_deeper
 \begin_layout Section*
 \start_of_appendix

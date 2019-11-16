@@ -1436,7 +1436,7 @@ recursion
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename images/initial-semantics.png
+	filename images/initial-semantics-2.png
 	width 85text%
 
 \end_inset
@@ -1455,7 +1455,11 @@ Proposes a notion of
 \series bold
 signature
 \series default
- for specifying the syntax and semantics of a PL;
+ with associated 
+\series bold
+category of models
+\series default
+, for specifying the syntax and semantics of a PL;
 \end_layout
 
 \begin_layout Enumerate

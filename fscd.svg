@@ -28,7 +28,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.74815957"
-     inkscape:cx="566.89807"
+     inkscape:cx="494.05265"
      inkscape:cy="205.41526"
      inkscape:document-units="mm"
      inkscape:current-layer="g3772"
@@ -2829,7 +2829,10 @@
     <g
        transform="matrix(0.57543479,0,0,0.57543479,17.83267,-151.10906)"
        id="layer1-8"
-       inkscape:label="Calque 1">
+       inkscape:label="Calque 1"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <path
          style="fill:#cccccc;fill-opacity:1;stroke:#cccccc;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          d="m 262.23757,388.70673 c -13.13226,0 -24.36476,8.75504 -28.93874,21.15325 -3.28364,-1.44879 -6.92847,-2.22341 -10.75425,-2.22341 -12.89656,0 -23.63069,9.13525 -25.97782,21.24589 -1.65257,-0.41046 -3.38524,-0.61761 -5.16763,-0.61761 -11.60557,0 -21.00571,9.25452 -21.00571,20.65917 0,11.40463 9.40014,20.65915 21.00571,20.65915 3.64942,0 7.09323,-0.92418 10.08387,-2.53221 5.16209,5.17569 13.54997,8.55395 23.01689,8.55395 7.62527,0 14.53429,-2.1895 19.637,-5.74381 4.38513,4.59567 10.52222,7.44224 17.31853,7.44224 8.83023,0 16.54937,-4.81872 20.75434,-12.01257 2.8951,1.62824 6.16573,2.56308 9.609,2.56308 12.0354,0 21.78783,-11.17098 21.78783,-24.95156 0,-13.27227 -9.05524,-24.10728 -20.475,-24.88982 -1.93417,-16.53022 -15.03339,-29.30574 -30.89402,-29.30574 z"
@@ -2993,7 +2996,10 @@
        xml:space="preserve"
        id="flowRoot60739"
        style="font-style:normal;font-weight:normal;font-size:34.66666794px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.26458333,0,0,0.26458333,-166.29429,4.8156934)"><flowRegion
+       transform="matrix(0.26458333,0,0,0.26458333,-166.29429,4.8156934)"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
          id="flowRegion60735"
          style="font-size:34.66666794px"><rect
            id="rect60733"
@@ -3006,7 +3012,10 @@
        transform="matrix(0.25909371,-0.05361707,0.05361707,0.25909371,-123.75183,33.697219)"
        style="font-style:normal;font-weight:normal;font-size:34.66666794px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none"
        id="flowRoot26782"
-       xml:space="preserve"><flowRegion
+       xml:space="preserve"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
          style="font-size:34.66666794px;fill:#0000ff"
          id="flowRegion26784"><rect
            style="font-size:34.66666794px;fill:#0000ff"
@@ -3021,7 +3030,10 @@
        transform="matrix(0.26458333,0,0,0.26458333,-155.555,6.3771024)"
        style="font-style:normal;font-weight:normal;font-size:34.66666794px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot26790"
-       xml:space="preserve"><flowRegion
+       xml:space="preserve"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
          style="font-size:34.66666794px"
          id="flowRegion26792"><rect
            style="font-size:34.66666794px"
@@ -3034,7 +3046,10 @@
        transform="matrix(0.26458333,0,0,0.26458333,195.54764,-7.0759971)"
        style="font-style:normal;font-weight:normal;font-size:32px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot26798"
-       xml:space="preserve"><flowRegion
+       xml:space="preserve"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
          style="font-size:32px"
          id="flowRegion26800"><rect
            style="font-size:32px"
@@ -3061,19 +3076,28 @@
        inkscape:connector-curvature="0"
        id="path53190"
        d="m 176.67507,67.325651 c 3.60476,-5.210806 6.55422,-8.3088 9.2521,-10.228083 6.45981,-4.595539 11.47728,-2.433332 20.59453,-6.33627"
-       style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker28031)" />
+       style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker28031)"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.17999985, 3.17999985;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker53194)"
        d="m 100.58564,134.62325 c 9.47042,-4.05608 14.06576,-5.46329 22.56472,-15.52525"
        id="path33981"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker30401)"
        d="M 35.739996,79.804514 C 44.81256,91.363602 54.039274,96.637692 55.434962,130.26922"
        id="path33219"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        inkscape:connector-curvature="0"
        id="path26814"
@@ -3092,18 +3116,36 @@
            width="144.78688"
            id="rect32125" /></flowRegion><flowPara
          id="flowPara32127">intial model</flowPara></flowRoot>    <flowRoot
-       transform="matrix(0.26458333,0,0,0.26458333,34.687077,-23.76128)"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       xml:space="preserve"
+       id="flowRoot10742"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,30.796975,-23.76128)"><flowRegion
+         id="flowRegion10738"><rect
+           id="rect10736"
+           width="222.34175"
+           height="81.83609"
+           x="393.89227"
+           y="441.55502" /></flowRegion><flowPara
+         id="flowPara10740"
+         style="font-size:32px">Initial model</flowPara></flowRoot>    <flowRoot
+       transform="matrix(0.26458333,0,0,0.26458333,97.282347,-23.763883)"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot32129"
-       xml:space="preserve"><flowRegion
+       xml:space="preserve"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
          id="flowRegion32131"><rect
            y="441.55502"
            x="393.89227"
-           height="81.836082"
-           width="196.94612"
+           height="81.83609"
+           width="278.47952"
            id="rect32133" /></flowRegion><flowPara
-         style="font-size:26.66666794px"
-         id="flowPara32135">Initial Model</flowPara></flowRoot>    <flowRoot
+         style="font-size:26.66666794px;fill:#0000ff"
+         id="flowPara32135">= specified object</flowPara></flowRoot>    <flowRoot
        transform="matrix(0.26458333,0,0,0.26458333,-2.2703054,134.28153)"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot5035-6"

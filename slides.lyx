@@ -592,7 +592,7 @@ programming language
 
 \end_deeper
 \begin_layout Frame
-In the litterature: no common well-established discipline.
+In the literature: no common well-established discipline.
 \end_layout
 
 \begin_deeper
@@ -646,7 +646,7 @@ status open
 
 
 \backslash
-footnote{not yet satisfyingly tackled by this PhD.}
+footnote{not yet satisfyingly addressed by this PhD.}
 \end_layout
 
 \end_inset
@@ -863,7 +863,7 @@ variables
 \begin_layout Block
 
 \series bold
-substitution
+Substitution
 \series default
 : variables 
 \begin_inset Formula $\mapsto$
@@ -911,8 +911,7 @@ Bound variables
 
 \begin_deeper
 \begin_layout Standard
-e.g.
- syntax of arithmetic propositions with quantifiers
+Example: syntax of arithmetic propositions with quantifiers
 \begin_inset ERT
 status open
 
@@ -955,7 +954,7 @@ should be identified with
 
 \begin_layout Standard
 \align center
-\begin_inset Quotes erd
+\begin_inset Quotes eld
 \end_inset
 
 
@@ -975,6 +974,65 @@ should be identified with
 \end_inset
 
 
+\end_layout
+
+\end_deeper
+\begin_layout AlertBlock
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Syntax and recursion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\series bold
+\emph on
+Recursion
+\series default
+\emph default
+ (for syntax) = principle for investigating a piece of valid syntactic data.
+\end_layout
+
+\begin_deeper
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Examples of use of recursion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+count the number of operations in an arithmetic expression
+\end_layout
+
+\begin_layout Itemize
+compute an arithmetic expression
 \end_layout
 
 \end_deeper
@@ -1007,7 +1065,7 @@ Program execution
 \begin_layout Standard
 
 \emph on
-program 
+Program 
 \emph default
 = valid 
 \emph on
@@ -1019,7 +1077,7 @@ syntactic
 \begin_layout Standard
 
 \emph on
-execution 
+Execution 
 \emph default
 = modification of the program:
 \end_layout
@@ -1115,7 +1173,19 @@ PL
 
 \end_deeper
 \begin_layout Frame
-Specification in 2 steps:
+
+\series bold
+Specification 
+\series default
+of a PL = features uniquely characterizing a PL.
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+In 2 steps:
 \end_layout
 
 \begin_deeper
@@ -1127,17 +1197,96 @@ syntax
 semantics
 \end_layout
 
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Example: specification of the syntax of arithmetic expressions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+numbers = constants
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $+$
+\end_inset
+
+ and 
+\begin_inset Formula $\times$
+\end_inset
+
+: operations expecting two expressions.
+\end_layout
+
+\end_deeper
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Caveat
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+There are 
+\series bold
+ineffective specifications
+\series default
+: no PL satisfies them.
+\end_layout
+
+\begin_deeper
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Stupid example
+\end_layout
+
+\end_inset
+
+Syntax with two constants 
+\begin_inset Formula $0$
+\end_inset
+
+ and 
+\begin_inset Formula $1$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $0=1$
+\end_inset
+
+ and 
+\begin_inset Formula $0\neq1$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Frame
-in the spirit of 
-\series bold
-Initial Semantics 
-\series default
-for justifying 
-\series bold
-recursion
-\series default
-.
+
+\end_layout
+
+\begin_layout Frame
+
 \end_layout
 
 \begin_layout Frame
@@ -1152,53 +1301,12 @@ status open
 
 \begin_layout Plain Layout
 \align center
-What is recursion?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-
-\series bold
-\emph on
-recursion
-\series default
-\emph default
- (e.g.
- for syntax) = principle for investigating a piece of valid syntactic data.
-\end_layout
-
-\begin_deeper
-\begin_layout ExampleBlock
-\begin_inset Argument 2
-status open
-
-\begin_layout Plain Layout
-Examples of use of recursion
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-count the number of operations in an arithmetic expression
-\end_layout
-
-\begin_layout Itemize
-compute an arithmetic expression
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\align center
 What is initial semantics?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -1318,58 +1426,44 @@ Initial Semantics
 
 \begin_deeper
 \begin_layout FrameSubtitle
-General idea
+Specification through initial semantics for justifying 
+\series bold
+recursion
+\series default
+.
 \end_layout
 
 \begin_layout Standard
 \align center
 \begin_inset Graphics
 	filename images/initial-semantics.png
-	width 75text%
+	width 85text%
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout ExampleBlock
-\begin_inset Argument 2
-status open
-
-\begin_layout Plain Layout
-Example: signature for syntax
-\end_layout
-
-\end_inset
-
-A signature for a given syntax describes the available operations.
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-Initial model = specified syntax.
 \end_layout
 
 \end_deeper
-\begin_layout AlertBlock
-\begin_inset Argument 2
-status open
+\begin_layout Frame
+This phD:
+\end_layout
 
-\begin_layout Plain Layout
-Non 
+\begin_deeper
+\begin_layout Enumerate
+Proposes a notion of 
 \series bold
-effective
+signature
 \series default
- signature
+ for specifying the syntax and semantics of a PL;
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout AlertBlock
-Existence of the initial model not automatically guaranted!
+\begin_layout Enumerate
+Rules out 
+\series bold
+ineffective 
+\series default
+signatures: identifies a criterion ensuring existence of the initial model.
 \end_layout
 
 \end_deeper
@@ -1505,7 +1599,7 @@ Semantics
 
 \end_deeper
 \begin_layout Itemize
-Parallel substitution: variables 
+Simultaneous substitution: variables 
 \begin_inset Formula $\mapsto$
 \end_inset
 
@@ -1694,7 +1788,12 @@ pour réduire la marge
 \series bold
 Syntax
 \series default
-) vertices = terms 
+) vertices = terms e.g.
+ 
+\begin_inset Formula $\Omega=(\lambda x.x\,x)\,(\lambda x.x\,x)$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -2169,7 +2268,7 @@ Substitution
 status open
 
 \begin_layout Plain Layout
-Parallel substitution
+Simultaneous substitution
 \end_layout
 
 \end_inset
@@ -2295,7 +2394,7 @@ filename "images/substitution.tex"
 status open
 
 \begin_layout Plain Layout
-Parallel substitution made formal
+Simultaneous substitution made formal
 \end_layout
 
 \end_inset
@@ -2492,7 +2591,7 @@ filename "images/freevar-indexing.tex"
 status open
 
 \begin_layout Plain Layout
-Parallel substitution
+Simultaneous substitution
 \end_layout
 
 \end_inset
@@ -2627,7 +2726,7 @@ text{vertices
 
 \begin_deeper
 \begin_layout Enumerate
-Parallel substitution 
+Simultaneous substitution 
 \begin_inset Formula $(L,\bind)$
 \end_inset
 
@@ -2663,7 +2762,7 @@ vspace{-1em}
 \end_layout
 
 \begin_layout Enumerate
-Monadics laws:
+Monadic laws:
 \begin_inset Note Note
 status open
 
@@ -3247,7 +3346,7 @@ A
 \series bold
 reduction monad
 \series default
- is a quadruple 
+ 
 \begin_inset Note Note
 status open
 
@@ -3265,7 +3364,7 @@ status open
 $
 \end_inset
 
- s.t.
+ consists of
 \end_layout
 
 \begin_deeper
@@ -3273,7 +3372,7 @@ $
 \begin_inset Formula $T$
 \end_inset
 
- = monad
+ = monad (= module over itself)
 \end_layout
 
 \begin_layout Itemize
@@ -4837,7 +4936,27 @@ status open
 
 \begin_layout Plain Layout
 
+[Fiore-Plotkin-Turi 1999]
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
 [Hirschowitz-Maggesi 2007]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

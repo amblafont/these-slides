@@ -4369,7 +4369,7 @@ status open
 
 
 \backslash
-vspace{-1.5em}
+vspace{-1em}
 \end_layout
 
 \begin_layout Plain Layout
@@ -4484,9 +4484,22 @@ Example:
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Formula 
 \[
-[\app,\abs]:\Sigma_{LC}(L)\rightarrow L
+[\app,\abs]:\Sigma_{LC}(L)\rightarrow L\qquad\text{where }\Sigma_{LC}(L)=(L\times L)\amalg L'
 \]
 
 \end_inset

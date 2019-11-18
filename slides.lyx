@@ -533,6 +533,11 @@ beamerdefaultoverlayspecification{<+->}
 \end_inset
 
 
+\begin_inset FormulaMacro
+\newcommand{\fix}{\mathsf{fix}}
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -901,7 +906,11 @@ Substitution
 status open
 
 \begin_layout Plain Layout
-Bound variables
+Bound variables and 
+\begin_inset Formula $\alpha$
+\end_inset
+
+-equivalence
 \end_layout
 
 \end_inset
@@ -911,7 +920,14 @@ Bound variables
 
 \begin_deeper
 \begin_layout Standard
-Example: syntax of arithmetic propositions with quantifiers
+
+\series bold
+\begin_inset Formula $\alpha$
+\end_inset
+
+-equivalence 
+\series default
+for arithmetic propositions with quantifiers
 \begin_inset ERT
 status open
 
@@ -1643,6 +1659,27 @@ Syntax:
 \end_layout
 
 \begin_layout Itemize
+Modulo 
+\series bold
+
+\begin_inset Formula $\alpha$
+\end_inset
+
+-equivalence
+\series default
+, e.g.
+ 
+\begin_inset Formula 
+\[
+\lambda x.x=\lambda y.y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
 
 \series bold
 Reductions: 
@@ -1655,23 +1692,6 @@ Reductions:
 \end_layout
 
 \end_deeper
-\begin_layout Example
-modulo 
-\begin_inset Formula $\alpha$
-\end_inset
-
--equivalence, e.g.
- 
-\begin_inset Formula 
-\[
-\lambda x.x=\lambda y.y
-\]
-
-\end_inset
-
-
-\end_layout
-
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -1997,6 +2017,10 @@ status open
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -2077,7 +2101,7 @@ filename "images/bipartite-graph.tex"
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -2247,6 +2271,11 @@ graphs
 \end_inset
 
 .
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3715,11 +3744,10 @@ We argued that syntactic operations are
 module morphisms
 \series default
 .
- Now: basic examples of modules.
+ Basic examples of modules?
 \end_layout
 
-\end_deeper
-\begin_layout Frame
+\begin_layout Standard
 
 \series bold
 Module over a monad 
@@ -3735,13 +3763,24 @@ Module over a monad
 -monadic substitution
 \end_layout
 
-\begin_deeper
 \begin_layout ExampleBlock
 \begin_inset Argument 2
 status open
 
 \begin_layout Plain Layout
 Examples
+\end_layout
+
+\end_inset
+
+
+\series bold
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -4028,9 +4067,7 @@ Example:
 \abs: & L' & \rightarrow L\qquad\left\{ \quad\begin{aligned}\abs_{X}:L(X\coprod\{\diamond\}) & \rightarrow L(X)\\
 t & \mapsto\lambda\diamond.t
 \end{aligned}
-\right.\\
-\\
-\\
+\right.
 \end{array}
 \]
 
@@ -4044,6 +4081,26 @@ Combine operations into a single one:
 \begin_inset Formula 
 \[
 \boxed{[\app,\abs]:(L\times L)\coprod L'\rightarrow L}
+\]
+
+\end_inset
+
+where (
+\emph on
+coproducts
+\emph default
+ of modules 
+\begin_inset Formula $M$
+\end_inset
+
+ and 
+\begin_inset Formula $N$
+\end_inset
+
+)
+\begin_inset Formula 
+\[
+(M\coprod N)(X)=M(X)\coprod N(X)
 \]
 
 \end_inset
@@ -4447,7 +4504,7 @@ We defined 1-signatures and their models.
 
 \end_deeper
 \begin_layout Frame
-(suitable notion of model morphism [Hirschowitz-Maggesi 2012]
+(suitable notion of model morphism [Hirschowitz-Maggesi 2012])
 \end_layout
 
 \begin_deeper
@@ -5149,7 +5206,7 @@ vspace{2em}
 \series bold
 Question
 \series default
-: Can we enforce some equations in the syntax?
+: Can we specify syntactic operations subject to some equations?
 \end_layout
 
 \begin_layout Frame
@@ -5160,15 +5217,15 @@ Question
 \begin_layout Standard
 \align center
 e.g.
- 
+ a 
 \emph on
-commutativity
+commutative
 \emph default
  or 
 \emph on
-associativity
+associative
 \emph default
- of a binary operation.
+ binary operation.
 \end_layout
 
 \end_deeper
@@ -5254,6 +5311,10 @@ We saw that algebraic signatures are effective.
 \end_layout
 
 \begin_layout Theorem
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -5262,6 +5323,11 @@ status open
 [Ahrens-
 \backslash
 emph{Lafont}-Hirschowitz-Maggesi CSL 2018]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5815,9 +5881,7 @@ text{where}
 \backslash
 quad
 \backslash
-text{swap}(t,u) = 
-\backslash
-text{swap}(u,t)
+text{swap}(t,u) = (u,t)
 \end_layout
 
 \begin_layout Plain Layout
@@ -6509,6 +6573,10 @@ We defined 2-signatures and their models.
 
 \begin_deeper
 \begin_layout Theorem
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -6517,6 +6585,11 @@ status open
 [Ahrens-
 \backslash
 emph{Lafont}-Hirschowitz-Maggesi FSCD 2019]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -6931,7 +7004,7 @@ of a binary operation
 fixpoint equation
 \begin_inset Formula 
 \[
-\mathsf{\lambda_{rec}x.t=t[x}:=\lambda_{rec}x.t]
+\mathsf{(\fix\,f:=t)\quad=\quad t[f}:=(\fix\,f:=t)]
 \]
 
 \end_inset
@@ -6988,7 +7061,7 @@ Specifying reduction monads
 \begin_inset Formula $\lambda$
 \end_inset
 
--calculus with 
+-calculus with (small-step) 
 \begin_inset Formula $\beta$
 \end_inset
 
@@ -7034,11 +7107,11 @@ arrows =
 
 \begin_deeper
 \begin_layout Itemize
-
-\series bold
-Idea
-\series default
-: specified through reduction rules.
+specified through 
+\emph on
+reduction rules 
+\emph default
+(to be made formal):
 \begin_inset Formula 
 \[
 (\lambda x.t)\,u\rightarrow t[x:=u]\qquad\frac{t\rightarrow t'}{t\,u\rightarrow t'\,u}\qquad\dots
@@ -8409,14 +8482,29 @@ Example:
 
 \begin_deeper
 \begin_layout Itemize
-congruence for application
+congruence for application and 
+\series bold
+abstraction
+\series default
+:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1em}
 \end_layout
 
-\begin_layout Itemize
-congruence for abstraction:
+\end_inset
+
+
 \begin_inset Formula 
 \[
-\dfrac{{\color{blue}u}\rightarrow{\color{red}u'}}{\lambda x.u\rightarrow\lambda x.u'}\;\rightsquigarrow\;\frac{\pi_{1}\rightarrow\pi_{2}}{\abs\circ\pi_{1}\rightarrow\abs\circ\pi_{2}}\quad\xymatrix{{\color{blue}T'}\times{\color{red}T'}\xyport{{\xyarrow[r][][][][0.5ex]}}{\pi_{1,T}}-\xystarboard{{\xyarrow[r][][][][-0.5ex]}}{\pi_{2,T}}- & T'}
+\dfrac{{\color{blue}u}\rightarrow{\color{red}u'}}{\lambda x.u\rightarrow\lambda x.u'}\;\rightsquigarrow\;\frac{\pi_{1}\rightarrow\pi_{2}}{\abs\circ\pi_{1}\rightarrow\abs\circ\pi_{2}}\quad\dfrac{\xymatrix{{\color{blue}T'}\times{\color{red}T'}\xyport{{\xyarrow[r][][][][0.5ex]}}{\pi_{1,T}}-\xystarboard{{\xyarrow[r][][][][-0.5ex]}}{\pi_{2,T}}- & T'}
+}{\xymatrix{{\color{blue}T'}\times{\color{red}T'}\xyport{{\xyarrow[r][][][][0.5ex]}}{\abs\circ\pi_{1,T}}-\xystarboard{{\xyarrow[r][][][][-0.5ex]}}{\abs\circ\pi_{2,T}}- & T}
+}
 \]
 
 \end_inset
@@ -8636,6 +8724,10 @@ reduction signature
 
 \begin_deeper
 \begin_layout Theorem
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -8644,6 +8736,11 @@ status open
 [Ahrens-
 \backslash
 emph{Lafont}-Hirschowitz-Maggesi POPL 2020]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -8693,11 +8790,11 @@ Examples
 \begin_inset Formula $\lambda$
 \end_inset
 
--calculus with 
+-calculus with small-step 
 \begin_inset Formula $\beta$
 \end_inset
 
--reduction (as in the previous slide)
+-reduction
 \end_layout
 
 \begin_layout Itemize
@@ -8729,7 +8826,15 @@ A Theory of Explicit Substitutions with Safe and Full Composition
 
 \end_deeper
 \begin_layout Standard
-Generalizing from graphs to bipartite graphs yields more examples:
+Generalizing from 
+\emph on
+graphs
+\emph default
+ to 
+\emph on
+bipartite graphs
+\emph default
+ yields more examples:
 \end_layout
 
 \begin_layout Standard
@@ -8808,10 +8913,16 @@ PLs as reduction monads
 
 \begin_layout Itemize
 Signatures for reduction monads with initiality theorem
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Main theorems regarding syntax: formalized within the Coq UniMath library
 \end_layout
 
-\begin_layout Itemize
-Main theorems regarding syntax: formalized within the Coq UniMath library
+\end_inset
+
+
 \end_layout
 
 \end_deeper

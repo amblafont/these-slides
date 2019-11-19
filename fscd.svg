@@ -28,10 +28,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.74815957"
-     inkscape:cx="494.05265"
+     inkscape:cx="273.21617"
      inkscape:cy="205.41526"
      inkscape:document-units="mm"
-     inkscape:current-layer="g3772"
+     inkscape:current-layer="g63295"
      showgrid="false"
      units="px"
      inkscape:window-width="1916"
@@ -2837,7 +2837,7 @@
          style="font-size:26.66666794px;fill:#000000"
          id="flowPara21464" /></flowRoot>  </g>
   <g
-     style="display:inline"
+     style="display:none"
      inkscape:groupmode="layer"
      id="g3772"
      inkscape:label="What is a syntax?">
@@ -2845,7 +2845,7 @@
        transform="matrix(0.57543479,0,0,0.57543479,17.83267,-151.10906)"
        id="layer1-8"
        inkscape:label="Calque 1"
-       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics-2.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96">
       <path
@@ -3012,7 +3012,7 @@
        id="flowRoot60739"
        style="font-style:normal;font-weight:normal;font-size:34.66666794px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        transform="matrix(0.26458333,0,0,0.26458333,-166.29429,4.8156934)"
-       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics-2.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><flowRegion
          id="flowRegion60735"
@@ -3026,7 +3026,7 @@
          id="flowPara60737">Signature</flowPara></flowRoot>    <flowRoot
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics-2.png"
        xml:space="preserve"
        id="flowRoot10752"
        style="font-style:normal;font-weight:normal;font-size:34.66666794px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none"
@@ -3046,7 +3046,7 @@
        style="font-style:normal;font-weight:normal;font-size:34.66666794px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none"
        id="flowRoot26782"
        xml:space="preserve"
-       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics-2.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><flowRegion
          style="font-size:34.66666794px;fill:#0000ff"
@@ -3064,7 +3064,7 @@
        style="font-style:normal;font-weight:normal;font-size:34.66666794px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot26790"
        xml:space="preserve"
-       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics-2.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><flowRegion
          style="font-size:34.66666794px"
@@ -3078,7 +3078,7 @@
          id="flowPara26796">Category of Models</flowPara></flowRoot>    <flowRoot
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics-2.png"
        xml:space="preserve"
        id="flowRoot14366"
        style="font-style:normal;font-weight:normal;font-size:32px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -3094,7 +3094,7 @@
          id="flowPara14364">Recursion principle</flowPara></flowRoot>    <flowRoot
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics-2.png"
        xml:space="preserve"
        id="flowRoot14374"
        style="font-style:normal;font-weight:normal;font-size:32px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -3108,12 +3108,12 @@
            y="196.94615"
            style="font-size:32px" /></flowRegion><flowPara
          id="flowPara14372"
-         style="font-size:29.33333389px;-inkscape-font-specification:'sans-serif Italic';font-family:sans-serif;font-weight:normal;font-style:italic;font-stretch:normal;font-variant:normal">supports</flowPara></flowRoot>    <flowRoot
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.33333397px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'">supports</flowPara></flowRoot>    <flowRoot
        transform="matrix(0.26456809,0.00283955,-0.00283955,0.26456809,125.2054,79.595384)"
        style="font-style:normal;font-weight:normal;font-size:32px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot26798"
        xml:space="preserve"
-       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics-2.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><flowRegion
          style="font-size:32px"
@@ -3125,7 +3125,7 @@
            width="258.99765"
            id="rect26802" /></flowRegion><flowPara
          id="flowPara26804"
-         style="font-size:29.33333396px;-inkscape-font-specification:'sans-serif Italic';font-family:sans-serif;font-weight:normal;font-style:italic;font-stretch:normal;font-variant:normal">determines</flowPara></flowRoot>    <flowRoot
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.33333397px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'">determines</flowPara></flowRoot>    <flowRoot
        transform="matrix(0.26458333,0,0,0.26458333,332.34975,16.391049)"
        style="font-style:normal;font-weight:normal;font-size:34.66666794px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot26806"
@@ -3141,7 +3141,7 @@
          id="flowPara26812">Substitution</flowPara></flowRoot>    <path
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics-2.png"
        style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker28031)"
        d="m 192.8129,115.59087 c 6.33364,0.17823 8.77086,3.7891 11.85122,5.00303 7.37561,2.90663 8.30086,8.29124 16.54582,13.80285"
        id="path12434"
@@ -3153,7 +3153,7 @@
        id="path53190"
        d="m 112.92938,144.7683 c 5.12112,-3.73108 29.28556,3.33222 45.3262,-0.10335 19.90302,-4.26281 37.1003,1.13287 47.3482,3.6367"
        style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker12438)"
-       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics-2.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <path
@@ -3162,7 +3162,7 @@
        id="path33981"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
-       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics-2.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <path
@@ -3171,7 +3171,7 @@
        id="path33219"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
-       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics-2.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <path
@@ -3194,7 +3194,7 @@
          id="flowPara32127">intial model</flowPara></flowRoot>    <flowRoot
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics.png"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/initial-semantics-2.png"
        xml:space="preserve"
        id="flowRoot10742"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -4287,7 +4287,7 @@
      inkscape:groupmode="layer"
      id="g63295"
      inkscape:label="Preview: Operations are module morphisms"
-     style="display:none">
+     style="display:inline">
     <flowRoot
        xml:space="preserve"
        id="flowRoot63005"
@@ -4315,7 +4315,24 @@
            y="210.46155"
            style="font-size:26.66666603px" /></flowRegion><flowPara
          id="flowPara63021" /></flowRoot>    <flowRoot
-       transform="matrix(0.26458333,0,0,0.26458333,-5.3941158,-21.332762)"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="/home/amblaf/Documents/manuscrit-these/slides/images/operations-as-module-morphisms.png"
+       xml:space="preserve"
+       id="flowRoot15876"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,-5.3941158,-7.5405839)"><flowRegion
+         id="flowRegion15870"><rect
+           id="rect15868"
+           width="965.53845"
+           height="171.69229"
+           x="46.153847"
+           y="213.23077" /></flowRegion><flowPara
+         style="font-size:26.66666794px"
+         id="flowPara15874"><flowSpan
+           style="font-weight:bold"
+           id="flowSpan15872">Application commutes with substitution</flowSpan></flowPara></flowRoot>    <flowRoot
+       transform="matrix(0.26458333,0,0,0.26458333,-4.8675515,-20.979116)"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot3461"
        xml:space="preserve"
@@ -4329,9 +4346,9 @@
            width="965.53845"
            id="rect3453" /></flowRegion><flowPara
          id="flowPara3459"
-         style="font-size:26.66666794px"><flowSpan
-           id="flowSpan3457"
-           style="font-weight:bold">Application commutes with substitution</flowSpan></flowPara></flowRoot>    <flowRoot
+         style="font-weight:normal;font-size:26.66666794px">For any model of λ-calculus (in particular for <flowSpan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:MathJax_Math;-inkscape-font-specification:MathJax_Math"
+   id="flowSpan15878">L</flowSpan>),</flowPara></flowRoot>    <flowRoot
        transform="matrix(0.26458333,0,0,0.26458333,-5.2873178,48.078643)"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot54314"
@@ -4591,7 +4608,7 @@
 <polygon
    id="polygon5360"
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
-   points="170.52,664.7 169.15,664.7 169.15,654.74 170.52,654.74 170.52,655.14 169.55,655.14 169.55,664.31 170.52,664.31 " />
+   points="169.15,654.74 170.52,654.74 170.52,655.14 169.55,655.14 169.55,664.31 170.52,664.31 170.52,664.7 169.15,664.7 " />
 <path
    inkscape:connector-curvature="0"
    d="m 174.07,660.24 0.01,0.03 0.01,0.03 v 0.03 l 0.01,0.04 0.01,0.03 0.02,0.05 0.01,0.04 0.01,0.04 0.02,0.05 0.02,0.05 0.02,0.05 0.02,0.05 0.02,0.05 0.02,0.05 0.03,0.05 0.03,0.05 0.03,0.04 0.03,0.05 0.03,0.05 0.04,0.04 0.03,0.05 0.04,0.04 0.04,0.03 0.05,0.04 0.05,0.03 0.04,0.03 0.03,0.01 0.03,0.02 0.02,0.01 0.03,0.01 0.03,0.01 h 0.02 l 0.03,0.01 0.03,0.01 h 0.03 0.03 l 0.04,0.01 h 0.03 c 0.05,0 0.29,0 0.5,-0.13 -0.28,-0.05 -0.48,-0.3 -0.48,-0.54 0,-0.16 0.11,-0.35 0.38,-0.35 0.22,0 0.53,0.18 0.53,0.58 0,0.52 -0.58,0.66 -0.92,0.66 -0.58,0 -0.93,-0.53 -1.05,-0.76 -0.25,0.66 -0.78,0.76 -1.07,0.76 -1.04,0 -1.61,-1.29 -1.61,-1.54 0,-0.1 0.1,-0.1 0.12,-0.1 0.08,0 0.11,0.02 0.13,0.11 0.34,1.06 1,1.31 1.34,1.31 0.19,0 0.53,-0.09 0.53,-0.67 0,-0.31 -0.17,-0.98 -0.53,-2.37 -0.16,-0.62 -0.51,-1.04 -0.95,-1.04 -0.06,0 -0.29,0 -0.5,0.13 0.25,0.05 0.47,0.26 0.47,0.54 0,0.27 -0.22,0.35 -0.37,0.35 -0.3,0 -0.55,-0.26 -0.55,-0.58 0,-0.46 0.5,-0.66 0.94,-0.66 0.66,0 1.02,0.7 1.05,0.76 0.12,-0.37 0.47,-0.76 1.07,-0.76 1.03,0 1.6,1.29 1.6,1.54 0,0.1 -0.09,0.1 -0.12,0.1 -0.09,0 -0.11,-0.04 -0.13,-0.11 -0.33,-1.07 -1.01,-1.31 -1.33,-1.31 -0.39,0 -0.55,0.32 -0.55,0.66 0,0.22 0.06,0.44 0.17,0.88 z"
@@ -4620,7 +4637,7 @@
 <polygon
    id="polygon5372"
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
-   points="202,655.14 202,654.74 203.36,654.74 203.36,664.7 202,664.7 202,664.31 202.97,664.31 202.97,655.14 " />
+   points="203.36,654.74 203.36,664.7 202,664.7 202,664.31 202.97,664.31 202.97,655.14 202,655.14 202,654.74 " />
 <path
    inkscape:connector-curvature="0"
    d="m 214.16,660.49 h 0.03 0.03 0.03 0.01 0.02 0.01 l 0.01,0.01 h 0.02 0.01 0.02 l 0.01,0.01 h 0.01 0.01 l 0.02,0.01 0.01,0.01 h 0.01 l 0.01,0.01 0.01,0.01 h 0.01 l 0.01,0.01 0.01,0.01 v 0.01 0.01 h 0.01 v 0.01 0 l 0.01,0.01 v 0.01 0 0.01 0.01 0.01 h 0.01 v 0.01 0.01 0.01 0.01 c 0,0.2 -0.19,0.2 -0.33,0.2 h -5.97 c -0.14,0 -0.33,0 -0.33,-0.2 0,-0.2 0.19,-0.2 0.34,-0.2 z"
@@ -4639,7 +4656,7 @@
 <polygon
    id="polygon5380"
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
-   points="223,655.14 223,664.31 223.97,664.31 223.97,664.7 222.61,664.7 222.61,654.74 223.97,654.74 223.97,655.14 " />
+   points="223.97,664.31 223.97,664.7 222.61,664.7 222.61,654.74 223.97,654.74 223.97,655.14 223,655.14 223,664.31 " />
 <path
    inkscape:connector-curvature="0"
    d="m 227.52,660.24 0.01,0.03 0.01,0.03 0.01,0.03 0.01,0.04 0.01,0.03 0.01,0.05 0.01,0.04 0.02,0.04 0.01,0.05 0.02,0.05 0.02,0.05 0.02,0.05 0.02,0.05 0.03,0.05 0.02,0.05 0.03,0.05 0.03,0.04 0.03,0.05 0.03,0.05 0.04,0.04 0.04,0.05 0.04,0.04 0.04,0.03 0.04,0.04 0.05,0.03 0.05,0.03 0.02,0.01 0.03,0.02 0.02,0.01 0.03,0.01 0.03,0.01 h 0.03 l 0.03,0.01 0.03,0.01 h 0.03 0.03 l 0.03,0.01 h 0.03 c 0.05,0 0.29,0 0.5,-0.13 -0.28,-0.05 -0.48,-0.3 -0.48,-0.54 0,-0.16 0.11,-0.35 0.38,-0.35 0.22,0 0.54,0.18 0.54,0.58 0,0.52 -0.59,0.66 -0.93,0.66 -0.58,0 -0.92,-0.53 -1.04,-0.76 -0.25,0.66 -0.79,0.76 -1.08,0.76 -1.04,0 -1.61,-1.29 -1.61,-1.54 0,-0.1 0.11,-0.1 0.12,-0.1 0.08,0 0.11,0.02 0.13,0.11 0.34,1.06 1,1.31 1.34,1.31 0.19,0 0.54,-0.09 0.54,-0.67 0,-0.31 -0.17,-0.98 -0.54,-2.37 -0.16,-0.62 -0.51,-1.04 -0.95,-1.04 -0.06,0 -0.29,0 -0.5,0.13 0.25,0.05 0.47,0.26 0.47,0.54 0,0.27 -0.22,0.35 -0.37,0.35 -0.29,0 -0.54,-0.26 -0.54,-0.58 0,-0.46 0.5,-0.66 0.93,-0.66 0.66,0 1.02,0.7 1.05,0.76 0.12,-0.37 0.48,-0.76 1.07,-0.76 1.03,0 1.6,1.29 1.6,1.54 0,0.1 -0.09,0.1 -0.12,0.1 -0.09,0 -0.11,-0.04 -0.13,-0.11 -0.33,-1.07 -1.01,-1.31 -1.32,-1.31 -0.39,0 -0.55,0.32 -0.55,0.66 0,0.22 0.06,0.44 0.17,0.88 z"
@@ -4666,7 +4683,7 @@
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
    id="path5390" />
 <polygon
-   points="255.45,654.74 256.82,654.74 256.82,664.7 255.45,664.7 255.45,664.31 256.42,664.31 256.42,655.14 255.45,655.14 "
+   points="256.82,664.7 255.45,664.7 255.45,664.31 256.42,664.31 256.42,655.14 255.45,655.14 255.45,654.74 256.82,654.74 "
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
    id="polygon5392" />
 <path
@@ -4675,7 +4692,7 @@
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
    id="path5394" />
 <polygon
-   points="268.45,664.31 268.45,664.7 267.09,664.7 267.09,654.74 268.45,654.74 268.45,655.14 267.49,655.14 267.49,664.31 "
+   points="267.09,664.7 267.09,654.74 268.45,654.74 268.45,655.14 267.49,655.14 267.49,664.31 268.45,664.31 268.45,664.7 "
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
    id="polygon5396" />
 <path
@@ -4704,7 +4721,7 @@
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
    id="path5406" />
 <polygon
-   points="299.94,664.31 300.91,664.31 300.91,655.14 299.94,655.14 299.94,654.74 301.31,654.74 301.31,664.7 299.94,664.7 "
+   points="300.91,655.14 299.94,655.14 299.94,654.74 301.31,654.74 301.31,664.7 299.94,664.7 299.94,664.31 300.91,664.31 "
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
    id="polygon5408" />
 </g>    <path
@@ -4784,7 +4801,7 @@
 <polygon
    id="polygon5985"
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
-   points="170.26,664.7 170.26,654.74 171.62,654.74 171.62,655.14 170.65,655.14 170.65,664.31 171.62,664.31 171.62,664.7 " />
+   points="171.62,654.74 171.62,655.14 170.65,655.14 170.65,664.31 171.62,664.31 171.62,664.7 170.26,664.7 170.26,654.74 " />
 <path
    id="path5987"
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
@@ -4813,7 +4830,7 @@
 <polygon
    id="polygon5997"
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
-   points="203.1,654.74 204.47,654.74 204.47,664.7 203.1,664.7 203.1,664.31 204.07,664.31 204.07,655.14 203.1,655.14 " />
+   points="204.47,664.7 203.1,664.7 203.1,664.31 204.07,664.31 204.07,655.14 203.1,655.14 203.1,654.74 204.47,654.74 " />
 <path
    id="path5999"
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
@@ -4832,7 +4849,7 @@
 <polygon
    id="polygon6005"
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
-   points="223.71,664.7 223.71,654.74 225.07,654.74 225.07,655.14 224.11,655.14 224.11,664.31 225.07,664.31 225.07,664.7 " />
+   points="225.07,654.74 225.07,655.14 224.11,655.14 224.11,664.31 225.07,664.31 225.07,664.7 223.71,664.7 223.71,654.74 " />
 <path
    id="path6007"
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
@@ -4861,7 +4878,7 @@
 <polygon
    id="polygon6017"
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
-   points="256.55,654.74 257.92,654.74 257.92,664.7 256.55,664.7 256.55,664.31 257.52,664.31 257.52,655.14 256.55,655.14 " />
+   points="257.92,664.7 256.55,664.7 256.55,664.31 257.52,664.31 257.52,655.14 256.55,655.14 256.55,654.74 257.92,654.74 " />
 <path
    id="path6019"
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
@@ -4870,7 +4887,7 @@
 <polygon
    id="polygon6021"
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
-   points="269.3,664.7 269.3,654.74 270.67,654.74 270.67,655.14 269.7,655.14 269.7,664.31 270.67,664.31 270.67,664.7 " />
+   points="270.67,654.74 270.67,655.14 269.7,655.14 269.7,664.31 270.67,664.31 270.67,664.7 269.3,664.7 269.3,654.74 " />
 <path
    id="path6023"
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
@@ -4899,8 +4916,18 @@
 <polygon
    id="polygon6033"
    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
-   points="302.15,654.74 303.51,654.74 303.51,664.7 302.15,664.7 302.15,664.31 303.11,664.31 303.11,655.14 302.15,655.14 " />
-</g>  </g>
+   points="303.51,664.7 302.15,664.7 302.15,664.31 303.11,664.31 303.11,655.14 302.15,655.14 302.15,654.74 303.51,654.74 " />
+</g>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot15884"
+       style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion15886"><rect
+           id="rect15888"
+           width="565.38739"
+           height="411.67688"
+           x="-212.52151"
+           y="70.28788" /></flowRegion><flowPara
+         id="flowPara15890"></flowPara></flowRoot>  </g>
   <g
      style="display:none"
      inkscape:label="Building blocks for specifying operations"

@@ -4181,15 +4181,29 @@ status open
 
 \end_inset
 
- reduction rules,
+ reduction rules.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+,
 \color blue
  involving some specified syntactic operations
 \color inherit
 .
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 Use of a general notion of 
 \series bold
 signature
@@ -4199,6 +4213,11 @@ signature
 dependency
 \color inherit
 .
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
@@ -9454,18 +9473,7 @@ A Theory of Explicit Substitutions with Safe and Full Composition
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-Generalizing from 
-\emph on
-graphs
-\emph default
- to 
-\emph on
-bipartite graphs
-\emph default
- yields more examples:
-\end_layout
-
+\end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -9473,6 +9481,41 @@ bipartite graphs
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Extension of reduction monads
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+with associated effectivity theorem
+\end_layout
+
+\begin_layout Enumerate
+Vertices (in graphs): terms of the syntax 
+\begin_inset Formula $↝$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+configurations
+\begin_inset Quotes erd
+\end_inset
+
+ over the syntax
+\end_layout
+
+\begin_deeper
 \begin_layout ExampleBlock
 \begin_inset Argument 2
 status open
@@ -9488,18 +9531,86 @@ Examples
 
 \begin_deeper
 \begin_layout Itemize
-(small-step or big-step) cbv 
 \begin_inset Formula $\lambda$
 \end_inset
 
--calculus.
+-calculus with small-step 
+\begin_inset Formula $\beta$
+\end_inset
+
+-reduction cbv:
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+variables 
+\begin_inset Formula $\mapsto$
+\end_inset
+
+ 
+\series bold
+values 
+\series default
+(rather than terms)
+\end_layout
+
+\begin_layout Itemize
+Thus, monad of 
+\series bold
+values
+\series default
+ (rather than terms)
+\end_layout
+
+\begin_layout Itemize
+Still, reductions happen between 
+\series bold
+terms
+\series default
+\color green
+ = 
+\begin_inset Quotes eld
+\end_inset
+
+configurations
+\begin_inset Quotes erd
+\end_inset
+
+ over the monad of values
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 \begin_inset Formula $\pi$
 \end_inset
 
 -calculus
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Graph 
+\begin_inset Formula $\leadsto$
+\end_inset
+
+ Bipartite graph
+\end_layout
+
+\begin_deeper
+\begin_layout Example
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus with big-step 
+\begin_inset Formula $\beta$
+\end_inset
+
+-reduction: term 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ value.
 \end_layout
 
 \end_deeper

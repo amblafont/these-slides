@@ -9563,12 +9563,12 @@ values
 \end_layout
 
 \begin_layout Itemize
-Still, reductions happen between 
+Still, reductions between 
 \series bold
 terms
 \series default
 \color green
- = 
+ (rather than values) = 
 \begin_inset Quotes eld
 \end_inset
 
@@ -9606,7 +9606,7 @@ Graph
 \begin_inset Formula $\beta$
 \end_inset
 
--reduction: term 
+-reduction cbv: term 
 \begin_inset Formula $\rightarrow$
 \end_inset
 

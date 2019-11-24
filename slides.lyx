@@ -67,6 +67,7 @@ anchor=base west,
     \hspace{1em}%
     \insertframenumber/\inserttotalframenumber
 }
+\definecolor{green}{RGB}{0,100,0}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -147,8 +148,23 @@ anchor=base west,
 status open
 
 \begin_layout Plain Layout
-TODO: trouver truc à dire sur pourquoi j'ai pas formalisé popl, et pourquoi
- j'ai
+TODO: trouver truc à dire sur pourquoi j'ai pas formalisé popl (sinon virer
+ les macarons coq): peut etre dire que je voudrais d'abord formaliser la
+ notion générale de signature?
+\end_layout
+
+\begin_layout Plain Layout
+et tt dépendant: parler de omega groupodies d'abord on part de la théorie
+ de stypes des sensembles globualires, et on l'enrichit
+\end_layout
+
+\begin_layout Plain Layout
+et initiality project
+\end_layout
+
+\begin_layout Plain Layout
+syntaxe nominale: on ne peut pas spécifier l'équation beta, ni la beta réduction
+ car le modèle doit venir avec une substitution!
 \end_layout
 
 \end_inset
@@ -854,7 +870,7 @@ Variables in expressions
 \begin_layout Block
 \begin_inset Formula 
 \[
-(x+5)\times y
+({\color{blue}x}+5)\times{\color{red}y}
 \]
 
 \end_inset
@@ -896,9 +912,9 @@ Substitution
 \begin_inset Formula 
 \[
 \begin{cases}
-\text{replace \ensuremath{x} with \ensuremath{3}}\\
-\text{replace \ensuremath{y} with \ensuremath{z\times z}}
-\end{cases}\leadsto\quad(3+5)\times(z\times z)
+\text{replace \ensuremath{{\color{blue}x}} with \ensuremath{{\color{blue}3}}}\\
+\text{replace \ensuremath{{\color{red}y}} with \ensuremath{{\color{red}z\times z}}}
+\end{cases}\leadsto\quad({\color{blue}3}+5)\times{\color{red}(z\times z)}
 \]
 
 \end_inset
@@ -1043,7 +1059,8 @@ Syntax and recursion
 Recursion
 \series default
 \emph default
- (for syntax) = principle for investigating a piece of valid syntactic data.
+ (for syntax) = principle for investigating (step by step) a piece of valid
+ syntactic data.
 \end_layout
 
 \begin_deeper
@@ -1948,7 +1965,7 @@ initial
 
 \end_inset
 
-which is a morphism of algebras, i.e., satisfying 
+which is a morphism of algebras, i.e., satisfies 
 \begin_inset Formula $(1)$
 \end_inset
 
@@ -1994,7 +2011,7 @@ Notion of
 \series bold
 signature
 \series default
- for specifying syntax and semantics:
+ for specifying stuff
 \end_layout
 
 \begin_deeper
@@ -2026,6 +2043,10 @@ initiality
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -2041,13 +2062,68 @@ VerticalBrace{catmod}{bas}{Initial Semantics}
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Enumerate
-Rules out 
+Ensure 
 \series bold
-ineffective 
+effectiveness
 \series default
-signatures: identifies a criterion ensuring existence of the initial model.
+ of signatures = existence of the initial model.
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+On going related work
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+
+\series bold
+Initality project
+\series default
+: proving initiality of a dependent type theory
+\end_layout
+
+\begin_layout Standard
+This PhD: systematic treatment of substitution, in the untyped setting.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+untyped setting (straightforwardly generalizable to the simply-typed setting)
+\end_layout
+
+\begin_layout Itemize
+systematic treatment of substitution based on 
+\emph on
+monads 
+\emph default
+and 
+\emph on
+modules
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -2193,13 +2269,19 @@ Simultaneous substitution: variables
 \begin_deeper
 \begin_layout Itemize
 monads and modules over them
-\end_layout
+\begin_inset Note Note
+status open
 
-\end_deeper
-\begin_layout Itemize
+\begin_layout Plain Layout
 (untyped PLs)
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Example
 \begin_inset Formula $\lambda$
 \end_inset
@@ -2480,9 +2562,10 @@ Graph = a quadruple
 
  where 
 \begin_inset Formula 
-\[
-A=\{\text{arrows}\}\qquad\qquad V=\{\text{vertices}\}
-\]
+\begin{align*}
+A & =\{\text{arrows}\} & \sigma & =\text{source of an arrow}\\
+V & =\{\text{vertices\}} & \tau & =\text{target of an arrow}
+\end{align*}
 
 \end_inset
 
@@ -3893,13 +3976,25 @@ r[x\mapsto\underline{x}]=r\qquad\qquad r[f][g]=r\left[x\mapsto f(x)[g]\right]
 \begin_layout Standard
 
 \series bold
-Remark
-\series default
-: any monad 
-\begin_inset Formula $T$
+Other examples of 
+\begin_inset Formula $L$
 \end_inset
 
- is a module over itself.
+-modules
+\series default
+: 
+\begin_inset Formula $L$
+\end_inset
+
+, 
+\begin_inset Formula $L\times L$
+\end_inset
+
+, 1, 
+\begin_inset Formula $\dots$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6534,6 +6629,10 @@ commutative
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -6558,6 +6657,11 @@ includegraphics[height=3em]{images/coq_logo}};
 
 \backslash
 end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -7827,6 +7931,10 @@ elementary
 
 \series default
 -equations
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -7851,6 +7959,11 @@ includegraphics[height=3em]{images/coq_logo}};
 
 \backslash
 end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -8170,6 +8283,10 @@ textwidth]{slides/slide_19_effect_1.pdf}
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -8190,7 +8307,7 @@ Examples of elementary equations
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 We saw that elementary 
 \begin_inset Formula $\Sigma$
 \end_inset
@@ -8256,7 +8373,8 @@ equation
 ?
 \end_layout
 
-\begin_layout Frame
+\end_inset
+
 
 \end_layout
 
@@ -8272,7 +8390,7 @@ equation
 status open
 
 \begin_layout Plain Layout
-Example: 2-signature for differential 
+Example: algebraic 2-signature for differential 
 \begin_inset Formula $\lambda$
 \end_inset
 
@@ -8355,17 +8473,14 @@ and
 commutativity
 \emph default
  of 
-\begin_inset Formula $+$
+\begin_inset Formula $+,$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Itemize
+ neutrality of 
 \begin_inset Formula $0$
 \end_inset
 
- is neutral for 
+ for 
 \begin_inset Formula $+$
 \end_inset
 
@@ -8381,12 +8496,30 @@ bilinearity of
 \begin_inset Formula $+$
 \end_inset
 
-, left linearity of application, linearity of abstraction (i.e.
+, left linearity of application, linearity of abstraction
+\begin_inset Formula 
+\[
+\lambda x.(s+t)=\lambda x.s+\lambda x.t\qquad\lambda x.0=0
+\]
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+(i.e.
  
 \begin_inset Formula $\lambda x.(s+t)=\lambda x.s+\lambda x.t$
 \end_inset
 
 ).
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -8423,7 +8556,7 @@ Partial derivative
 \begin_layout Block
 \begin_inset Formula 
 \[
-\boxed{D(\lambda x.s)\cdot t\rightarrow\dfrac{\partial s}{\partial x}\cdot t}\qquad\Sigma_{\partial}(T)=T'\times T
+\boxed{D(\lambda x.s)\cdot t\rightarrow\lambda x.\left(\dfrac{\partial s}{\partial x}\cdot t\right)}\qquad\frac{\partial\_}{\partial x}\cdot\_:T'\times T\rightarrow T{\color{red}'}
 \]
 
 \end_inset
@@ -8459,17 +8592,23 @@ status open
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Sigma_{\partial}(T)=T'\times T$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Block
-\begin_inset Formula $\frac{\partial\_}{\partial x}\cdot\_$
-\end_inset
-
- = extra operation specifed by 
-\begin_inset Formula $\Sigma_{\partial}$
-\end_inset
-
- + to recursive equations.
+Still specifiable as a 1-signature + recursive equations.
 \end_layout
 
 \begin_layout Block
@@ -10299,7 +10438,11 @@ Examples
 \begin_inset Formula $\lambda$
 \end_inset
 
--calculus with explicit substitution [Kesner 2009].
+-ex = 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus with explicit substitutions [Kesner 2009].
 \end_layout
 
 \begin_layout Standard
@@ -10336,6 +10479,247 @@ A Theory of Explicit Substitutions with Safe and Full Composition
 status open
 
 \begin_layout Plain Layout
+Reduction signature for 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-ex
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Syntax
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\lambda$
+\end_inset
+
+-ex = 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calcul + explicit substitution 
+\begin_inset Formula $t[x/u]$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ is bound in 
+\begin_inset Formula $t$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+as a module morphism 
+\begin_inset Formula $L^{ex}{}'\times L^{ex}\rightarrow L^{ex}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Block
+subject to the equation
+\begin_inset Formula 
+\[
+t[x/u][y/v]=t[y/v][x/u]\quad\text{if {\color{green}\ensuremath{y\notin fv(u)}} and {\color{green}\ensuremath{x\notin fv(v)}}}
+\]
+
+\end_inset
+
+as a 
+\begin_inset Formula $\Sigma_{L^{ex}}$
+\end_inset
+
+-equation 
+\begin_inset Formula $L^{ex}{}''\times{\color{green}L^{ex}}\times{\color{green}L^{ex}}\rightrightarrows L^{ex}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Block
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Semantics
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+congruences, 
+\begin_inset Formula $\beta$
+\end_inset
+
+-reduction 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $(\lambda x.t)\,u\rightarrow t[x/u]$
+\end_inset
+
+, 
+\begin_inset Formula $\dots$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula 
+\[
+t[x/u][y/v]\rightarrow t[y/v][x/u[y/v]]\quad\text{if {\color{green}\ensuremath{x\notin fv(u)}} and {\color{red}\ensuremath{y\in fv(u)}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+metavariable module: 
+\begin_inset Formula $L^{ex}{}''\times{\color{green}L^{ex}}\times{\color{red}L_{\diamond}^{ex}}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: reduction signature for differential 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+signature for monads: 
+\begin_inset Formula $\Sigma_{L^{d}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+reductions rules:
+\begin_inset Formula 
+\[
+\redr{\beta}{(\lambda x.t)\,u}{t[x:=u]}\qquad+\qquad D(\lambda x.s)\cdot t\rightarrow\lambda x.\left(\dfrac{\partial s}{\partial x}\cdot t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Extension of reduction monads
 \end_layout
 
@@ -10350,11 +10734,11 @@ with associated effectivity theorem
 \end_layout
 
 \begin_layout Enumerate
-Vertices (in graphs): terms of the syntax 
+Vertices: syntax/monad 
 \begin_inset Formula $↝$
 \end_inset
 
- 
+ module of 
 \begin_inset Quotes eld
 \end_inset
 
@@ -10435,6 +10819,14 @@ configurations
 \end_inset
 
 -calculus
+\end_layout
+
+\begin_layout Itemize
+differential 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus (without its signature though)
 \end_layout
 
 \end_deeper
@@ -10543,10 +10935,25 @@ Perspectives
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Itemize
+Generalize the specification of vertices
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+specify the differential 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-calculus
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
 Generalize on the category of sets:
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
 specify simply-typed PLs: category of families of sets (indexed by simple
  types) 
@@ -10560,6 +10967,17 @@ specify Finster-Mimram's monad of weak
 -groupoids: category of globular sets
 \end_layout
 
+\end_deeper
+\begin_layout Itemize
+Equations between reductions
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+relational reductions (at most 1 reduction between terms).
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Block
 

@@ -568,9 +568,25 @@ monsubst}
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset CommandInset include
 LatexCommand include
-filename "/home/amblaf/Documents/manuscrit-these/lyxymatrix.lyx"
+filename "lyxymatrix.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand include
+filename "lyxymatrix.lyx"
 
 \end_inset
 

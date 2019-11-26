@@ -1424,7 +1424,7 @@ State of the art: specifying syntax
 
 \begin_deeper
 \begin_layout Standard
-Two main notions of signature for monads:
+Main notions of signature for monads:
 \end_layout
 
 \begin_layout Itemize

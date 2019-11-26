@@ -1280,6 +1280,10 @@ numbers = constants
 semantics
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
 \begin_layout AlertBlock
 \begin_inset Argument 2
 status open
@@ -1333,6 +1337,11 @@ Syntax with two constants
 \end_layout
 
 \end_deeper
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -1446,7 +1455,7 @@ Specification of semantics
 
 \begin_deeper
 \begin_layout Itemize
-SOS rules: 
+Bialgebraic approach: 
 \begin_inset Formula $\lambda$
 \end_inset
 
@@ -2011,7 +2020,7 @@ Notion of
 \series bold
 signature
 \series default
- for specifying stuff
+ = specification
 \end_layout
 
 \begin_deeper
@@ -2069,11 +2078,11 @@ VerticalBrace{catmod}{bas}{Initial Semantics}
 
 \end_deeper
 \begin_layout Enumerate
-Ensure 
+In this PhD, signatures are not automatically 
 \series bold
-effectiveness
+effective
 \series default
- of signatures = existence of the initial model.
+ = the initial model does not always exist.
 \end_layout
 
 \begin_layout ExampleBlock
@@ -2081,7 +2090,7 @@ effectiveness
 status open
 
 \begin_layout Plain Layout
-On going related work
+Ongoing related work
 \end_layout
 
 \end_inset
@@ -2460,7 +2469,7 @@ Syntax
 \series default
 ) vertices = terms e.g.
  
-\begin_inset Formula $\Omega=(\lambda x.x\,x)\,(\lambda x.x\,x)$
+\begin_inset Formula $\Omega=(\lambda x.\ x\,x)\,(\lambda x.\ x\,x)$
 \end_inset
 
 
@@ -3836,7 +3845,8 @@ module
 status open
 
 \begin_layout Plain Layout
-dire que c'est action d'un monoide, et détailler
+dire que c'est action d'un monoide, et détailler.
+ Parler des exemples?
 \end_layout
 
 \end_inset

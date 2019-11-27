@@ -10666,16 +10666,6 @@ Main theorems regarding syntax: formalized within the Coq UniMath library
 
 \end_layout
 
-\end_deeper
-\begin_layout Frame
-\begin_inset Note Note
-status open
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
 \begin_layout Block
 \begin_inset Argument 2
 status open
@@ -10691,7 +10681,7 @@ Perspectives
 
 \begin_deeper
 \begin_layout Itemize
-Generalize the specification of vertices
+Generalize reduction signatures
 \end_layout
 
 \begin_deeper
@@ -10735,16 +10725,26 @@ relational reductions (at most 1 reduction between terms).
 \end_deeper
 \end_deeper
 \end_deeper
+\begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+
+\end_layout
+
+\end_deeper
 \end_inset
 
 
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
-
-\end_layout
-
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset

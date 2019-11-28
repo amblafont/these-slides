@@ -1,0 +1,1951 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{psfrag}
+
+% decalages
+\voffset=-1in
+\hoffset=-1in
+
+% marge de gauche page impair
+\oddsidemargin=2cm
+
+% marge de gauche page pair
+\evensidemargin=2cm
+
+% largeur du text
+\textwidth=17cm
+
+% marge du haut
+\topmargin=1cm
+
+% entete
+\headheight=1cm
+\headsep=0.5cm
+
+% hauteur du text
+\textheight=24.7cm
+
+
+
+\usepackage{babel}\addto\extrasfrench{%
+   \providecommand{\og}{\leavevmode\flqq~}%
+   \providecommand{\fg}{\ifdim\lastskip>\z@\unskip\fi~\frqq}%
+}
+
+\usepackage[final]{pdfpages}
+
+\renewcommand{\FrenchLabelItem}{\textbullet}
+
+%\usepackage[dvipsnames]{xcolor}
+\usepackage[backref=page, hidelinks, hypertexnames=false]{hyperref}
+\hypersetup{
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=black,          % color of internal links (change box color with linkbordercolor)
+    citecolor=black,        % color of links to bibliography
+    filecolor=black,      % color of file links
+    urlcolor=blue,           % color of external links      
+}
+
+\usepackage[nobottomtitles*]{titlesec}
+
+\titleformat{\section}[runin]
+  {\normalfont\Large\bfseries}
+  {}{0pt}{}%
+  [\ifthenelse{\equal{\thesection}{0}}{\\\vspace*{0pt}}{\space\thesection\\}]
+
+\titlespacing{\section}
+  {0pt}{*2}{0pt}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language french
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+PROMPTEUR
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Standard
+Bonjour et bienvenue à ma soutenance de thèse, que j'ai réalisée au sein
+ de l'équipe Gallinette du laboratoire LS2N sous la direction de Nicolas
+ Tabareau et Tom Hirschowitz..
+ Je vais commencer mon exposé par une introduction en français d'environ
+ 10 minutes, puis je poursuivrai en Anglais.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Standard
+Je vais essayer de résumer le sujet de ma thèse en un transparent.
+\end_layout
+
+\begin_layout Standard
+La question qui m'intéresse est la suivante:
+\end_layout
+
+\begin_layout Standard
+Comment les présenter
+\end_layout
+
+\begin_layout Itemize
+On s'aperçoit en lisant les papiers qui sont publiés dans le domaine de
+ la théorie des langages de programmation qu'il n'y a pas de consensus bien
+ établi sur cette question, et surtout comment les présenter
+\end_layout
+
+\begin_layout Itemize
+Mon objectif dans ma thèse c'est de proposer un cadre mathématique qui permet
+ de présenter un tel langage de programmation de manière plus économique.
+\end_layout
+
+\begin_layout Itemize
+I don't claim that I can deal with this program satisfyingly in the setting
+ of my PhD, but I am optimistic that.g
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Standard
+Mais d'abord qu'est ce qu'un langage de programmation.
+ Alors je voudrais prendre l'exemple des expressions arithmétiques qu'on
+ peut taper sur une calculatrice.
+\end_layout
+
+\begin_layout Standard
+C'est-à-dire que je considère ici les expressions arithmétiques comme un
+ langage de programmation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Voyons cela un peu plus en détails: d'abord 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Il faut remarquer dans un premier temps que la calculatrice n'accepte pas
+ n'importe quelle suite de symboles.
+\end_layout
+
+\begin_layout Standard
+Par exemple si j'écris 5+), la calculatrice peut manifester son mécontentement
+ par une erreur de syntaxe.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Standard
+l'intéret d'un langage de programmation, c'est de pouvoir exécuter les programme
+s.
+\end_layout
+
+\begin_layout Standard
+un programme c'est un texte qui respecte les règles de la syntaxe.
+\end_layout
+
+\begin_layout Standard
+L'execution consiste en une évolution du programme au cours du temps.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Standard
+Les flèches sont les 
+\series bold
+réductions,
+\series default
+ cad les étapes d'exectuions
+\end_layout
+
+\begin_layout Standard
+Il y a un point très important dans les langages de programmation que je
+ considère dans ma thèse: il s'agit des variables = nom pour une expression
+ arithmétique encore indéterminé.
+\end_layout
+
+\begin_layout Standard
+Informellement, cette description correspond à la définition des monades
+ de réduction qui est dans ma thèse la notion mathématique de langage de
+ programmation.
+\end_layout
+
+\begin_layout Itemize
+Une microcavité de semiconducteurs est obtenue en enserrant une couche dont
+ l'épaisseur est inférieure au micron, appelée "cavité" entre deux miroirs
+ de Bragg.
+ 
+\end_layout
+
+\begin_layout Itemize
+Dans ce cas, un seul mode de Fabry-Pérot est admis dans la structure, et
+ le VCSEL va donc laser dans ce mode de cavité.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Standard
+Pour spécifier ce qu'est une langage de programmation, je me place dans
+ l'esprit de la sémantique initial.
+\end_layout
+
+\begin_layout Standard
+VOyons en quoi cela consiste.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Standard
+Je voudrais revenir sur la syntaxe et sur une difficulté que l'on rencontre
+ lorsque l'on s'y intéresse de près.
+\end_layout
+
+\begin_layout Standard
+Lorsque l'on s'intéresse de près à la syntaxe on découvre une difficulté:
+ c'est la notion de variable liée et d'alpha équivalence.
+\end_layout
+
+\begin_layout Standard
+Quand on veut définir une fonction par exemple ici la fonction qui calcule
+ le double d'un nombre, on est obligé d'introduire une variable pour pouvoir
+ désigner l'argument de la fonction.
+ Mais le nom de la variable est complètement arbitraire.
+ On veut pouvoir identifier ces deux définitions de fonctions qui ne diffèrent
+ que par le choix de ce nom de variable.
+ C'est ce qu'on appelle l'alpha équivalence: x est une variable liée.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Standard
+Maintenant je vais faire un petit aperçu de ce qui a été fait dans le domaine
+ de la spécification de langage de programmation.
+\end_layout
+
+\begin_layout Standard
+principe de récurrence est plus restrictif
+\end_layout
+
+\begin_layout Itemize
+Ces polaritons sont des objets particulièrement intéressants et permettent
+ une physique très riche aussi bien fondamentale qu'appliquée.
+ 
+\end_layout
+
+\begin_layout Itemize
+Comme ce sont des bosons, on peut créer un quasicondensat de polaritons.
+ 
+\end_layout
+
+\begin_layout Itemize
+Plusieurs propriétés intrigantes sont apparues comme la superfluidité de
+ ces condensats ou l'apparition de vortex quantifiés.
+ 
+\end_layout
+
+\begin_layout Itemize
+De part leur caractère hybride, mi-matière, mi-lumière, ils permettent d'explore
+r une grande variété de phénomènes non-linéaires qui, permettent à leur
+ tour de concevoir des dispositifs optoélectroniques sophistiqués : laser,
+ LED, micro-OPO, génération de rayonnement Thz, routeur, transistor etc.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Dans ma thèse j'ai donc étudié plus précisément les propriétés de polarisation
+ de ces polaritons dans divers régimes.
+ 
+\end_layout
+
+\begin_layout Itemize
+Avant d'aller plus loin, voyons de plus près à quoi ressemblent les modes
+ polaritoniques de microcavité.
+ 
+\end_layout
+
+\begin_layout Itemize
+Le milieu actif inséré au centre de la cavité optique est un puits quantique,
+ c'est à dire une fine couche de semiconducteur inséré entre des barrières
+ constitué d'un matériau de plus grande bande interdite.
+ 
+\end_layout
+
+\begin_layout Itemize
+Un photon peut être absorbé dans cette structure et exciter un électron
+ de valence vers la bande de conduction.
+ 
+\end_layout
+
+\begin_layout Itemize
+Dans ce cas il laisse derrière lui une lacune dans la bande de valence,
+ encore appelé "trou".
+ 
+\end_layout
+
+\begin_layout Itemize
+L'électron de conduction et le trou sont alors attirés par interaction coulombie
+nne, et la quasi-particule résultant de cette interaction est appelée exciton.
+ 
+\end_layout
+
+\begin_layout Itemize
+L'énergie de l'exciton dépend de son impulsion par une loi parabolique.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Les excitons sont donc confinés à l'intérieur du puits quantique.
+ 
+\end_layout
+
+\begin_layout Itemize
+La lumière, elle, reste confinée au sein de la microcavité.
+ 
+\end_layout
+
+\begin_layout Itemize
+On peut montrer qu'à cause du confinement selon z, l''énergie du mode Fabry-Péro
+t admis dans la microcavité dépend de l'angle d'incidence de la lumière,
+ ou, de manière équivalente, du vecteur d'onde dans le plan des couches
+ noté k//.
+ 
+\end_layout
+
+\begin_layout Itemize
+Cette dispersion en énergie de la lumière admise forme également une parabole,
+ dont la courbure est très forte (100 00 fois plus faible que celle de l'exciton
+).
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Maintenant considérons la situation où l'énergie du mode de cavité à incidence
+ normale est résonante avec l'énergie du mode excitonique, que l'on va considére
+r constante.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Maintenant je vais passer à la partie technique, en Anglais.
+\end_layout
+
+\begin_layout Itemize
+I will first give the mathematical definition of reduction monads which
+ accounts for the informal notion of PLs.
+\end_layout
+
+\begin_layout Itemize
+Reduction monads: Two main components: graphs and susbtitution.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Notons que ce dédoublement de modes est analogue aux modes propres de deux
+ oscillateurs couplés en physique classique.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+La proportion "excitonique" ou "photonique", que j'ai représenté par une
+ échelle de couleur, du mode de polariton considéré dépend du vecteur d'onde
+ dans le plan des couches, k//.
+ 
+\end_layout
+
+\begin_layout Itemize
+On voit qu'à angle nul, les modes de polaritons haut et bas sont exactement
+ 50/50, alors qu'à grand angle le mode de polariton bas tend vers l'exciton
+ et le mode de polariton haut vers le photon.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Standard
+Let me explain more formally how we can describe a programming language
+ as a graph.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Quelques mots sur le schéma expérimental utilisé pour détecter ces polaritons.
+ 
+\end_layout
+
+\begin_layout Itemize
+La microcavité, inséré dans un cryostat refroidi à 6K pour permettre d'atteindre
+ les conditions de couplage fort, est excitée par un faisceau en incidence
+ normale que je vais souvent appeler "pompe" dans une géométrie classique
+ de microscopie confocale.
+ 
+\end_layout
+
+\begin_layout Itemize
+La lumière réémise par la microcavité est imagée sur une caméra CCD, conjuguée
+ au plan de Fourier de l'échantillon, ou encore à l'espace des k ou l'espace
+ angulaire : à un point de cet espace correspond un angle d'émission de
+ la microcavité.
+ 
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Si l'on souhaite imager la dispersion en énergie des polaritons, on ajoute
+ un spectromètre dont les fentes d'entrée et de sortie sont conjuguées au
+ plan de Fourier.
+\end_layout
+
+\begin_layout Itemize
+Le contrôle en polarisation de la lumière incidente et émise est fait grâce
+ à l'association de lames demi-onde et d'un analyseur.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Dans ma thèse, je me suis intéressée à des microcavités structurées.
+ 
+\end_layout
+
+\begin_layout Itemize
+Les microcavités que j'ai étudiées sont exclusivement composées d'AlGaAs
+ et GaAs.
+ 
+\end_layout
+
+\begin_layout Itemize
+Et sont fabriquées par le LPN.
+\end_layout
+
+\begin_layout Itemize
+La première partie est consacrée à une microcavité gravée en fils de quelques
+ micromètres de large et d'un mm de long.
+ 
+\end_layout
+
+\begin_layout Itemize
+La deuxième partie s'intéresse à une microcavité double, composée de deux
+ microcavités superposées.
+ 
+\end_layout
+
+\begin_layout Itemize
+La structuration permet de réaliser une ingénierie des modes photoniques
+ admis dans la microcavité.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Nous allons tout d'abord nous intéresser aux origines d'un dédoublement
+ de polarisation qui a lieu dans des microcavités gravées en fils.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Vous voyez ici en trait plein le mode Fabry Pérot admis dans une microcavité
+ planaire.
+ 
+\end_layout
+
+\begin_layout Itemize
+Lorsqu'on grave cette microcavité planaire en fil, le confinement latéral
+ induit des conditions aux limites pour le mode optique qui résulte en une
+ nouvelle quantification.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ainsi, un multiplet de modes optiques sont admis dans la structures, indicés
+ j0, j1, j2...
+ 
+\end_layout
+
+\begin_layout Itemize
+L'espacement entre ces modes dépend de la largeur du fil.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ces différents modes photoniques vont se coupler au mode excitonique et
+ résulter en d'autant modes polaritoniques hauts et bas.
+ 
+\end_layout
+
+\begin_layout Itemize
+Nous allons nous intéresser aux modes polaritoniques bas qui sont bien visibles
+ en photoluminescence, et comparer leur dispersion en fonction de la polarisatio
+n de la lumière, parallèle ou perpendiculaire à l'axe du fil.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Vous voyez ici les branches de polaritons basses obtenues expérimentalement.
+\end_layout
+
+\begin_layout Itemize
+On observe ici les trois premiers modes, polarisés parallèlement à l'axe
+ du fil à droite, et polarisés perpendiculairement à l'axe du fil à gauche.
+\end_layout
+
+\begin_layout Itemize
+On constate que ces modes ne sont pas à la même énergie : le mode polarisé
+ perpendiculairement à l'axe du fil est au-dessus du mode polarisé parallèlement
+ à l'axe du fil.
+\end_layout
+
+\begin_layout Itemize
+On constate de plus que ce dédoublement semble augmenter lorsque le mode
+ polaritonique se rapproche de l'exciton.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Ce dédoublement a déjà été observé maintes fois dans la littérature.
+ 
+\end_layout
+
+\begin_layout Itemize
+Il était attribué à des contraintes thermiques présentes à basse température
+ dûes au collage à chaud de l'échantillon sur le porte-échantillon.
+ 
+\end_layout
+
+\begin_layout Itemize
+Il a même été utilisé par Vincenzo Ardizzone pour étudier des processus
+ de diffusion entre des branches de polarisation différente.
+\end_layout
+
+\begin_layout Itemize
+Cependant, Vincenzo Ardizzone avait remarqué à la fin de sa thèse qu'en
+ fonction du désaccord exciton-photon, on pouvait observer un changement
+ de signe de ce dédoublement, c'est-à-dire que le mode polarisé parallèlement
+ à l'axe du fil était à plus haute énergie que le mode polarisé perpendiculairem
+ent.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Pour mieux comprendre cette observation, j'ai mesuré ce dédoublement pour
+ le mode le plus bas j0 en fonction du désaccord exciton-photon pour 5 largeurs
+ de fils différentes.
+ 
+\end_layout
+
+\begin_layout Itemize
+Chaque point que vous voyez là correspond donc à deux mesures de la dispersion
+ pour des polarisations parallèles et orthogonales à l'axe du fil.
+ 
+\end_layout
+
+\begin_layout Itemize
+On observe une loi générale décrivant le dédoublement en fonction du désaccord,
+ indépendemment de la taille du fil.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ce dédoublement reste par ailleurs inchangé lorsque l'on change la technique
+ de collage sur le porte échantillon, donc les justifications usuelles de
+ ce dédoublement doivent être écartés.
+\end_layout
+
+\begin_layout Itemize
+De plus
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+On voit une exaltation de ce dédoublement, jusqu'à 1meV, pour pour des désaccord
+s nuls.
+\end_layout
+
+\begin_layout Itemize
+On voit que pour des désaccords très négatifs, ce dédoublement devient négatif.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Quelles contributions peuvent être prise en compte pour expliquer ce résultat
+ ? 
+\end_layout
+
+\begin_layout Itemize
+Le polariton résulte du couplage entre un mode de cavité, un mode excitonique.
+ 
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+On peut donc prendre en compte 3 contributions.
+ 
+\end_layout
+
+\begin_layout Itemize
+D'abord, un dédoublement d'origine photonique, par exemple dû à une biréfringenc
+e induite dans les miroirs de Bragg.
+ 
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Ensuite, un dédoublement d'origine excitonique, dû à la structure fine de
+ l'exciton.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Et enfin, et c'est l'originalité de notre travail, un dédoublement dû à
+ une différence de couplage Rabi entre les polarisations parallèles et orthogona
+les.
+\end_layout
+
+\begin_layout Itemize
+Ces trois contributions vont intervenir de manière différente en fonction
+ du desaccord.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+On remarque qu'en prenant en compte ces trois contributions, on peut fort
+ bien reproduire les points expérimentaux.
+ 
+\end_layout
+
+\begin_layout Itemize
+Le résultat du fit nous permet de quantifier la valeur de ces trois contribution
+s.
+\end_layout
+
+\begin_layout Itemize
+Concernant les signes de ces trois contributions, on voit qu'ils sont négatifs.
+ 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+En effet, on observe un dédoublement négatif à fort désaccord négatif :
+ ce qui justifie le signe de la contribution photonique.
+ 
+\end_layout
+
+\begin_layout Itemize
+Le signe négatif de la contribution excitonique vient de l'extrapolation
+ de la courbe à désaccord positif.
+\end_layout
+
+\begin_layout Itemize
+La contribution Rabi négative correspond à un écartement moins grand entre
+ les polaritons haut et bas : le mode polarisé perpendiculairement va donc
+ remonter par rapport au mode polarisé parallèlement.
+ Son effet est donc compté positivement dans le dédoublement total.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Plusieurs observations
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Mêmes ordres de grandeur pour les 3 contributions -> aucune négligeable
+\end_layout
+
+\begin_layout Itemize
+Contribution la plus importante : 
+\begin_inset Formula $\delta\Omega_{R}$
+\end_inset
+
+ ce qui est déjà en soi une surprise puisque jusqu'ici il n'avait jamais
+ été pris en compte dans les fils.
+ 
+\end_layout
+
+\begin_layout Itemize
+Cette contribution intervient de façon marquante à désaccord nul, ce qui
+ correspond également à l'endroit où le dédoublement est exalté.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+A présent nous nous interrogeons sur l'origine physique de ces trois contributio
+ns.
+\end_layout
+
+\begin_layout Itemize
+Les fils polaritoniques que j'ai étudiés sont gravés jusqu'au substrat,
+ représenté ici en blanc, ce qui représente une profondeur de gravure d'environ
+ 7µ.
+\end_layout
+
+\begin_layout Itemize
+Ce substrat est formé d'Arséniure de Gallium, tandis que la microcavité
+ est formée par plusieurs couches d'Arséniure de Gallium Aluminium avec
+ des compositions variées d'Aluminium.
+ 
+\end_layout
+
+\begin_layout Itemize
+Le substrat et les matériaux constituant la microcavité ont une légère différenc
+e de paramètre de maille.
+\end_layout
+
+\begin_layout Itemize
+La maille cristalline du substrat est en effet plus petite que la maille
+ cristalline moyenne de la structure.
+\end_layout
+
+\begin_layout Itemize
+Le substrat induit donc une compression sur la microcavité gravée.
+\end_layout
+
+\begin_layout Itemize
+On peut montrer avec un modèle mécanique que cette contrainte infligée par
+ le substrat est relâchée sur une distance caractéristique très faible dans
+ la direction latérale : une fraction de la largeur du fil, soit maximum
+ 1 micron, indépendamment de la largeur du fil.
+ 
+\end_layout
+
+\begin_layout Itemize
+Cette longueur de relaxation des contraintes est en tout cas bien plus petite
+ que la hauteur du fil.
+\end_layout
+
+\begin_layout Itemize
+Au contraire, elle n'est pas du tout relâchée dans la direction longitudinale.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Standard
+It simplifies the mathematical definition to consider that there is only
+ one operation instead of multiple ones.
+\end_layout
+
+\begin_layout Itemize
+J'ai donc calculé la dilatation induite sur l'axe court par cette relaxation
+ de contraintes anisotrope.
+\end_layout
+
+\begin_layout Itemize
+Ensuite, on peut calculer la biréfringence induite par cette anisotropie
+ ce qui va nous donner une estimation théorique de la composante PHOTONIQUE
+ du dédoublement.
+\end_layout
+
+\begin_layout Itemize
+Par ailleurs, l'interaction d'échange à courte portée entre l'électron et
+ le trou va être exaltée, conduisant à l'apparition une contribution de
+ nature EXCITONIQUE 
+\end_layout
+
+\begin_layout Itemize
+La présence de contraintes anisotropes va également modifier les propriétés
+ de l'exciton et notamment sa force d'oscillateur : le couplage RABI va
+ se dédoubler.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+On obtient les bons signes 
+\end_layout
+
+\begin_layout Itemize
+et des ordres de grandeurs relativement satisfaisants.
+ 
+\end_layout
+
+\begin_layout Itemize
+On n'a pas un accord parfait avec les paramètres expérimentaux issus du
+ fit.
+\end_layout
+
+\begin_layout Itemize
+Mais ces estimations théoriques ont été réalisées en utilisant des coefficients
+ et des paramètres théoriques parfois extrapolés à basse température et
+ à des compositions en Aluminium non tabulées.
+ 
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Cette étude permet de prévoir de façon quasi-déterministe la valeur du dédoublem
+ent observé, et donc permet une ingénierie a priori pour le moduler à loisir.
+\end_layout
+
+\begin_layout Itemize
+Voici une liste des ingrédients possibles :
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Varier le désaccord permet de contrôler la valeur et le signe de ce dédoublement.
+\end_layout
+
+\begin_layout Itemize
+Varier la profondeur de gravure permet de moduler la relaxation anisotrope
+ des contraintes.
+\end_layout
+
+\begin_layout Itemize
+La composition des DBR et leur différence de paramètre de maille avec le
+ substrat est également un paramètre important.
+\end_layout
+
+\begin_layout Itemize
+Enfin, et cela je ne l'ai pas montré, l'angle de la gravure et la symétrie
+ du mode jouent également un rôle important dans la valeur de la contribution
+ d'origine photonique.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Dans quels type de système un contrôle de la valeur de ce dédoublement pourrait-
+il être intéressant ?
+\end_layout
+
+\begin_layout Itemize
+Dans l'optique d'utilisation des polaritons dans des circuits logiques,
+ il va falloir graver des guides dans des microcavités.
+ Vous voyez ici des exemples de barrière tunnel, d'interféromètre, ou de
+ routeur à base de polaritons qui utilisent une géométrie proche du fil
+ photonique.
+\end_layout
+
+\begin_layout Itemize
+Or, la rotation induite sur le pseudo-spin par les effets de confinement
+ et de gravure pourrait être exploités pour influencer les performances
+ de tels dispositifs.
+ 
+\end_layout
+
+\begin_layout Itemize
+Récemment, des géométries encore plus complexes ont été proposées et étudiées,
+ comme ce réseau en nid d'abeille.
+\end_layout
+
+\begin_layout Itemize
+Dans ces objets, des états de bords localisés, potentiellement protégés
+ topologiquement, sont confinés et présentent également un dédoublement
+ longitudinal transverse qui pourrait être interprêtés à l'aide de notre
+ modèle.
+ 
+\end_layout
+
+\begin_layout Itemize
+Pour résumer, ce travail peut être utile pour interpréter et prédire le
+ résultats de systèmes qui se focalisent sur la propagation des polaritons
+ dans des microcavités en dimension réduite.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+This result was published in 2018
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Dans ce cas, deux modes de Fabry-Pérot sont admis dans la structure.
+ 
+\end_layout
+
+\begin_layout Itemize
+Leur espacement dépend du nombre de miroir de bragg intermédiaires entre
+ les deux cavités.
+ 
+\end_layout
+
+\begin_layout Itemize
+Dans notre cas, les deux modes de cavités sont séparés par une dizaine de
+ milli-electronvolts.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Ces deux modes de cavité vont se coupler au mode excitonique.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ce couplage résulte en 2 branches de polariton basses et deux branches de
+ polariton haute.
+ 
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Dans ma thèse je me suis concentrée sur les deux branches de polariton basses.
+\end_layout
+
+\begin_layout Itemize
+Elles présentent l'avantage d'être situées à des énergies inférieures à
+ celle de l'exciton, ce qui permet de s'affranchir des relaxation vers ses
+ états.
+ 
+\end_layout
+
+\begin_layout Itemize
+Utiliser une microcavité double permet d'obtenir un deuxième avantage remarquabl
+e : l'une des deux branches peut être utilisée comme canal de contrôle,
+ tandis que l'autre peut être utilisée comme signal.
+\end_layout
+
+\begin_layout Itemize
+Je vais donc regarder différents type de diffusion de la branche contrôle
+ vers la branche signal.
+ 
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+A faible puissance, on reste dans un régime linéaire de diffusion Rayleigh
+ élastique : les polaritons photocréés se cognent sur des défauts et changent
+ leur vecteur d'onde en conservant leur énergie.
+ 
+\end_layout
+
+\begin_layout Itemize
+Cela est possible car un mode à la même énergie à un vecteur d'onde non
+ nul existe sur la branche signal.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+En augmentant l'intensité de la pompe optique, on peut démarrer un processus
+ non-linéaire similaire à un mélange à 4 ondes.
+ 
+\end_layout
+
+\begin_layout Itemize
+Par exemple, 2 polaritons de pompe se transforment en un signal et un complément
+aire situés à des vecteurs d'onde opposés sur la branche signal.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Si on augmente encore la puissance, alors ce processus peut devenir réversible
+ et on entre dans le processus d'Oscillation paramétrique optique : les
+ deux polaritons signaux et complémentaires se recombinent pour reformer
+ des polaritons de pompe.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Ces trois processus ont un point commun : la pompe est envoyée à incidence
+ normale, et ils sont dégénérés en énergie.
+\end_layout
+
+\begin_layout Itemize
+Ils viennent peupler la branche de polariton à un angle bien précis.
+ 
+\end_layout
+
+\begin_layout Itemize
+Dû à l'invariance par rotation dans le plan des couches, un cône de lumière
+ est alors réémis de l'échantillon, qui forme donc un cercle dans le plan
+ de Fourier, appelé « cercle élastique ».
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Mais en réalité, les polarisations TE et TM ne se couplent pas de la même
+ façon aux modes polaritoniques.
+ 
+\end_layout
+
+\begin_layout Itemize
+A angle d'émission ou d'excitation non-nul, la lumière polarisée en TM se
+ couple moins bien au mode excitation que celle polarisée TE qui reste dans
+ le plan des couches.
+ 
+\end_layout
+
+\begin_layout Itemize
+A angle nul, il n'y a aucune différence entre les deux polarisations.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Cette anisotropie résulte en un dédoublement TE-TM des branches de polaritons
+ qui est nul à incidence normale et qui augmente avec le vecteur d'onde
+ des polaritons.
+ 
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Ainsi, il y a en réalité deux cercles élastiques dont les modes correspondent
+ à des polarisations linéaires opposées.
+\end_layout
+
+\begin_layout Itemize
+La base de ce dédoublement dépend de la direction d'émission de la lumière.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Ce dédoublement TE-TM affecte la propagation des polaritons dans le régime
+ de diffusion élastique.
+\end_layout
+
+\begin_layout Itemize
+En effet, si l'on choisit bien la polarisation initiale de la pompe, leur
+ pseudo-spin, qui est équivalent à la polarisation de la lumière associée,
+ va subir une précession pendant la propagation.
+\end_layout
+
+\begin_layout Itemize
+Ce phénomène résulte en une séparation angulaire entre des polaritons de
+ pseudo-spins opposés, comme visible sur cette image qui représente le degré
+ de polarisation circulaire du cercle élastique 
+\begin_inset Quotes cld
+\end_inset
+
+moyen
+\begin_inset Quotes crd
+\end_inset
+
+ dans le plan de Fourier.
+\end_layout
+
+\begin_layout Itemize
+Ce phénomène a été démontré en 2007 dans l'équipe d'Alberto Bramati sur
+ une microcavité simple et est appelé 
+\begin_inset Quotes cld
+\end_inset
+
+Effet Hall Optique de Spin
+\begin_inset Quotes crd
+\end_inset
+
+ par analogie avec l'effet hall de spin qui sépare spatialement les spins
+ opposés pendant leur propagation.
+\end_layout
+
+\begin_layout Itemize
+La pompe était envoyée à incidence oblique pour être résonante avec la branche
+ de polariton basse et permettre la diffusion élastique sur le cercle élastique.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+L'avantage de la microcavité double, c'est qu'elle permet d'aller sonder
+ cet effet hall optique de spin en séparant spatialement la pompe du cercle
+ élastique.
+\end_layout
+
+\begin_layout Itemize
+La pompe est ainsi envoyée à incidence normale résonante avec la branche
+ 
+\begin_inset Quotes cld
+\end_inset
+
+contrôle
+\begin_inset Quotes crd
+\end_inset
+
+ de la microcavité double, tandis que le cercle élastique est formé sur
+ la branche 
+\begin_inset Quotes cld
+\end_inset
+
+signal
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+D'autre part, l'écartement entre les deux branches basses sélectionne un
+ cercle élastique situé à plus grand angle ce qui permet d'amplifier la
+ valeur du dédoublement TE-TM.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Cet effet hall optique de spin est un donc effet purement linéaire dans
+ lesquels deux ingrédients sont essentiels : dédoublement TE-TM et diffusion
+ Rayleigh élastique (pour la propagation des polaritons).
+ 
+\end_layout
+
+\begin_layout Itemize
+Comment CONTRôLER cet effet hall optique de spin ? Il faut pour cela un
+ élément non-linéaire.
+ 
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Pour cela, on va d'abord se placer dans une configuration de polarisation
+ légèrement différente de celle proposée par l'expérience de 2007.
+ 
+\end_layout
+
+\begin_layout Itemize
+Cette fois-ci la pompe va être polarisée circulairement et on va regarder
+ le degré de polarisation linéaire.
+\end_layout
+
+\begin_layout Itemize
+Dans ce cas, on s'attend au même type de texture en polarisation, avec un
+ basculement entre la polarisation horizontale et la polarisation verticale
+ à un angle 
+\begin_inset Formula $\phi_{0}$
+\end_inset
+
+ qui correspond à 90°.
+\end_layout
+
+\begin_layout Itemize
+L'élément non-linéaire permettant le contrôle de l'effet hall optique de
+ spin va être apporté par les interactions entre les polaritons de pompe
+ lorsque la puissance optique d'excitation augmente.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Alors on s'attend à une rotation de la texture de polarisation caractéristique
+ de l'OSHE.
+ L'angle 
+\begin_inset Formula $\phi_{0}$
+\end_inset
+
+ de basculement du degré de polarisation va diminuer.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Pour mesurer cette rotation, j'ai réalisé une analyse précise de la répartition
+ de la polarisation le long du cercle élastique, ce qui me permet d'obtenir
+ la valeur l'angle caractéristique.
+\end_layout
+
+\begin_layout Itemize
+J'ai réalisé cette expérience pour plusieurs valeurs de la puissance optique
+ de pompe.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+This reduction rule is not straightforward to take into account because
+ of the side condition 
+\begin_inset Formula $y\in fv(u)$
+\end_inset
+
+.
+ It says that the metavariable 
+\begin_inset Formula $u$
+\end_inset
+
+ really depends on the fresh variable 
+\begin_inset Formula $y$
+\end_inset
+
+, so we have to construct a specific module of terms which really depends
+ on free variables.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+However, we cannot provide a signature for it even in this generalized setting.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+La formation de ce motif peut être expliquée par une physique similaire
+ à celle qui régit l'apparition des motifs de Turing, comme les tâches présentes
+ sur le pelage des guépards.
+ 
+\end_layout
+
+\begin_layout Itemize
+Il s'agit d'une instabilité stabilisée par des processus non-linéaires.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Une description théorique simplifiée des processus non-linéaires permettant
+ de stabiliser le motif hexagonal met en jeu trois contributions.
+\end_layout
+
+\begin_layout Itemize
+Le premier, que je vais appeler "du premier ordre" couple deux polaritons
+ pompe avec deux états du cercle élastique qui correspondent à des vecteurs
+ d'onde opposés.
+ 
+\end_layout
+
+\begin_layout Itemize
+Le 2e met en jeu trois états sur le cercle élastique en plus de la pompe.
+ 
+\end_layout
+
+\begin_layout Itemize
+Enfin, un troisième processus met en jeu quatre états du cercle élastique.
+\end_layout
+
+\begin_layout Itemize
+Tous ces processus sont similaires à un mélange à 4 ondes en optique.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Notons que ce 2e processus ne fonctionne que pour une géométrie hexagonale
+ dans le 2e processus, afin d'assurer l'accord de phase.
+\end_layout
+
+\begin_layout Itemize
+J'ai donc fait une expérience pour vérifier que ce mécanisme était bien
+ à l'oeuvre dans la microcavité double en régime OPO.
+\end_layout
+
+\begin_layout Itemize
+Pour simplifier la discussion, je me suis placée dans le régime d'amplification
+ paramétrique.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Voici une image de l'expérience réalisée.
+\end_layout
+
+\begin_layout Itemize
+J'ai placé deux sondes sont situées de part et d'autre de la pompe, résonante
+ avec le cercle élastique et séparées par 120°.
+\end_layout
+
+\begin_layout Itemize
+L'interaction entre les polaritons de pompe et la sonde 1 par le processus
+ non-linéaire du premier ordre entraîne une densité de polaritons située
+ ici.
+\end_layout
+
+\begin_layout Itemize
+De même, une densité de polaritons apparait ici dû à l'interaction entre
+ les polaritons de la sonde 2 et de la pompe.
+\end_layout
+
+\begin_layout Itemize
+Le point intéressant est la densité de polaritons qu'on obtient entre les
+ deux sondes ici.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Observez bien le point du signal du second ordre.
+\end_layout
+
+\begin_layout Itemize
+Si on retire la sonde 1, alors il disparaît,
+\end_layout
+
+\begin_layout Itemize
+Si on retire la Sonde 2, alors il disparaît,
+\end_layout
+
+\begin_layout Itemize
+Si on retire la pompe, il disparait aussi.
+\end_layout
+
+\begin_layout Itemize
+C'est donc bien la présence des 3 qui est nécessaire.
+\end_layout
+
+\begin_layout Itemize
+Maintenant, je sors des conditions d'accord de phase en déplacant légèrement
+ la sonde 1 puis la sonde 2 : le signal disparaît.
+\end_layout
+
+\begin_layout Itemize
+Ce film montre donc que le signal du 2e ordre
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+résulte bien de l'intéraction entre la pompe et les 2 sondes
+\end_layout
+
+\begin_layout Itemize
+et qu'il est spécifique de la géométrie hexagonale
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+A présent, je vais m'intéresser de plus près au processus du 1er ordre.
+\end_layout
+
+\begin_layout Itemize
+Ce processus est en effet commun à tous les motifs observés, 2, 4, 6 ou
+ 8 points.
+\end_layout
+
+\begin_layout Itemize
+et plus précisément à ses règles de sélection en polarisation.
+\end_layout
+
+\begin_layout Itemize
+Cela pourrait nous donner des renseignements sur le mécanisme de formation
+ des motifs à 4 et 8 points, ou sur la déformation des hexagones.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Je vais donc placer une seule sonde et observer l'intensité du signal du
+ 1er ordre résultant de l'interaction entre les polaritons de pompe et de
+ sonde.
+\end_layout
+
+\begin_layout Itemize
+La pompe est polarisée linéairement.
+\end_layout
+
+\begin_layout Itemize
+Le sonde peut être soit co-polarisée à la pompe, soit polarisée dans la
+ direction croisée.
+\end_layout
+
+\begin_layout Itemize
+De même, la détection peut se faire soit dans le canal de polarisation de
+ la pompe, soit dans le canal croisé.
+\end_layout
+
+\begin_layout Itemize
+On a donc 4 configurations possibles d'expérience.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Prenons l'exemple de la configuration où la sonde ET la détection sont dans
+ le canal de polarisation croisée à la pompe.
+\end_layout
+
+\begin_layout Itemize
+On zoome sur le signal.
+\end_layout
+
+\begin_layout Itemize
+On va tourner progressivement la polarisation de la pompe et par conséquent
+ celle de la sonde et de la détection en même temps.
+\end_layout
+
+\begin_layout Itemize
+Pour chaque valeur de la polarisation, on regarde l'intensité du signal
+ en fonction de la norme du vecteur d'onde.
+\end_layout
+
+\begin_layout Itemize
+On construit ainsi une carte de l'intensité du signal en fonction de la
+ polarisation de la pompe en abscisse et de la position du signal dans le
+ plan de Fourier en ordonnée.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+On observe que le signal est intense pour quatre valeurs de la polarisation,
+ qui correspondent à des polarisations parallèles ou perpendiculaires à
+ l'axe formé par la pompe et la sonde.
+\end_layout
+
+\begin_layout Itemize
+Deuxièmement, ces quatre maxima sont sont situés à deux valeurs du vecteur
+ d'onde.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Ces deux résultats s'expliquent fort bien en prenant en compte dédoublement
+ TE-TM.
+\end_layout
+
+\begin_layout Itemize
+En effet, pour la première mesure, la pompe est polarisée parallèlement
+ à l'axe pompe-sonde, et on regarde le canal de polarisation croisé pour
+ le signal : celui-ci va donc être résonant avec le cercle élastique 
+\begin_inset Quotes cld
+\end_inset
+
+TE
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+A 90°, la pompe est polarisée perpendiculairement à cet axe, et le canal
+ de polarisation croisée correspond donc au cercle élastique 
+\begin_inset Quotes cld
+\end_inset
+
+TM
+\begin_inset Quotes crd
+\end_inset
+
+ situé à une amplitude en vecteur d'onde plus faible.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+A présent, regardons ce que l'on obtient dans les autres configurations.
+\end_layout
+
+\begin_layout Itemize
+La première colonne correspond aux résultats expérimentaux et la deuxième
+ ligne aux résultats des simulations obtenus par nos collaborateurs théoriciens
+ 
+\end_layout
+
+\begin_layout Itemize
+Vous reconnaissez ici la carte que nous venons de construire.
+\end_layout
+
+\begin_layout Itemize
+Dans la configuration où la polarisation de la pompe, de la sonde et de
+ la détection sont alignées, on observe le même type de figure, avec un
+ rôle inversé des polarisations TE et TM.
+\end_layout
+
+\begin_layout Itemize
+On observe néanmoins que la configuration qui renverse la polarisation est
+ plus efficace que la configuration qui les conserve.
+\end_layout
+
+\begin_layout Itemize
+D'autre part, dans les configurations où sonde et détection sont en polarisation
+ croisée, on observe un faible signal.
+\end_layout
+
+\begin_layout Itemize
+La présence d'un signal, même faible, est déjà en soi surprenant puisque
+ cette configuration correspond à une situation qui ne conserve pas le spin
+ : deux polaritons de pompe de même polarisation sont transformés en un
+ polariton de sonde et un polariton signal de polarisations opposées.
+\end_layout
+
+\begin_layout Itemize
+C'est donc, encore une fois, un effet dû au dédoublement TE-TM qu'on observe
+ un signal dans ces configurations.
+ 
+\end_layout
+
+\begin_layout Itemize
+En effet, lorsque la base de polarisation de la sonde n'est pas situé selon
+ les modes propres, il y a une rotation du pseudo-spin qui permet l'accord
+ de phase.
+\end_layout
+
+\begin_layout Itemize
+Ce qui explique qu'ils ne soient pas situés sur le cercle élastique correspondan
+t à l'énergie de la pompe.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Pour conclure, cette expérience montre que 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+la configuration qui renverse la polarisation linéaire est la plus efficace.
+ Cet état de fait est dû aux interactions polaritons-polaritons qui dépendent
+ du spin et qui favorise cette configuration.
+ Ce qui explique en partie pourquoi on observe le motif dans le canal de
+ polarisation croisée par rapport à la pompe.
+\end_layout
+
+\begin_layout Itemize
+le signal varie entre deux positions du plan de Fourier, à cause du dédoublement
+ TE-TM.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Pour conclure, cette expérience montre que l'effet du dédoublement TE-TM
+ splitting doit absolument être pris en compte dans les expérience d'oscillation
+ paramétrique optique dans les microcavités de semiconducteurs.
+\end_layout
+
+\begin_layout Itemize
+Remarquons que le dédoublement TE-TM, en outre, est responsable d'une symétrie
+ d'ordre 4, contrairement aux interactions polaritons-polaritons qui favorisent
+ les processus situés dans une géométrie hexagonale.
+\end_layout
+
+\begin_layout Itemize
+Cette observation est une piste pour comprendre la formation de motifs à
+ 4 points qui pour l'instant est un mystère théorique.
+ Ou bien pourquoi les hexagones observés ne sont pas parfaitement réguliers.
+ Nous continuons de travailler sur ces questions avec nos collaborateurs
+ théoriciens.
+\end_layout
+
+\begin_layout Itemize
+Il joue un grand rôle dans les règles de sélection en polarisation du mélange
+ à quatre ondes.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Ce dédoublement TE-TM joue un si grand rôle que la polarisation de la pompe
+ guide l'orientation du motif.
+\end_layout
+
+\begin_layout Itemize
+La polarisation de la pompe est en effet un degré de liberté robuste qui
+ permet de contrôler l'orientation de ces motifs.
+\end_layout
+
+\begin_layout Itemize
+Dans cet example, vous allez voir un motif à quatre points qui tourne AVEC
+ la polarisation de pompe.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Notons que l'orientation d'un motif à deux points sur 360° fonctionne également.
+\end_layout
+
+\begin_layout Itemize
+Notre microcavité double permet donc d'envisager un dispositif de 
+\begin_inset Quotes cld
+\end_inset
+
+micro-phare
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Ainsi, en modulant très rapidement la polarisation de la pompe optique on
+ peut varier très rapidement la direction de la lumière émise.
+\end_layout
+
+\begin_layout Itemize
+Ce micro-phare est donc un convertisseur temps-espace.
+\end_layout
+
+\begin_layout Itemize
+Avec ce système, on pourrait envisager un microscope à balayage ultra-rapide.
+\end_layout
+
+\begin_layout Itemize
+Celui-ci pourrait permettre d'obtenir des informations temporelles très
+ précises en séparant spatialement les informations reçues (par exemple
+ l'intensité) à chaque unité de temps.
+\end_layout
+
+\begin_layout Itemize
+Son fonctionnement serait analogue, dans le principe, au fonctionnement
+ d'une streak-camera.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Pour conclure, j'ai démontré avec ces diverses expériences, que la polarisation
+ et la puissance de la pompe sur la branche contrôle peuvent être manipulées
+ pour contrôler la densité de polaritons présente sur la branche signal.
+\end_layout
+
+\begin_layout Itemize
+De nouvelles expériences pourraient nous permettre d'encore mieux comprendre
+ la physique de ces motifs.
+\end_layout
+
+\begin_layout Itemize
+En particulier, les conditions de conversion de la pompe optique en une
+ densité de polaritons doivent être mieux comprises afin d'être améliorées.
+\end_layout
+
+\begin_layout Itemize
+Pour l'instant cette conversion correspond à 1 pour mille.
+\end_layout
+
+\begin_layout Itemize
+Il faudrait dans l'idéal abaisser ce seuil pour envisager des dispositifs
+ d'interrupteurs optiques pour la photonique ultra-rapide.
+\end_layout
+
+\begin_layout Itemize
+D'autre part, les mécanismes permettant la formation de motifs à 4 et 8
+ points pourraient être clarifiés en regardant les correlations entre les
+ différents points.
+\end_layout
+
+\begin_layout Itemize
+Enfin, la dynamique de formation de ces motifs doit être vérifiée expérimentalem
+ent.
+ 
+\end_layout
+
+\begin_layout Itemize
+Les temps d'interaction entre polaritons et leur durée de vie étant très
+ courts (qq ps), on s'attend à un temps de switch très rapide.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Une fois ces différents points éclaircis, la microcavité double représente
+ un bon candidat pour des applications en optique ultra rapides : modulateurs
+ optiques entièrement contrôble optiquement (plus de problème de faux contacts
+ !), micro-phares.
+\end_layout
+
+\begin_layout Itemize
+Le contrôle de l'effet Hall Optique de spin grâce au pompage résonant sur
+ la branche de contrôle permet aussi d'envisager des applications spin-optroniqu
+es.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Je voudrais terminer en remerciant mes nombreux collaborateurs théoriciens
+ avec lesquels j'ai travaillé très étroitement.
+ 
+\end_layout
+
+\begin_layout Itemize
+Stefan Schumacher ici présent, qui travaille à Paderborn, et Przem Lewandowski,
+ Rolf Binder, Nai-Hang Kwong et Samuel Luk à l'université d'Arizona sont
+ ceux avec lesquels j'ai le plus interagi.
+ Ils travaillent en outre en collaboration avec une équipe de l'université
+ chinoise d'Hong Kong dirigée par le professeur Leung.
+\end_layout
+
+\begin_layout Section
+Slide
+\end_layout
+
+\begin_layout Itemize
+Enfin un immense merci à Emmanuel et Philippe qui m'ont encadrée avec brio
+ pendant trois ans.
+ J'ai énormément appris à votre contact et ce dans une ambiance excellente.
+\end_layout
+
+\begin_layout Itemize
+Ambiance qui est partagée d'ailleurs uniformément dans le groupe d'optique.
+\end_layout
+
+\begin_layout Itemize
+Une thèse est loin d'être un travail solitaire et je voudrais ici saluer
+ l'aide apportée par les équipes techniques et administratives.
+ Mention spéciale pour les cryogénistes qui ont réussi à me fournir de l'helium
+ tous les jours pendant 3 ans et malgré les interruptions intempestives
+ de courant et autres désagréments liés aux travaux du bâtiment.
+\end_layout
+
+\begin_layout Itemize
+Stéphane avec lequel j'ai découvert avec ravissement la présence de motifs
+ de Turing dans le salar d'Uyuni en Bolivie.
+\end_layout
+
+\end_body
+\end_document

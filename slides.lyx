@@ -598,7 +598,7 @@ What is a programming language, mathematically?
 \end_layout
 
 \begin_layout Itemize
-In the literature, no common well-established discipline.
+In the literature, no well-established consensus.
 \end_layout
 
 \begin_layout ExampleBlock
@@ -1132,7 +1132,7 @@ actual
 
 \end_deeper
 \begin_layout Itemize
-Syntactic model 
+Programming language 
 \begin_inset Formula $=$
 \end_inset
 
@@ -1477,6 +1477,10 @@ Modules
 \end_inset
 
  [Hirschowitz-Maggesi, 2007].
+\end_layout
+
+\begin_layout Block
+This thesis: modules
 \end_layout
 
 \end_deeper
@@ -9771,6 +9775,10 @@ Reduction signatures
 
 \end_layout
 
+\begin_layout Frame
+Reduction signatures specify reduction monads.
+\end_layout
+
 \begin_deeper
 \begin_layout Block
 \begin_inset Argument 2
@@ -9862,10 +9870,11 @@ Example:
 \end_layout
 
 \begin_layout Itemize
-congruence for application and 
-\series bold
-abstraction
-\series default
+congruence for application and abstraction
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
  
 \begin_inset Formula $(T'\xrightarrow{\abs}T)$
 \end_inset
@@ -9884,12 +9893,26 @@ vspace{-1em}
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
 \dfrac{{\color{blue}u}\rightarrow{\color{red}u'}}{\lambda x.u\rightarrow\lambda x.u'}\;\rightsquigarrow\;\frac{\pi_{1}\rightarrow\pi_{2}}{\abs\circ\pi_{1}\rightarrow\abs\circ\pi_{2}}\quad\dfrac{\xymatrix{{\color{blue}T'}\times{\color{red}T'}\xyport{{\xyarrow[r][][][][0.5ex]}}{\pi_{1,T}}-\xystarboard{{\xyarrow[r][][][][-0.5ex]}}{\pi_{2,T}}- & T'}
 }{\xymatrix{{\color{blue}T'}\times{\color{red}T'}\xyport{{\xyarrow[r][][][][0.5ex]}}{\abs\circ\pi_{1,T}}-\xystarboard{{\xyarrow[r][][][][-0.5ex]}}{\abs\circ\pi_{2,T}}- & T}
 }
 \]
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -10388,7 +10411,7 @@ t[x/u][y/v]\rightarrow t[y/v][x/u[y/v]]\quad\text{if {\color{green}\ensuremath{x
 
 \begin_layout Standard
 metavariable module: 
-\begin_inset Formula $L^{ex}{}''\times{\color{green}L^{ex}}\times{\color{red}L_{\diamond}^{ex}}$
+\begin_inset Formula $L^{ex}{}''\times{\color{green}L^{ex}}\times{\color{red}L_{\diamond}^{ex}}\qquad\quad(L_{\diamond}^{ex}\subset L^{ex}{}')$
 \end_inset
 
 
@@ -10681,7 +10704,7 @@ Perspectives
 
 \begin_deeper
 \begin_layout Itemize
-Generalize reduction signatures
+Generalize reduction monads and their signatures
 \end_layout
 
 \begin_deeper
@@ -10710,9 +10733,9 @@ specify Finster-Mimram's monad of weak
 \end_inset
 
 -groupoids: category of globular sets
-\end_layout
+\begin_inset Note Note
+status open
 
-\end_deeper
 \begin_layout Itemize
 Equations between reductions
 \end_layout
@@ -10720,6 +10743,12 @@ Equations between reductions
 \begin_deeper
 \begin_layout Itemize
 relational reductions (at most 1 reduction between terms).
+\end_layout
+
+\end_deeper
+\end_inset
+
+
 \end_layout
 
 \end_deeper

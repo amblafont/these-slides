@@ -1002,6 +1002,124 @@ Reduction monads!
 status open
 
 \begin_layout Plain Layout
+A difficulty
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Bound variables and 
+\begin_inset Formula $\alpha$
+\end_inset
+
+-equivalence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+\begin_inset Formula $\alpha$
+\end_inset
+
+-equivalence
+\series default
+:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-0.5em}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+x\mapsto2\times x\quad\text{ should be identified with }\quad y\mapsto2\times y
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+should be identified with
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $x$
+\end_inset
+
+ is bound by 
+\begin_inset Formula $\mapsto$
+\end_inset
+
+ in 
+\begin_inset Formula $x\mapsto2\times x$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout AlertBlock
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Specifying programming languages: 
 \series bold
 initial semantics
@@ -1199,124 +1317,6 @@ Effective
 \end_layout
 
 \end_deeper
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-A difficulty
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout AlertBlock
-\begin_inset Argument 2
-status open
-
-\begin_layout Plain Layout
-Bound variables and 
-\begin_inset Formula $\alpha$
-\end_inset
-
--equivalence
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-
-\series bold
-\begin_inset Formula $\alpha$
-\end_inset
-
--equivalence
-\series default
-:
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{-0.5em}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula 
-\[
-x\mapsto2\times x\quad\text{ should be identified with }\quad y\mapsto2\times y
-\]
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-should be identified with
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Quotes eld
-\end_inset
-
-
-\begin_inset Formula $x$
-\end_inset
-
- is bound by 
-\begin_inset Formula $\mapsto$
-\end_inset
-
- in 
-\begin_inset Formula $x\mapsto2\times x$
-\end_inset
-
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout AlertBlock
-
-\end_layout
-
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -1533,6 +1533,50 @@ double categories
 \end_inset
 
  [Meseguer, the Montanari school].
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\xymatrix{n\ar[r]^{t}\ar[d]_{\alpha} & m\ar[d]^{\beta}\\
+p\ar[r]_{u} & q
+}
+\]
+
+\end_inset
+
+où t et u sont des opérations, 
+\begin_inset Formula $n$
+\end_inset
+
+ et 
+\begin_inset Formula $p$
+\end_inset
+
+ disent leurs nombres d'arguments et 
+\begin_inset Formula $m$
+\end_inset
+
+ et 
+\begin_inset Formula $q$
+\end_inset
+
+ disent le nombre de sorties.
+ Ca traduit la règle suivante:
+\begin_inset Formula 
+\[
+\frac{x\xrightarrow{\alpha}y}{t(x)\xrightarrow{\beta}u(y)}
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10284,11 +10328,11 @@ Syntax
 \begin_inset Formula $\lambda$
 \end_inset
 
--ex = 
+-ex: 
 \begin_inset Formula $\lambda$
 \end_inset
 
--calcul + explicit substitution 
+-calculus + explicit substitution 
 \begin_inset Formula $t[x/u]$
 \end_inset
 

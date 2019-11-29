@@ -1370,22 +1370,23 @@ J'ai réalisé cette expérience pour plusieurs valeurs de la puissance optique
 Slide
 \end_layout
 
-\begin_layout Itemize
-This reduction rule is not straightforward to take into account because
- of the side condition 
-\begin_inset Formula $y\in fv(u)$
-\end_inset
+\begin_layout Standard
+The reduction rules propagate the explicit substitution under the various
+ constructions of the language.
+\end_layout
 
-.
- It says that the metavariable 
+\begin_layout Itemize
+This reduction rule is a bit more involved because of the side condition
+ stating that the metavariable 
 \begin_inset Formula $u$
 \end_inset
 
- really depends on the fresh variable 
+ should reall depend on the fresh variable 
 \begin_inset Formula $y$
 \end_inset
 
-, so we have to construct a specific module of terms which really depends
+.
+ So we have to construct a specific module of terms which really depends
  on free variables.
 \end_layout
 
